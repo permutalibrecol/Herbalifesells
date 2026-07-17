@@ -27,6 +27,7 @@
             background-color: var(--light-bg);
             color: var(--dark);
             padding: 20px;
+            padding-bottom: 100px; /* Espacio para el carrito flotante */
         }
 
         .container {
@@ -81,7 +82,6 @@
             transform: translateY(-4px);
         }
 
-        /* Contenedor Efecto Estudio PhotoRoom */
         .img-container {
             background: #ffffff;
             padding: 25px;
@@ -164,8 +164,127 @@
             background: var(--primary-light);
         }
 
+        /* --- ESTILOS DEL CARRITO FLOTANTE --- */
+        .cart-bar {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(150px);
+            width: 90%;
+            max-width: 600px;
+            background: rgba(33, 33, 33, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1000;
+        }
+
+        .cart-bar.active {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .cart-info {
+            color: var(--white);
+        }
+
+        .cart-info h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .cart-info p {
+            font-size: 0.8rem;
+            color: #ccc;
+        }
+
+        .cart-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-checkout {
+            background: #25d366; /* Color WhatsApp */
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .btn-checkout:hover {
+            transform: scale(1.05);
+        }
+
+        /* --- FORMULARIO MODAL DE PEDIDO --- */
+        .modal-overlay {
+            position: fixed;
+            top:0; left:0; width:100%; height:100%;
+            background: rgba(0,0,0,0.6);
+            display: flex; justify-content: center; align-items: center;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 2000;
+        }
+
+        .modal-overlay.active {
+            opacity: 1; pointer-events: auto;
+        }
+
+        .modal {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+
+        .modal h2 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-cancel {
+            background: #eee; border:none; padding:10px 15px; border-radius:6px; cursor:pointer;
+        }
+
         @media (max-width: 768px) {
             .grid { grid-template-columns: 1fr; }
+            .cart-bar { width: 95%; padding: 12px 16px; }
         }
     </style>
 </head>
@@ -177,11 +296,10 @@
         <p>Línea Completa Expandida — Precios de Mercado 2026 en COP (Colombia)</p>
     </header>
 
-    <!-- NUTRICIÓN BÁSICA -->
     <div class="category-title">Nutrición Básica y Control de Peso</div>
     <div class="grid">
         
-        <div class="card">
+        <div class="card" data-id="H01" data-name="Fórmula 1 Batido Nutricional" data-price="142000">
             <div class="img-container">
                 <span class="badge">Esencial</span>
                 <svg viewBox="0 0 100 150" width="90">
@@ -194,16 +312,16 @@
             <div class="info">
                 <div>
                     <h3>Fórmula 1 Batido Nutricional</h3>
-                    <p>Sustituto de comida con proteínas, fibra soluble y 21 vitaminas esenciales.</p>
+                    <p>Sustituto de comida saludable con proteínas, fibra soluble y 21 vitaminas esenciales.</p>
                 </div>
                 <div class="price-row">
                     <div class="price">$142.000 COP</div>
-                    <button class="btn-add">Añadir 🛒</button>
+                    <button class="btn-add" onclick="agregarAlCarrito('H01')">Añadir 🛒</button>
                 </div>
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="H02" data-name="Protein Drink Mix (PDM)" data-price="174000">
             <div class="img-container">
                 <svg viewBox="0 0 100 150" width="90">
                     <rect x="20" y="40" width="60" height="100" rx="10" fill="#fff3e0"/>
@@ -215,16 +333,16 @@
             <div class="info">
                 <div>
                     <h3>Protein Drink Mix (PDM)</h3>
-                    <p>Refuerzo proteico intermedio ideal para saciar el apetito y proteger el músculo.</p>
+                    <p>Refuerzo proteico intermedio ideal para saciar el apetito y proteger la masa muscular.</p>
                 </div>
                 <div class="price-row">
                     <div class="price">$174.000 COP</div>
-                    <button class="btn-add">Añadir 🛒</button>
+                    <button class="btn-add" onclick="agregarAlCarrito('H02')">Añadir 🛒</button>
                 </div>
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="H03" data-name="Polvo de Proteína Personalizado (PPP)" data-price="119000">
             <div class="img-container">
                 <svg viewBox="0 0 100 150" width="90">
                     <rect x="28" y="45" width="44" height="95" rx="6" fill="#f3e5f5"/>
@@ -240,12 +358,12 @@
                 </div>
                 <div class="price-row">
                     <div class="price">$119.000 COP</div>
-                    <button class="btn-add">Añadir 🛒</button>
+                    <button class="btn-add" onclick="agregarAlCarrito('H03')">Añadir 🛒</button>
                 </div>
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="H04" data-name="Fórmula 2 Complejo Multivitamínico" data-price="98000">
             <div class="img-container">
                 <svg viewBox="0 0 100 150" width="90">
                     <rect x="25" y="40" width="50" height="100" rx="8" fill="#e1f5fe"/>
@@ -257,21 +375,20 @@
             <div class="info">
                 <div>
                     <h3>Fórmula 2 Complejo Multivitamínico</h3>
-                    <p>Aporta más de 20 vitaminas y minerales esenciales para la defensa celular del cuerpo.</p>
+                    <p>Aporta más de 20 vitaminas y minerales esenciales para la defensa celular.</p>
                 </div>
                 <div class="price-row">
                     <div class="price">$98.000 COP</div>
-                    <button class="btn-add">Añadir 🛒</button>
+                    <button class="btn-add" onclick="agregarAlCarrito('H04')">Añadir 🛒</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- BIENESTAR DIGESTIVO -->
     <div class="category-title">Bienestar Digestivo y Salud Intestinal</div>
     <div class="grid">
         
-        <div class="card">
+        <div class="card" data-id="H05" data-name="Herbal Aloe Concentrado" data-price="136000">
             <div class="img-container">
                 <span class="badge">Popular</span>
                 <svg viewBox="0 0 100 150" width="90">
@@ -283,15 +400,204 @@
             <div class="info">
                 <div>
                     <h3>Herbal Aloe Concentrado</h3>
-                    <p>Bebida refrescante de sábila que limpia y alivia el tracto digestivo interno.</p>
+                    <p>Bebida refrescante de sábila orgánica que limpia, desinflama y alivia el tracto digestivo.</p>
                 </div>
                 <div class="price-row">
                     <div class="price">$136.000 COP</div>
-                    <button class="btn-add">Añadir 🛒</button>
+                    <button class="btn-add" onclick="agregarAlCarrito('H05')">Añadir 🛒</button>
                 </div>
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-id="H06" data-name="Bebida Herbal Instantánea (Té)" data-price="125000">
             <div class="img-container">
                 <svg viewBox="0 0 100 150" width="90">
+                    <rect x="35" y="50" width="30" height="90" rx="6" fill="#fff9c4"/>
+                    <rect x="33" y="42" width="34" height="10" rx="2" fill="#fbc02d"/>
+                    <text x="50" y="110" font-size="8" font-weight="bold" fill="#fbc02d" text-anchor="middle">TEA</text>
+                </svg>
+            </div>
+            <div class="info">
+                <div>
+                    <h3>Bebida Herbal Instantánea 50g</h3>
+                    <p>Té cargado de antioxidantes que eleva los niveles de energía y acelera el metabolismo térmico.</p>
+                </div>
+                <div class="price-row">
+                    <div class="price">$125.000 COP</div>
+                    <button class="btn-add" onclick="agregarAlCarrito('H06')">Añadir 🛒</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="cart-bar" id="cartBar">
+    <div class="cart-info">
+        <h4 id="cartTotal">Total: $0 COP</h4>
+        <p id="cartCount">0 productos seleccionados</p>
+    </div>
+    <div class="cart-actions">
+        <button class="btn-checkout" onclick="abrirModal()">Confirmar Pedido 🛍️</button>
+    </div>
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+        <h2>Datos de Entrega</h2>
+        <p style="font-size:0.85rem; color:var(--gray); margin-bottom:15px;">Completa los datos para registrar tu orden y enviarla a WhatsApp.</p>
+        
+        <div class="form-group">
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" id="nombre" placeholder="Ej. Juan Pérez" required>
+        </div>
+        <div class="form-group">
+            <label for="telefono">Teléfono / WhatsApp</label>
+            <input type="tel" id="telefono" placeholder="Ej. 3101234567" required>
+        </div>
+        <div class="form-group">
+            <label for="direccion">Dirección Completa y Ciudad</label>
+            <input type="text" id="direccion" placeholder="Calle 45 #12-34, Bogotá" required>
+        </div>
+        <div class="form-group">
+            <label for="metodoPago">Método de Pago Preferido</label>
+            <select id="metodoPago">
+                <option value="Nequi">Nequi</option>
+                <option value="Daviplata">Daviplata</option>
+                <option value="Transferencia Bancaria">Transferencia Bancaria (Bancolombia)</option>
+            </select>
+        </div>
+
+        <div class="modal-buttons">
+            <button class="btn-cancel" onclick="cerrarModal()">Cancelar</button>
+            <button class="btn-checkout" id="btnEnviarFinal" onclick="procesarCompraFinal()">Enviar Pedido 🚀</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // URL DE TU IMPLEMENTACIÓN EN GOOGLE APPS SCRIPT (CÁMBIALA AL DESPLEGAR)
+    const WEB_APP_URL = "CONECTA_AQUI_TU_URL_DE_APPS_SCRIPT";
+    const NUMERO_WHATSAPP = "573246820723"; // Reemplaza con tu número con código de país
+
+    let carrito = {};
+
+    function agregarAlCarrito(id) {
+        const tarjeta = document.querySelector(`.card[data-id="${id}"]`);
+        const nombre = tarjeta.getAttribute('data-name');
+        const precio = parseInt(tarjeta.getAttribute('data-price'));
+
+        if (carrito[id]) {
+            carrito[id].cantidad += 1;
+        } else {
+            carrito[id] = { nombre: nombre, precio: precio, cantidad: 1 };
+        }
+        actualizarInterfazCarrito();
+    }
+
+    function actualizarInterfazCarrito() {
+        const cartBar = document.getElementById('cartBar');
+        let total = 0;
+        let conteo = 0;
+
+        for (const id in carrito) {
+            total += carrito[id].precio * carrito[id].cantidad;
+            conteo += carrito[id].cantidad;
+        }
+
+        if (conteo > 0) {
+            cartBar.classList.add('active');
+            document.getElementById('cartTotal').innerText = `Total: $${total.toLocaleString('es-CO')} COP`;
+            document.getElementById('cartCount').innerText = `${conteo} producto(s) añadidos`;
+        } else {
+            cartBar.classList.remove('active');
+        }
+    }
+
+    function abrirModal() {
+        document.getElementById('modalOverlay').classList.add('active');
+    }
+
+    function cerrarModal() {
+        document.getElementById('modalOverlay').classList.remove('active');
+    }
+
+    function procesarCompraFinal() {
+        const nombre = document.getElementById('nombre').value.trim();
+        const telefono = document.getElementById('telefono').value.trim();
+        const direccion = document.getElementById('direccion').value.trim();
+        const metodoPago = document.getElementById('metodoPago').value;
+        const btnSubmit = document.getElementById('btnEnviarFinal');
+
+        if (!nombre || !telefono || !direccion) {
+            alert("⚠️ Por favor completa todos los campos del formulario.");
+            return;
+        }
+
+        btnSubmit.disabled = true;
+        btnSubmit.innerText = "Registrando... ⏳";
+
+        // Estructurar el detalle del pedido en texto plano
+        let listaProductos = [];
+        let resumenTexto = "";
+        let totalGeneral = 0;
+
+        for (const id in carrito) {
+            let subtotal = carrito[id].precio * carrito[id].cantidad;
+            totalGeneral += subtotal;
+            listaProductos.push(`${carrito[id].cantidad}x ${carrito[id].nombre}`);
+            resumenTexto += `• ${carrito[id].cantidad}x ${carrito[id].nombre} ($${subtotal.toLocaleString('es-CO')})\n`;
+        }
+
+        // 1. Datos para enviar al Google Sheets (vía Apps Script)
+        const payload = {
+            nombre: nombre,
+            telefono: telefono,
+            direccion: direccion,
+            metodoPago: metodoPago,
+            productos: listaProductos.join(', '),
+            total: totalGeneral
+        };
+
+        // Hacer el guardado en segundo plano (Estrategia Silent API)
+        fetch(WEB_APP_URL, {
+            method: 'POST',
+            mode: 'no-cors', // Evita bloqueos CORS del navegador
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        }).then(() => {
+            despacharWhatsApp(nombre, resumenTexto, totalGeneral, direccion, metodoPago);
+        }).catch(err => {
+            console.error("Error guardando en Sheets:", err);
+            // Incluso si falla la base de datos, despachamos por WhatsApp para no perder la venta
+            despacharWhatsApp(nombre, resumenTexto, totalGeneral, direccion, metodoPago);
+        });
+    }
+
+    function despacharWhatsApp(nombre, resumen, total, direccion, pago) {
+        // 2. Crear mensaje estructurado para cerrar la venta en WhatsApp
+        const mensajeWhatsApp = `✨ *NUEVO PEDIDO HERBALIFE* ✨\n\n` +
+                                `👤 *Cliente:* ${nombre}\n` +
+                                `📞 *Contacto:* ${document.getElementById('telefono').value}\n` +
+                                `📍 *Entrega:* ${direccion}\n` +
+                                `💳 *Pago por:* ${pago}\n\n` +
+                                `🛒 *Detalle de la Orden:*\n${resumen}\n` +
+                                `💰 *Total a pagar:* $${total.toLocaleString('es-CO')} COP\n\n` +
+                                `Hi! Solicito verificar disponibilidad de mi pedido para proceder con la transferencia. ¡Gracias!`;
+
+        const urlFinal = `https://api.whatsapp.com/send?phone=${NUMERO_WHATSAPP}&text=${encodeURIComponent(mensajeWhatsApp)}`;
+        
+        // Limpiar el estado y redirigir
+        carrito = {};
+        actualizarInterfazCarrito();
+        cerrarModal();
+        
+        const btnSubmit = document.getElementById('btnEnviarFinal');
+        btnSubmit.disabled = false;
+        btnSubmit.innerText = "Enviar Pedido 🚀";
+
+        window.location.href = urlFinal;
+    }
+</script>
+</body>
+</html>
