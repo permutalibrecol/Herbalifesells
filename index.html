@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo Completo Herbalife Colombia 2026</title>
+    <title>Catálogo Oficial Herbalife Colombia 2026</title>
     <style>
+        /* ==========================================
+           VARIABLES Y ESTILOS GLOBALES
+           ========================================== */
         :root {
             --primary: #2e7d32;
             --primary-light: #4caf50;
@@ -26,13 +29,13 @@
         body {
             background-color: var(--light-bg);
             color: var(--dark);
-            padding: 20px;
-            padding-bottom: 100px; /* Espacio para el carrito flotante */
+            padding-bottom: 120px; /* Espacio libre para que la barra del carrito no tape nada */
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 20px;
         }
 
         header {
@@ -52,6 +55,157 @@
             font-size: 1rem;
         }
 
+        /* ==========================================
+           SECCIÓN DE BIENVENIDA: ASTRID 
+           ========================================== */
+        .bienvenida-astrid {
+            background: linear-gradient(135deg, #fafdface 0%, #f2f7f3 100%);
+            padding: 40px 20px;
+            border-bottom: 1px solid #e1ebe3;
+            margin-bottom: 20px;
+        }
+        
+        .bienvenida-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        @media (min-width: 768px) {
+            .bienvenida-container {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 50px;
+            }
+        }
+        
+        .bienvenida-imagen {
+            flex: 1;
+            width: 100%;
+            max-width: 320px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .bienvenida-imagen img {
+            width: 100%;
+            height: auto;
+            max-height: 380px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(46, 125, 50, 0.08);
+            border: 5px solid #ffffff;
+        }
+        
+        .bienvenida-contenido {
+            flex: 1.3;
+            text-align: center;
+        }
+        
+        @media (min-width: 768px) {
+            .bienvenida-contenido {
+                text-align: left;
+            }
+        }
+        
+        .bienvenida-badge {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .bienvenida-contenido h2 {
+            font-size: 2.3rem;
+            color: #1b5e20;
+            margin: 0 0 15px 0;
+            font-weight: 800;
+        }
+        
+        .bienvenida-intro {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #455a64;
+            margin-bottom: 15px;
+        }
+        
+        .bienvenida-invitacion {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #37474f;
+            margin-bottom: 25px;
+        }
+        
+        .bienvenida-pilares {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        
+        .pilar {
+            background: #ffffff;
+            padding: 14px 8px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            text-align: center;
+            border: 1px solid #e8f5e9;
+            transition: transform 0.3s ease;
+        }
+        
+        .pilar:hover {
+            transform: translateY(-3px);
+            border-color: #c8e6c9;
+        }
+        
+        .pilar-icono {
+            font-size: 1.6rem;
+            display: block;
+            margin-bottom: 6px;
+        }
+        
+        .pilar h3 {
+            font-size: 0.95rem;
+            margin: 0 0 4px 0;
+            color: #1b5e20;
+        }
+        
+        .pilar p {
+            font-size: 0.75rem;
+            color: #78909c;
+            margin: 0;
+            line-height: 1.3;
+        }
+        
+        .btn-bienvenida {
+            display: inline-block;
+            background-color: #2e7d32;
+            color: #ffffff;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 10px 22px rgba(46, 125, 50, 0.15);
+            transition: background 0.2s;
+        }
+        
+        .btn-bienvenida:hover {
+            background-color: #1b5e20;
+        }
+
+        /* ==========================================
+           CATEGORÍAS Y PRODUCTOS (CATÁLOGO)
+           ========================================== */
         .category-title {
             font-size: 1.5rem;
             color: var(--dark);
@@ -164,18 +318,20 @@
             background: var(--primary-light);
         }
 
-        /* --- ESTILOS DEL CARRITO FLOTANTE --- */
+        /* ==========================================
+           CARRITO FLOTANTE (UX MÓVIL)
+           ========================================== */
         .cart-bar {
             position: fixed;
-            bottom: 20px;
+            bottom: 15px;
             left: 50%;
             transform: translateX(-50%) translateY(150px);
-            width: 90%;
+            width: 92%;
             max-width: 600px;
-            background: rgba(33, 33, 33, 0.95);
+            background: rgba(33, 33, 33, 0.96);
             backdrop-filter: blur(10px);
             border-radius: 16px;
-            padding: 16px 24px;
+            padding: 14px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -202,36 +358,34 @@
             color: #ccc;
         }
 
-        .cart-actions {
-            display: flex;
-            gap: 10px;
-        }
-
         .btn-checkout {
-            background: #25d366; /* Color WhatsApp */
+            background: #25d366;
             color: white;
             border: none;
             padding: 10px 18px;
             border-radius: 8px;
             font-weight: bold;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: transform 0.2s;
         }
 
         .btn-checkout:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
 
-        /* --- FORMULARIO MODAL DE PEDIDO --- */
+        /* ==========================================
+           FORMULARIO MODAL INTERACTIVO
+           ========================================== */
         .modal-overlay {
             position: fixed;
-            top:0; left:0; width:100%; height:100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.6);
             display: flex; justify-content: center; align-items: center;
             opacity: 0; pointer-events: none;
             transition: opacity 0.3s ease;
             z-index: 2000;
+            padding: 10px;
         }
 
         .modal-overlay.active {
@@ -240,26 +394,30 @@
 
         .modal {
             background: white;
-            padding: 30px;
+            padding: 25px;
             border-radius: 16px;
-            width: 90%;
-            max-width: 450px;
+            width: 100%;
+            max-width: 440px;
             box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .modal h2 {
-            margin-bottom: 15px;
+            margin-bottom: 8px;
             color: var(--primary);
+            font-size: 1.5rem;
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 14px;
+            text-align: left;
         }
 
         .form-group label {
             display: block;
             font-size: 0.85rem;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             font-weight: 600;
         }
 
@@ -279,18 +437,56 @@
         }
 
         .btn-cancel {
-            background: #eee; border:none; padding:10px 15px; border-radius:6px; cursor:pointer;
+            background: #eee; border: none; padding: 10px 15px; border-radius: 6px; cursor: pointer; font-weight: 600;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 550px) {
+            .bienvenida-pilares { grid-template-columns: 1fr; }
             .grid { grid-template-columns: 1fr; }
-            .cart-bar { width: 95%; padding: 12px 16px; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
+<section class="bienvenida-astrid">
+  <div class="bienvenida-container">
+    <div class="bienvenida-imagen">
+      <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600" alt="Astrid Especialista">
+    </div>
+    <div class="bienvenida-contenido">
+      <span class="bienvenida-badge">Asesoría Basada en la Experiencia Real</span>
+      <h2>Hola, soy Astrid</h2>
+      <p class="bienvenida-intro">
+        Mi recorrido en el mundo del bienestar y la salud integral no proviene únicamente de la teoría, sino de mi propia experiencia y transformación personal. Tras aprender a escuchar mi cuerpo y entender la nutrición celular, convertí esta pasión en mi propósito diario.
+      </p>
+      <p class="bienvenida-invitacion">
+        Hoy te invito con total entusiasmo, seas <strong>hombre o mujer</strong>, a dar un paso al frente para cuidar de forma consciente tu ser en tres dimensiones esenciales:
+      </p>
+      
+      <div class="bienvenida-pilares">
+        <div class="pilar">
+          <span class="pilar-icono">🌱</span>
+          <h3>Cuerpo</h3>
+          <p>Nutrición equilibrada y energía óptima.</p>
+        </div>
+        <div class="pilar">
+          <span class="pilar-icono">🧘‍♀️</span>
+          <h3>Mente</h3>
+          <p>Enfoque claro, paz y balance diario.</p>
+        </div>
+        <div class="pilar">
+          <span class="pilar-icono">✨</span>
+          <h3>Espíritu</h3>
+          <p>Conexión profunda y plenitud total.</p>
+        </div>
+      </div>
+      
+      <a href="#catalogo" class="btn-bienvenida">Explorar el Catálogo</a>
+    </div>
+  </div>
+</section>
+
+<div class="container" id="catalogo">
     <header>
         <h1>Catálogo de Nutrición Oficial</h1>
         <p>Línea Completa Expandida — Precios de Mercado 2026 en COP (Colombia)</p>
@@ -400,7 +596,7 @@
             <div class="info">
                 <div>
                     <h3>Herbal Aloe Concentrado</h3>
-                    <p>Bebida refrescante de sábila orgánica que limpia, desinflama y alivia el tracto digestivo.</p>
+                    <p>Bebida refrescante de sábila orgánica que limpia y alivia el tracto digestivo interno.</p>
                 </div>
                 <div class="price-row">
                     <div class="price">$136.000 COP</div>
@@ -420,7 +616,7 @@
             <div class="info">
                 <div>
                     <h3>Bebida Herbal Instantánea 50g</h3>
-                    <p>Té cargado de antioxidantes que eleva los niveles de energía y acelera el metabolismo térmico.</p>
+                    <p>Té cargado de antioxidantes que eleva los niveles de energía y apoya el metabolismo térmico.</p>
                 </div>
                 <div class="price-row">
                     <div class="price">$125.000 COP</div>
@@ -445,22 +641,22 @@
 <div class="modal-overlay" id="modalOverlay">
     <div class="modal">
         <h2>Datos de Entrega</h2>
-        <p style="font-size:0.85rem; color:var(--gray); margin-bottom:15px;">Completa los datos para registrar tu orden y enviarla a WhatsApp.</p>
+        <p style="font-size:0.85rem; color:var(--gray); margin-bottom:15px;">Completa la información para registrar tu orden y coordinar el pago.</p>
         
         <div class="form-group">
             <label for="nombre">Nombre Completo</label>
             <input type="text" id="nombre" placeholder="Ej. Juan Pérez" required>
         </div>
         <div class="form-group">
-            <label for="telefono">Teléfono / WhatsApp</label>
+            <label for="telefono">Teléfono de Contacto</label>
             <input type="tel" id="telefono" placeholder="Ej. 3101234567" required>
         </div>
         <div class="form-group">
-            <label for="direccion">Dirección Completa y Ciudad</label>
+            <label for="direccion">Dirección y Ciudad</label>
             <input type="text" id="direccion" placeholder="Calle 45 #12-34, Bogotá" required>
         </div>
         <div class="form-group">
-            <label for="metodoPago">Método de Pago Preferido</label>
+            <label for="metodoPago">Método de Transferencia</label>
             <select id="metodoPago">
                 <option value="Nequi">Nequi</option>
                 <option value="Daviplata">Daviplata</option>
@@ -476,21 +672,21 @@
 </div>
 
 <script>
-    // URL DE TU IMPLEMENTACIÓN EN GOOGLE APPS SCRIPT (CÁMBIALA AL DESPLEGAR)
-    const WEB_APP_URL = "CONECTA_AQUI_TU_URL_DE_APPS_SCRIPT";
-    const NUMERO_WHATSAPP = "573246820723"; // Reemplaza con tu número con código de país
+    // URL integrada directamente desde tu parámetro asignado
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycby0BL-lu6GSx5wa8-oTd0lLlPyfmGsY21qyIC_l0_DlHwTYVfZ8KidRcquu1oN-Fw/exec";
+    const NUMERO_WHATSAPP = "573246820723"; // Número de destino comercial con código de país
 
     let carrito = {};
 
     function agregarAlCarrito(id) {
         const tarjeta = document.querySelector(`.card[data-id="${id}"]`);
         const nombre = tarjeta.getAttribute('data-name');
-        const precio = parseInt(tarjeta.getAttribute('data-price'));
+        const price = parseInt(tarjeta.getAttribute('data-price'));
 
         if (carrito[id]) {
             carrito[id].cantidad += 1;
         } else {
-            carrito[id] = { nombre: nombre, precio: precio, cantidad: 1 };
+            carrito[id] = { nombre: nombre, precio: price, cantidad: 1 };
         }
         actualizarInterfazCarrito();
     }
@@ -508,7 +704,7 @@
         if (conteo > 0) {
             cartBar.classList.add('active');
             document.getElementById('cartTotal').innerText = `Total: $${total.toLocaleString('es-CO')} COP`;
-            document.getElementById('cartCount').innerText = `${conteo} producto(s) añadidos`;
+            document.getElementById('cartCount').innerText = `${conteo} producto(s) añadido(s)`;
         } else {
             cartBar.classList.remove('active');
         }
@@ -530,14 +726,13 @@
         const btnSubmit = document.getElementById('btnEnviarFinal');
 
         if (!nombre || !telefono || !direccion) {
-            alert("⚠️ Por favor completa todos los campos del formulario.");
+            alert("⚠️ Por favor completa los campos del formulario para continuar.");
             return;
         }
 
         btnSubmit.disabled = true;
         btnSubmit.innerText = "Registrando... ⏳";
 
-        // Estructurar el detalle del pedido en texto plano
         let listaProductos = [];
         let resumenTexto = "";
         let totalGeneral = 0;
@@ -549,7 +744,7 @@
             resumenTexto += `• ${carrito[id].cantidad}x ${carrito[id].nombre} ($${subtotal.toLocaleString('es-CO')})\n`;
         }
 
-        // 1. Datos para enviar al Google Sheets (vía Apps Script)
+        // Datos del payload ordenados
         const payload = {
             nombre: nombre,
             telefono: telefono,
@@ -559,35 +754,35 @@
             total: totalGeneral
         };
 
-        // Hacer el guardado en segundo plano (Estrategia Silent API)
+        // Guardado invisible y asíncrono en Google Sheets
         fetch(WEB_APP_URL, {
             method: 'POST',
-            mode: 'no-cors', // Evita bloqueos CORS del navegador
+            mode: 'no-cors',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
         }).then(() => {
-            despacharWhatsApp(nombre, resumenTexto, totalGeneral, direccion, metodoPago);
+            despacharWhatsApp(nombre, telefono, resumenTexto, totalGeneral, direccion, metodoPago);
         }).catch(err => {
-            console.error("Error guardando en Sheets:", err);
-            // Incluso si falla la base de datos, despachamos por WhatsApp para no perder la venta
-            despacharWhatsApp(nombre, resumenTexto, totalGeneral, direccion, metodoPago);
+            console.error("Error guardando datos:", err);
+            // Si el internet o la hoja fallan, enviamos el pedido por WhatsApp de todos modos
+            despacharWhatsApp(nombre, telefono, resumenTexto, totalGeneral, direccion, metodoPago);
         });
     }
 
-    function despacharWhatsApp(nombre, resumen, total, direccion, pago) {
-        // 2. Crear mensaje estructurado para cerrar la venta en WhatsApp
+    function despacharWhatsApp(nombre, telefono, resumen, total, direccion, pago) {
+        // Redacción estructurada del mensaje final
         const mensajeWhatsApp = `✨ *NUEVO PEDIDO HERBALIFE* ✨\n\n` +
                                 `👤 *Cliente:* ${nombre}\n` +
-                                `📞 *Contacto:* ${document.getElementById('telefono').value}\n` +
-                                `📍 *Entrega:* ${direccion}\n` +
-                                `💳 *Pago por:* ${pago}\n\n` +
+                                `📞 *Contacto:* ${telefono}\n` +
+                                `📍 *Dirección de Entrega:* ${direccion}\n` +
+                                `💳 *Forma de Pago:* Transferencia via ${pago}\n\n` +
                                 `🛒 *Detalle de la Orden:*\n${resumen}\n` +
-                                `💰 *Total a pagar:* $${total.toLocaleString('es-CO')} COP\n\n` +
-                                `Hi! Solicito verificar disponibilidad de mi pedido para proceder con la transferencia. ¡Gracias!`;
+                                `💰 *Total a Transferir:* $${total.toLocaleString('es-CO')} COP\n\n` +
+                                `Hola Astrid, acabo de generar mi orden desde el sitio web. Por favor verifícala para proceder con la transferencia. ¡Muchas gracias!`;
 
         const urlFinal = `https://api.whatsapp.com/send?phone=${NUMERO_WHATSAPP}&text=${encodeURIComponent(mensajeWhatsApp)}`;
         
-        // Limpiar el estado y redirigir
+        // Limpieza de estados de la UI
         carrito = {};
         actualizarInterfazCarrito();
         cerrarModal();
@@ -596,8 +791,9 @@
         btnSubmit.disabled = false;
         btnSubmit.innerText = "Enviar Pedido 🚀";
 
+        // Redirección directa hacia la aplicación de WhatsApp
         window.location.href = urlFinal;
     }
 </script>
 </body>
-</html> 
+</html>
