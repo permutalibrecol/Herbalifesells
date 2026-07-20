@@ -16,6 +16,8 @@
             --light-bg: #f5f5f5;
             --white: #ffffff;
             --shadow: 0 10px 30px rgba(0,0,0,0.06);
+            
+            /* Sombra Efecto Estudio PhotoRoom */
             --photoroom-shadow: drop-shadow(0 15px 12px rgba(0,0,0,0.15));
         }
 
@@ -56,11 +58,11 @@
         }
 
         /* ==========================================
-           SECCIÓN DE BIENVENIDA: ASTRID 
+           SECCIÓN DE BIENVENIDA: ASTRID (INICIAL)
            ========================================== */
         .bienvenida-astrid {
             background: linear-gradient(135deg, #fafdface 0%, #f2f7f3 100%);
-            padding: 40px 20px;
+            padding: 60px 20px;
             border-bottom: 1px solid #e1ebe3;
             margin-bottom: 20px;
         }
@@ -71,21 +73,21 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 30px;
+            gap: 40px;
         }
         
         @media (min-width: 768px) {
             .bienvenida-container {
                 flex-direction: row;
                 justify-content: space-between;
-                gap: 50px;
+                gap: 60px;
             }
         }
         
         .bienvenida-imagen {
             flex: 1;
             width: 100%;
-            max-width: 320px;
+            max-width: 380px;
             display: flex;
             justify-content: center;
         }
@@ -93,11 +95,16 @@
         .bienvenida-imagen img {
             width: 100%;
             height: auto;
-            max-height: 380px;
+            max-height: 460px;
             object-fit: cover;
             border-radius: 24px;
             box-shadow: 0 20px 40px rgba(46, 125, 50, 0.08);
             border: 5px solid #ffffff;
+            transition: transform 0.4s ease;
+        }
+        
+        .bienvenida-imagen img:hover {
+            transform: scale(1.02);
         }
         
         .bienvenida-contenido {
@@ -125,37 +132,38 @@
         }
         
         .bienvenida-contenido h2 {
-            font-size: 2.3rem;
+            font-size: 2.6rem;
             color: #1b5e20;
-            margin: 0 0 15px 0;
+            margin: 0 0 20px 0;
             font-weight: 800;
+            line-height: 1.2;
         }
         
         .bienvenida-intro {
-            font-size: 1rem;
+            font-size: 1.1rem;
             line-height: 1.6;
             color: #455a64;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
         
         .bienvenida-invitacion {
-            font-size: 1rem;
+            font-size: 1.05rem;
             line-height: 1.6;
             color: #37474f;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
         
         .bienvenida-pilares {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            margin-bottom: 25px;
+            gap: 15px;
+            margin-bottom: 35px;
         }
         
         .pilar {
             background: #ffffff;
-            padding: 14px 8px;
-            border-radius: 16px;
+            padding: 16px 10px;
+            border-radius: 18px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
             text-align: center;
             border: 1px solid #e8f5e9;
@@ -163,24 +171,26 @@
         }
         
         .pilar:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(46, 125, 50, 0.06);
             border-color: #c8e6c9;
         }
         
         .pilar-icono {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
         
         .pilar h3 {
-            font-size: 0.95rem;
-            margin: 0 0 4px 0;
+            font-size: 1.05rem;
+            margin: 0 0 6px 0;
             color: #1b5e20;
+            font-weight: 700;
         }
         
         .pilar p {
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             color: #78909c;
             margin: 0;
             line-height: 1.3;
@@ -190,11 +200,11 @@
             display: inline-block;
             background-color: #2e7d32;
             color: #ffffff;
-            padding: 12px 28px;
+            padding: 14px 34px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 1rem;
             box-shadow: 0 10px 22px rgba(46, 125, 50, 0.15);
             transition: background 0.2s;
         }
@@ -246,7 +256,8 @@
             position: relative;
         }
 
-        .img-container svg {
+        /* Foto del Producto Estilo PhotoRoom */
+        .img-container img {
             max-height: 100%;
             max-width: 100%;
             object-fit: contain;
@@ -319,7 +330,7 @@
         }
 
         /* ==========================================
-           CARRITO FLOTANTE (UX MÓVIL)
+           CARRITO FLOTANTE (MÓVIL-FIRST UX)
            ========================================== */
         .cart-bar {
             position: fixed;
@@ -498,12 +509,7 @@
         <div class="card" data-id="H01" data-name="Fórmula 1 Batido Nutricional" data-price="142000">
             <div class="img-container">
                 <span class="badge">Esencial</span>
-                <svg viewBox="0 0 100 150" width="90">
-                    <rect x="25" y="30" width="50" height="110" rx="8" fill="#e8f5e9"/>
-                    <rect x="23" y="20" width="54" height="15" rx="4" fill="#2e7d32"/>
-                    <rect x="30" y="55" width="40" height="55" fill="#ffffff" rx="2"/>
-                    <text x="50" y="123" font-size="7" font-weight="bold" fill="#2e7d32" text-anchor="middle">FÓRMULA 1</text>
-                </svg>
+                <img src="https://images.unsplash.com/photo-1627318042466-9b5585b9b6d8?auto=format&fit=crop&q=80&w=300" alt="Formula 1 Batido">
             </div>
             <div class="info">
                 <div>
@@ -519,12 +525,7 @@
 
         <div class="card" data-id="H02" data-name="Protein Drink Mix (PDM)" data-price="174000">
             <div class="img-container">
-                <svg viewBox="0 0 100 150" width="90">
-                    <rect x="20" y="40" width="60" height="100" rx="10" fill="#fff3e0"/>
-                    <rect x="18" y="28" width="64" height="16" rx="5" fill="#f57c00"/>
-                    <rect x="26" y="60" width="48" height="50" fill="#ffffff" rx="2"/>
-                    <text x="50" y="125" font-size="8" font-weight="bold" fill="#f57c00" text-anchor="middle">PROTEIN PDM</text>
-                </svg>
+                <img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&q=80&w=300" alt="PDM Protein">
             </div>
             <div class="info">
                 <div>
@@ -540,12 +541,7 @@
 
         <div class="card" data-id="H03" data-name="Polvo de Proteína Personalizado (PPP)" data-price="119000">
             <div class="img-container">
-                <svg viewBox="0 0 100 150" width="90">
-                    <rect x="28" y="45" width="44" height="95" rx="6" fill="#f3e5f5"/>
-                    <rect x="26" y="35" width="48" height="12" rx="3" fill="#7b1fa2"/>
-                    <rect x="33" y="60" width="34" height="50" fill="#ffffff" rx="2"/>
-                    <text x="50" y="123" font-size="8" font-weight="bold" fill="#7b1fa2" text-anchor="middle">PPP</text>
-                </svg>
+                <img src="https://images.unsplash.com/photo-1594119932057-a37a77b8e1f5?auto=format&fit=crop&q=80&w=300" alt="PPP Protein">
             </div>
             <div class="info">
                 <div>
@@ -561,12 +557,7 @@
 
         <div class="card" data-id="H04" data-name="Fórmula 2 Complejo Multivitamínico" data-price="98000">
             <div class="img-container">
-                <svg viewBox="0 0 100 150" width="90">
-                    <rect x="25" y="40" width="50" height="100" rx="8" fill="#e1f5fe"/>
-                    <rect x="23" y="28" width="54" height="14" rx="4" fill="#0288d1"/>
-                    <rect x="31" y="58" width="38" height="52" fill="#ffffff" rx="2"/>
-                    <text x="50" y="124" font-size="7" font-weight="bold" fill="#0288d1" text-anchor="middle">COMPLEJO VIT</text>
-                </svg>
+                <img src="https://images.unsplash.com/photo-1606132646549-656360c73a62?auto=format&fit=crop&q=80&w=300" alt="Multivitamínico">
             </div>
             <div class="info">
                 <div>
@@ -587,11 +578,7 @@
         <div class="card" data-id="H05" data-name="Herbal Aloe Concentrado" data-price="136000">
             <div class="img-container">
                 <span class="badge">Popular</span>
-                <svg viewBox="0 0 100 150" width="90">
-                    <rect x="32" y="35" width="36" height="105" rx="5" fill="#e8f5e9"/>
-                    <rect x="30" y="25" width="40" height="12" rx="3" fill="#1b5e20"/>
-                    <text x="50" y="122" font-size="8" font-weight="bold" fill="#1b5e20" text-anchor="middle">ALOE</text>
-                </svg>
+                <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&q=80&w=300" alt="Aloe">
             </div>
             <div class="info">
                 <div>
@@ -605,22 +592,39 @@
             </div>
         </div>
 
-        <div class="card" data-id="H06" data-name="Bebida Herbal Instantánea (Té)" data-price="125000">
+        <div class="card" data-id="H06" data-name="Té Concentrado de Hierbas" data-price="125000">
             <div class="img-container">
-                <svg viewBox="0 0 100 150" width="90">
-                    <rect x="35" y="50" width="30" height="90" rx="6" fill="#fff9c4"/>
-                    <rect x="33" y="42" width="34" height="10" rx="2" fill="#fbc02d"/>
-                    <text x="50" y="110" font-size="8" font-weight="bold" fill="#fbc02d" text-anchor="middle">TEA</text>
-                </svg>
+                <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&q=80&w=300" alt="Té Concentrado">
             </div>
             <div class="info">
                 <div>
-                    <h3>Bebida Herbal Instantánea 50g</h3>
-                    <p>Té cargado de antioxidantes que eleva los niveles de energía y apoya el metabolismo térmico.</p>
+                    <h3>Té Concentrado de Hierbas</h3>
+                    <p>Eleva los niveles de energía y apoya el metabolismo térmico.</p>
                 </div>
                 <div class="price-row">
                     <div class="price">$125.000 COP</div>
                     <button class="btn-add" onclick="agregarAlCarrito('H06')">Añadir 🛒</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="category-title">Belleza Inner y Cuidado Personal</div>
+    <div class="grid">
+        
+        <div class="card" data-id="H07" data-name="Collagen Skin Booster" data-price="180000">
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=300" alt="Collagen">
+            </div>
+            <div class="info">
+                <div>
+                    <h3>Collagen Skin Booster</h3>
+                    <p>Nutre tu belleza desde adentro.</p>
+                </div>
+                <div class="price-row">
+                    <div class="price">$180.000 COP</div>
+                    <button class="btn-add" onclick="agregarAlCarrito('H07')">Añadir 🛒</button>
                 </div>
             </div>
         </div>
@@ -672,7 +676,8 @@
 </div>
 
 <script>
-    // URL integrada directamente desde tu parámetro asignado
+    // URL DE TU IMPLEMENTACIÓN EN GOOGLE APPS SCRIPT
+    // Asegúrate de pegar AQUÍ tu URL de la aplicación web
     const WEB_APP_URL = "https://script.google.com/macros/s/AKfycby0BL-lu6GSx5wa8-oTd0lLlPyfmGsY21qyIC_l0_DlHwTYVfZ8KidRcquu1oN-Fw/exec";
     const NUMERO_WHATSAPP = "573246820723"; // Número de destino comercial con código de país
 
@@ -744,7 +749,7 @@
             resumenTexto += `• ${carrito[id].cantidad}x ${carrito[id].nombre} ($${subtotal.toLocaleString('es-CO')})\n`;
         }
 
-        // Datos del payload ordenados
+        // Datos para enviar al Google Sheets (vía Apps Script)
         const payload = {
             nombre: nombre,
             telefono: telefono,
@@ -754,17 +759,19 @@
             total: totalGeneral
         };
 
-        // Guardado invisible y asíncrono en Google Sheets
+        // Hacer el guardado invisible y asíncrono
         fetch(WEB_APP_URL, {
             method: 'POST',
-            mode: 'no-cors',
+            mode: 'no-cors', // Estrategia Silent API
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
         }).then(() => {
+            // El guardado se asume exitoso (Silent API no devuelve confirmación Cors)
+            // Procedemos a la pasarela directa a WhatsApp
             despacharWhatsApp(nombre, telefono, resumenTexto, totalGeneral, direccion, metodoPago);
         }).catch(err => {
             console.error("Error guardando datos:", err);
-            // Si el internet o la hoja fallan, enviamos el pedido por WhatsApp de todos modos
+            // Incluso si falla la red, despachamos por WhatsApp para no perder la venta
             despacharWhatsApp(nombre, telefono, resumenTexto, totalGeneral, direccion, metodoPago);
         });
     }
@@ -778,7 +785,7 @@
                                 `💳 *Forma de Pago:* Transferencia via ${pago}\n\n` +
                                 `🛒 *Detalle de la Orden:*\n${resumen}\n` +
                                 `💰 *Total a Transferir:* $${total.toLocaleString('es-CO')} COP\n\n` +
-                                `Hola Astrid, acabo de generar mi orden desde el sitio web. Por favor verifícala para proceder con la transferencia. ¡Muchas gracias!`;
+                                `Hi Astrid, acabo de generar mi orden desde el sitio web. Por favor verifícala para proceder con la transferencia. ¡Muchas gracias!`;
 
         const urlFinal = `https://api.whatsapp.com/send?phone=${NUMERO_WHATSAPP}&text=${encodeURIComponent(mensajeWhatsApp)}`;
         
