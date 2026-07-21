@@ -1,3 +1,4 @@
+html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,13 +12,12 @@
         :root {
             --primary: #2e7d32;
             --primary-light: #4caf50;
+            --primary-dark: #1b5e20;
             --dark: #212121;
             --gray: #666;
             --light-bg: #f5f5f5;
             --white: #ffffff;
             --shadow: 0 10px 30px rgba(0,0,0,0.06);
-            
-            /* Sombra Efecto Estudio PhotoRoom */
             --photoroom-shadow: drop-shadow(0 15px 12px rgba(0,0,0,0.15));
         }
 
@@ -31,7 +31,7 @@
         body {
             background-color: var(--light-bg);
             color: var(--dark);
-            padding-bottom: 120px; /* Espacio libre para que la barra del carrito no tape nada */
+            padding-bottom: 120px;
         }
 
         .container {
@@ -58,12 +58,12 @@
         }
 
         /* ==========================================
-           SECCIÓN DE BIENVENIDA: ASTRID (INICIAL)
+           SECCIÓN DE BIENVENIDA: ASTRID
            ========================================== */
         .bienvenida-astrid {
-            background: linear-gradient(135deg, #fafdface 0%, #f2f7f3 100%);
+            background: linear-gradient(135deg, #f0f7f0 0%, #e8f5e9 100%);
             padding: 60px 20px;
-            border-bottom: 1px solid #e1ebe3;
+            border-bottom: 3px solid var(--primary-light);
             margin-bottom: 20px;
         }
         
@@ -90,21 +90,22 @@
             max-width: 380px;
             display: flex;
             justify-content: center;
+            align-items: center;
         }
         
         .bienvenida-imagen img {
             width: 100%;
             height: auto;
-            max-height: 460px;
+            max-height: 480px;
             object-fit: cover;
             border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(46, 125, 50, 0.08);
-            border: 5px solid #ffffff;
-            transition: transform 0.4s ease;
+            box-shadow: 0 20px 40px rgba(46, 125, 50, 0.15), 0 0 0 5px #ffffff, 0 0 0 7px rgba(46, 125, 50, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
         
         .bienvenida-imagen img:hover {
             transform: scale(1.02);
+            box-shadow: 0 25px 50px rgba(46, 125, 50, 0.2), 0 0 0 5px #ffffff, 0 0 0 7px rgba(46, 125, 50, 0.15);
         }
         
         .bienvenida-contenido {
@@ -119,8 +120,8 @@
         }
         
         .bienvenida-badge {
-            background-color: #e8f5e9;
-            color: #2e7d32;
+            background-color: var(--primary);
+            color: var(--white);
             padding: 6px 16px;
             border-radius: 50px;
             font-size: 0.8rem;
@@ -132,25 +133,30 @@
         }
         
         .bienvenida-contenido h2 {
-            font-size: 2.6rem;
-            color: #1b5e20;
+            font-size: 2.8rem;
+            color: var(--primary-dark);
             margin: 0 0 20px 0;
             font-weight: 800;
             line-height: 1.2;
         }
         
+        .bienvenida-contenido h2 span {
+            color: var(--primary-light);
+        }
+        
         .bienvenida-intro {
             font-size: 1.1rem;
-            line-height: 1.6;
+            line-height: 1.8;
             color: #455a64;
             margin-bottom: 18px;
         }
         
         .bienvenida-invitacion {
             font-size: 1.05rem;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #37474f;
             margin-bottom: 30px;
+            font-weight: 500;
         }
         
         .bienvenida-pilares {
@@ -161,23 +167,23 @@
         }
         
         .pilar {
-            background: #ffffff;
+            background: var(--white);
             padding: 16px 10px;
             border-radius: 18px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
             text-align: center;
             border: 1px solid #e8f5e9;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .pilar:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(46, 125, 50, 0.06);
-            border-color: #c8e6c9;
+            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.08);
+            border-color: var(--primary-light);
         }
         
         .pilar-icono {
-            font-size: 1.8rem;
+            font-size: 2rem;
             display: block;
             margin-bottom: 8px;
         }
@@ -185,7 +191,7 @@
         .pilar h3 {
             font-size: 1.05rem;
             margin: 0 0 6px 0;
-            color: #1b5e20;
+            color: var(--primary-dark);
             font-weight: 700;
         }
         
@@ -198,23 +204,27 @@
         
         .btn-bienvenida {
             display: inline-block;
-            background-color: #2e7d32;
-            color: #ffffff;
+            background-color: var(--primary);
+            color: var(--white);
             padding: 14px 34px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1rem;
-            box-shadow: 0 10px 22px rgba(46, 125, 50, 0.15);
-            transition: background 0.2s;
+            box-shadow: 0 10px 22px rgba(46, 125, 50, 0.2);
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
         }
         
         .btn-bienvenida:hover {
-            background-color: #1b5e20;
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px rgba(46, 125, 50, 0.25);
         }
 
         /* ==========================================
-           CATEGORÍAS Y PRODUCTOS (CATÁLOGO)
+           CATEGORÍAS Y PRODUCTOS
            ========================================== */
         .category-title {
             font-size: 1.5rem;
@@ -235,7 +245,7 @@
             border-radius: 14px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: transform 0.25s ease;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -244,6 +254,7 @@
 
         .card:hover {
             transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
         }
 
         .img-container {
@@ -256,7 +267,6 @@
             position: relative;
         }
 
-        /* Foto del Producto Estilo PhotoRoom */
         .img-container img {
             max-height: 100%;
             max-width: 100%;
@@ -275,6 +285,18 @@
             font-size: 0.7rem;
             font-weight: bold;
             text-transform: uppercase;
+        }
+
+        .badge-popular {
+            background: #ff6f00;
+        }
+
+        .badge-premium {
+            background: #6a1b9a;
+        }
+
+        .badge-natural {
+            background: #00897b;
         }
 
         .info {
@@ -322,15 +344,20 @@
             font-weight: 600;
             font-size: 0.9rem;
             cursor: pointer;
-            transition: background 0.2s ease;
+            transition: background 0.2s ease, transform 0.15s ease;
         }
 
         .btn-add:hover {
             background: var(--primary-light);
+            transform: scale(1.03);
+        }
+
+        .btn-add:active {
+            transform: scale(0.95);
         }
 
         /* ==========================================
-           CARRITO FLOTANTE (MÓVIL-FIRST UX)
+           CARRITO FLOTANTE
            ========================================== */
         .cart-bar {
             position: fixed;
@@ -339,14 +366,15 @@
             transform: translateX(-50%) translateY(150px);
             width: 92%;
             max-width: 600px;
-            background: rgba(33, 33, 33, 0.96);
-            backdrop-filter: blur(10px);
+            background: rgba(33, 33, 33, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-radius: 16px;
             padding: 14px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.35);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             z-index: 1000;
         }
@@ -378,15 +406,19 @@
             font-weight: bold;
             font-size: 0.9rem;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: transform 0.2s, opacity 0.2s;
         }
 
         .btn-checkout:hover {
             transform: scale(1.03);
         }
 
+        .btn-checkout:active {
+            transform: scale(0.95);
+        }
+
         /* ==========================================
-           FORMULARIO MODAL INTERACTIVO
+           MODAL
            ========================================== */
         .modal-overlay {
             position: fixed;
@@ -405,7 +437,7 @@
 
         .modal {
             background: white;
-            padding: 25px;
+            padding: 30px;
             border-radius: 16px;
             width: 100%;
             max-width: 440px;
@@ -420,6 +452,12 @@
             font-size: 1.5rem;
         }
 
+        .modal .subtitle {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
         .form-group {
             margin-bottom: 14px;
             text-align: left;
@@ -430,14 +468,23 @@
             font-size: 0.85rem;
             margin-bottom: 4px;
             font-weight: 600;
+            color: var(--dark);
         }
 
         .form-group input, .form-group select {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
+            padding: 10px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
             font-size: 0.95rem;
+            transition: border-color 0.2s;
+            background: #fafafa;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: white;
         }
 
         .modal-buttons {
@@ -448,25 +495,88 @@
         }
 
         .btn-cancel {
-            background: #eee; border: none; padding: 10px 15px; border-radius: 6px; cursor: pointer; font-weight: 600;
+            background: #eee;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
         }
 
+        .btn-cancel:hover {
+            background: #ddd;
+        }
+
+        /* ==========================================
+           RESPONSIVE
+           ========================================== */
         @media (max-width: 550px) {
             .bienvenida-pilares { grid-template-columns: 1fr; }
             .grid { grid-template-columns: 1fr; }
+            .bienvenida-contenido h2 { font-size: 2rem; }
+            .bienvenida-imagen { max-width: 280px; }
+            header h1 { font-size: 1.6rem; }
         }
+
+        @media (max-width: 400px) {
+            .cart-bar {
+                flex-direction: column;
+                gap: 10px;
+                align-items: stretch;
+                padding: 12px 16px;
+            }
+            .cart-actions {
+                display: flex;
+                justify-content: center;
+            }
+            .cart-info h4 { font-size: 0.95rem; }
+        }
+
+        /* ==========================================
+           ANIMACIONES
+           ========================================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .card:nth-child(2) { animation-delay: 0.1s; }
+        .card:nth-child(3) { animation-delay: 0.2s; }
+        .card:nth-child(4) { animation-delay: 0.3s; }
+        .card:nth-child(5) { animation-delay: 0.4s; }
+        .card:nth-child(6) { animation-delay: 0.5s; }
+        .card:nth-child(7) { animation-delay: 0.6s; }
+        .card:nth-child(8) { animation-delay: 0.7s; }
+        .card:nth-child(9) { animation-delay: 0.8s; }
     </style>
 </head>
 <body>
 
+<!-- ==========================================
+     SECCIÓN DE BIENVENIDA CON ASTRID
+     ========================================== -->
 <section class="bienvenida-astrid">
   <div class="bienvenida-container">
     <div class="bienvenida-imagen">
-      <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600" alt="Astrid Especialista">
+      <!-- 🔹 IMAGEN DE ASTRID: Reemplaza el src con la URL de tu imagen -->
+      <!-- Ejemplo: src="https://tu-sitio.com/imagen-astrid.jpg" -->
+      <!-- También puedes usar imágenes de WhatsApp o Drive -->
+      <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600" alt="Astrid - Asesora de Bienestar Herbalife">
     </div>
     <div class="bienvenida-contenido">
-      <span class="bienvenida-badge">Asesoría Basada en la Experiencia Real</span>
-      <h2>Hola, soy Astrid</h2>
+      <span class="bienvenida-badge">✨ Asesoría Basada en la Experiencia Real</span>
+      <h2>Hola, soy <span>Astrid</span></h2>
       <p class="bienvenida-intro">
         Mi recorrido en el mundo del bienestar y la salud integral no proviene únicamente de la teoría, sino de mi propia experiencia y transformación personal. Tras aprender a escuchar mi cuerpo y entender la nutrición celular, convertí esta pasión en mi propósito diario.
       </p>
@@ -492,23 +602,27 @@
         </div>
       </div>
       
-      <a href="#catalogo" class="btn-bienvenida">Explorar el Catálogo</a>
+      <a href="#catalogo" class="btn-bienvenida">Explorar el Catálogo 🌿</a>
     </div>
   </div>
 </section>
 
+<!-- ==========================================
+     CATÁLOGO DE PRODUCTOS
+     ========================================== -->
 <div class="container" id="catalogo">
     <header>
-        <h1>Catálogo de Nutrición Oficial</h1>
+        <h1>🌿 Catálogo de Nutrición Oficial</h1>
         <p>Línea Completa Expandida — Precios de Mercado 2026 en COP (Colombia)</p>
     </header>
 
+    <!-- CATEGORÍA 1 -->
     <div class="category-title">Nutrición Básica y Control de Peso</div>
     <div class="grid">
         
         <div class="card" data-id="H01" data-name="Fórmula 1 Batido Nutricional" data-price="142000">
             <div class="img-container">
-                <span class="badge">Esencial</span>
+                <span class="badge">⭐ Esencial</span>
                 <img src="https://images.unsplash.com/photo-1627318042466-9b5585b9b6d8?auto=format&fit=crop&q=80&w=300" alt="Formula 1 Batido">
             </div>
             <div class="info">
@@ -525,6 +639,7 @@
 
         <div class="card" data-id="H02" data-name="Protein Drink Mix (PDM)" data-price="174000">
             <div class="img-container">
+                <span class="badge badge-popular">🔥 Popular</span>
                 <img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&q=80&w=300" alt="PDM Protein">
             </div>
             <div class="info">
@@ -539,7 +654,7 @@
             </div>
         </div>
 
-        <div class="card" data-id="H03" data-name="Polvo de Proteína Personalizado (PPP)" data-price="119000">
+        <div class="card" data-id="H03" data-name="Polvo de Proteína Personalizado" data-price="119000">
             <div class="img-container">
                 <img src="https://images.unsplash.com/photo-1594119932057-a37a77b8e1f5?auto=format&fit=crop&q=80&w=300" alt="PPP Protein">
             </div>
@@ -572,12 +687,13 @@
         </div>
     </div>
 
+    <!-- CATEGORÍA 2 -->
     <div class="category-title">Bienestar Digestivo y Salud Intestinal</div>
     <div class="grid">
         
         <div class="card" data-id="H05" data-name="Herbal Aloe Concentrado" data-price="136000">
             <div class="img-container">
-                <span class="badge">Popular</span>
+                <span class="badge badge-natural">🌿 Natural</span>
                 <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&q=80&w=300" alt="Aloe">
             </div>
             <div class="info">
@@ -608,19 +724,36 @@
             </div>
         </div>
 
+        <div class="card" data-id="H08" data-name="Fiber & Herb Complex" data-price="89000">
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&q=80&w=300" alt="Fibra">
+            </div>
+            <div class="info">
+                <div>
+                    <h3>Fiber & Herb Complex</h3>
+                    <p>Mezcla de fibra soluble e insoluble para una digestión saludable.</p>
+                </div>
+                <div class="price-row">
+                    <div class="price">$89.000 COP</div>
+                    <button class="btn-add" onclick="agregarAlCarrito('H08')">Añadir 🛒</button>
+                </div>
+            </div>
+        </div>
     </div>
     
+    <!-- CATEGORÍA 3 -->
     <div class="category-title">Belleza Inner y Cuidado Personal</div>
     <div class="grid">
         
         <div class="card" data-id="H07" data-name="Collagen Skin Booster" data-price="180000">
             <div class="img-container">
+                <span class="badge badge-premium">💎 Premium</span>
                 <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=300" alt="Collagen">
             </div>
             <div class="info">
                 <div>
                     <h3>Collagen Skin Booster</h3>
-                    <p>Nutre tu belleza desde adentro.</p>
+                    <p>Nutre tu belleza desde adentro con colágeno hidrolizado y vitaminas C y E.</p>
                 </div>
                 <div class="price-row">
                     <div class="price">$180.000 COP</div>
@@ -629,9 +762,27 @@
             </div>
         </div>
 
+        <div class="card" data-id="H09" data-name="NRG Energizante Natural" data-price="97000">
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=300" alt="NRG">
+            </div>
+            <div class="info">
+                <div>
+                    <h3>NRG Energizante Natural</h3>
+                    <p>Mezcla de té verde y guaraná para un impulso de energía natural.</p>
+                </div>
+                <div class="price-row">
+                    <div class="price">$97.000 COP</div>
+                    <button class="btn-add" onclick="agregarAlCarrito('H09')">Añadir 🛒</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
+<!-- ==========================================
+     CARRITO FLOTANTE
+     ========================================== -->
 <div class="cart-bar" id="cartBar">
     <div class="cart-info">
         <h4 id="cartTotal">Total: $0 COP</h4>
@@ -642,10 +793,13 @@
     </div>
 </div>
 
+<!-- ==========================================
+     MODAL
+     ========================================== -->
 <div class="modal-overlay" id="modalOverlay">
     <div class="modal">
-        <h2>Datos de Entrega</h2>
-        <p style="font-size:0.85rem; color:var(--gray); margin-bottom:15px;">Completa la información para registrar tu orden y coordinar el pago.</p>
+        <h2>📋 Datos de Entrega</h2>
+        <p class="subtitle">Completa la información para registrar tu orden y coordinar el pago.</p>
         
         <div class="form-group">
             <label for="nombre">Nombre Completo</label>
@@ -676,15 +830,21 @@
 </div>
 
 <script>
-    // URL DE TU IMPLEMENTACIÓN EN GOOGLE APPS SCRIPT
-    // Asegúrate de pegar AQUÍ tu URL de la aplicación web
+    // ==========================================
+    // CONFIGURACIÓN ✅ YA CONFIGURADO
+    // ==========================================
     const WEB_APP_URL = "https://script.google.com/macros/s/AKfycby0BL-lu6GSx5wa8-oTd0lLlPyfmGsY21qyIC_l0_DlHwTYVfZ8KidRcquu1oN-Fw/exec";
-    const NUMERO_WHATSAPP = "573246820723"; // Número de destino comercial con código de país
+    const NUMERO_WHATSAPP = "573206344590";
 
     let carrito = {};
 
+    // ==========================================
+    // FUNCIONES DEL CARRITO
+    // ==========================================
     function agregarAlCarrito(id) {
         const tarjeta = document.querySelector(`.card[data-id="${id}"]`);
+        if (!tarjeta) return;
+        
         const nombre = tarjeta.getAttribute('data-name');
         const price = parseInt(tarjeta.getAttribute('data-price'));
 
@@ -694,6 +854,14 @@
             carrito[id] = { nombre: nombre, precio: price, cantidad: 1 };
         }
         actualizarInterfazCarrito();
+        
+        const btn = tarjeta.querySelector('.btn-add');
+        btn.textContent = '✓ Añadido';
+        btn.style.background = '#4caf50';
+        setTimeout(() => {
+            btn.textContent = 'Añadir 🛒';
+            btn.style.background = '';
+        }, 800);
     }
 
     function actualizarInterfazCarrito() {
@@ -715,7 +883,15 @@
         }
     }
 
+    // ==========================================
+    // FUNCIONES DEL MODAL
+    // ==========================================
     function abrirModal() {
+        const conteo = Object.values(carrito).reduce((sum, item) => sum + item.cantidad, 0);
+        if (conteo === 0) {
+            alert('🛒 Tu carrito está vacío. Agrega algunos productos primero.');
+            return;
+        }
         document.getElementById('modalOverlay').classList.add('active');
     }
 
@@ -723,6 +899,17 @@
         document.getElementById('modalOverlay').classList.remove('active');
     }
 
+    document.getElementById('modalOverlay').addEventListener('click', function(e) {
+        if (e.target === this) cerrarModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') cerrarModal();
+    });
+
+    // ==========================================
+    // PROCESAR COMPRA
+    // ==========================================
     function procesarCompraFinal() {
         const nombre = document.getElementById('nombre').value.trim();
         const telefono = document.getElementById('telefono').value.trim();
@@ -731,76 +918,70 @@
         const btnSubmit = document.getElementById('btnEnviarFinal');
 
         if (!nombre || !telefono || !direccion) {
-            alert("⚠️ Por favor completa los campos del formulario para continuar.");
+            alert('⚠️ Por favor completa todos los campos del formulario para continuar.');
             return;
         }
 
         btnSubmit.disabled = true;
-        btnSubmit.innerText = "Registrando... ⏳";
+        btnSubmit.innerText = 'Registrando... ⏳';
 
-        let listaProductos = [];
-        let resumenTexto = "";
+        let resumenTexto = '';
         let totalGeneral = 0;
+        const productosArray = [];
 
         for (const id in carrito) {
-            let subtotal = carrito[id].precio * carrito[id].cantidad;
+            const item = carrito[id];
+            const subtotal = item.precio * item.cantidad;
             totalGeneral += subtotal;
-            listaProductos.push(`${carrito[id].cantidad}x ${carrito[id].nombre}`);
-            resumenTexto += `• ${carrito[id].cantidad}x ${carrito[id].nombre} ($${subtotal.toLocaleString('es-CO')})\n`;
+            productosArray.push(`${item.cantidad}x ${item.nombre}`);
+            resumenTexto += `• ${item.cantidad}x ${item.nombre} ($${subtotal.toLocaleString('es-CO')})\n`;
         }
 
-        // Datos para enviar al Google Sheets (vía Apps Script)
         const payload = {
             nombre: nombre,
             telefono: telefono,
             direccion: direccion,
             metodoPago: metodoPago,
-            productos: listaProductos.join(', '),
-            total: totalGeneral
+            productos: productosArray.join(', '),
+            total: totalGeneral,
+            fecha: new Date().toLocaleString('es-CO')
         };
 
-        // Hacer el guardado invisible y asíncrono
+        // Envío a Google Apps Script
         fetch(WEB_APP_URL, {
             method: 'POST',
-            mode: 'no-cors', // Estrategia Silent API
+            mode: 'no-cors',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
-        }).then(() => {
-            // El guardado se asume exitoso (Silent API no devuelve confirmación Cors)
-            // Procedemos a la pasarela directa a WhatsApp
-            despacharWhatsApp(nombre, telefono, resumenTexto, totalGeneral, direccion, metodoPago);
-        }).catch(err => {
-            console.error("Error guardando datos:", err);
-            // Incluso si falla la red, despachamos por WhatsApp para no perder la venta
-            despacharWhatsApp(nombre, telefono, resumenTexto, totalGeneral, direccion, metodoPago);
-        });
+        }).catch(() => {});
+
+        // Enviar a WhatsApp
+        despacharWhatsApp(nombre, telefono, resumenTexto, totalGeneral, direccion, metodoPago);
     }
 
     function despacharWhatsApp(nombre, telefono, resumen, total, direccion, pago) {
-        // Redacción estructurada del mensaje final
         const mensajeWhatsApp = `✨ *NUEVO PEDIDO HERBALIFE* ✨\n\n` +
                                 `👤 *Cliente:* ${nombre}\n` +
                                 `📞 *Contacto:* ${telefono}\n` +
-                                `📍 *Dirección de Entrega:* ${direccion}\n` +
-                                `💳 *Forma de Pago:* Transferencia via ${pago}\n\n` +
-                                `🛒 *Detalle de la Orden:*\n${resumen}\n` +
-                                `💰 *Total a Transferir:* $${total.toLocaleString('es-CO')} COP\n\n` +
-                                `Hi Astrid, acabo de generar mi orden desde el sitio web. Por favor verifícala para proceder con la transferencia. ¡Muchas gracias!`;
+                                `📍 *Dirección:* ${direccion}\n` +
+                                `💳 *Pago:* Transferencia via ${pago}\n\n` +
+                                `🛒 *Detalle:*\n${resumen}\n` +
+                                `💰 *Total:* $${total.toLocaleString('es-CO')} COP\n\n` +
+                                `Hola Astrid, acabo de generar mi orden desde el sitio web. ¡Quedo atento a tu confirmación! 🙌`;
 
         const urlFinal = `https://api.whatsapp.com/send?phone=${NUMERO_WHATSAPP}&text=${encodeURIComponent(mensajeWhatsApp)}`;
         
-        // Limpieza de estados de la UI
         carrito = {};
         actualizarInterfazCarrito();
         cerrarModal();
         
         const btnSubmit = document.getElementById('btnEnviarFinal');
         btnSubmit.disabled = false;
-        btnSubmit.innerText = "Enviar Pedido 🚀";
+        btnSubmit.innerText = 'Enviar Pedido 🚀';
 
-        // Redirección directa hacia la aplicación de WhatsApp
         window.location.href = urlFinal;
     }
 </script>
+
 </body>
 </html>
