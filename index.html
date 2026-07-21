@@ -2,23 +2,25 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catálogo Oficial Herbalife Colombia 2026</title>
     <style>
-        /* ==========================================
+        /* ============================
            VARIABLES Y ESTILOS GLOBALES
-           ========================================== */
+           ============================ */
         :root {
             --primary: #2e7d32;
             --primary-light: #4caf50;
             --primary-dark: #1b5e20;
+            --gold: #ffb300;
             --dark: #212121;
             --gray: #666;
             --light-bg: #f5f5f5;
             --white: #ffffff;
-            --shadow: 0 10px 30px rgba(0,0,0,0.06);
-            --photoroom-shadow: drop-shadow(0 15px 12px rgba(0,0,0,0.15));
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            --photoroom-shadow: drop-shadow(0 15px 12px rgba(0, 0, 0, 0.15));
+            --radius: 14px;
         }
 
         * {
@@ -57,16 +59,16 @@
             font-size: 1rem;
         }
 
-        /* ==========================================
-           SECCIÓN DE BIENVENIDA: ASTRID
-           ========================================== */
+        /* ============================
+           SECCIÓN ASTRID
+           ============================ */
         .bienvenida-astrid {
             background: linear-gradient(135deg, #f0f7f0 0%, #e8f5e9 100%);
             padding: 60px 20px;
             border-bottom: 3px solid var(--primary-light);
             margin-bottom: 20px;
         }
-        
+
         .bienvenida-container {
             max-width: 1100px;
             margin: 0 auto;
@@ -75,7 +77,7 @@
             align-items: center;
             gap: 40px;
         }
-        
+
         @media (min-width: 768px) {
             .bienvenida-container {
                 flex-direction: row;
@@ -83,7 +85,7 @@
                 gap: 60px;
             }
         }
-        
+
         .bienvenida-imagen {
             flex: 1;
             width: 100%;
@@ -92,33 +94,35 @@
             justify-content: center;
             align-items: center;
         }
-        
+
         .bienvenida-imagen img {
             width: 100%;
             height: auto;
             max-height: 480px;
             object-fit: cover;
             border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(46, 125, 50, 0.15), 0 0 0 5px #ffffff, 0 0 0 7px rgba(46, 125, 50, 0.1);
+            box-shadow: 0 20px 40px rgba(46, 125, 50, 0.15), 0 0 0 5px #ffffff,
+                0 0 0 7px rgba(46, 125, 50, 0.1);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
-        
+
         .bienvenida-imagen img:hover {
             transform: scale(1.02);
-            box-shadow: 0 25px 50px rgba(46, 125, 50, 0.2), 0 0 0 5px #ffffff, 0 0 0 7px rgba(46, 125, 50, 0.15);
+            box-shadow: 0 25px 50px rgba(46, 125, 50, 0.2), 0 0 0 5px #ffffff,
+                0 0 0 7px rgba(46, 125, 50, 0.15);
         }
-        
+
         .bienvenida-contenido {
             flex: 1.3;
             text-align: center;
         }
-        
+
         @media (min-width: 768px) {
             .bienvenida-contenido {
                 text-align: left;
             }
         }
-        
+
         .bienvenida-badge {
             background-color: var(--primary);
             color: var(--white);
@@ -131,7 +135,7 @@
             display: inline-block;
             margin-bottom: 15px;
         }
-        
+
         .bienvenida-contenido h2 {
             font-size: 2.8rem;
             color: var(--primary-dark);
@@ -139,18 +143,18 @@
             font-weight: 800;
             line-height: 1.2;
         }
-        
+
         .bienvenida-contenido h2 span {
-            color: var(--primary-light);
+            color: var(--gold);
         }
-        
+
         .bienvenida-intro {
             font-size: 1.1rem;
             line-height: 1.8;
             color: #455a64;
             margin-bottom: 18px;
         }
-        
+
         .bienvenida-invitacion {
             font-size: 1.05rem;
             line-height: 1.7;
@@ -158,14 +162,14 @@
             margin-bottom: 30px;
             font-weight: 500;
         }
-        
+
         .bienvenida-pilares {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 15px;
             margin-bottom: 35px;
         }
-        
+
         .pilar {
             background: var(--white);
             padding: 16px 10px;
@@ -175,33 +179,33 @@
             border: 1px solid #e8f5e9;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .pilar:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(46, 125, 50, 0.08);
             border-color: var(--primary-light);
         }
-        
+
         .pilar-icono {
             font-size: 2rem;
             display: block;
             margin-bottom: 8px;
         }
-        
+
         .pilar h3 {
             font-size: 1.05rem;
             margin: 0 0 6px 0;
             color: var(--primary-dark);
             font-weight: 700;
         }
-        
+
         .pilar p {
             font-size: 0.78rem;
             color: #78909c;
             margin: 0;
             line-height: 1.3;
         }
-        
+
         .btn-bienvenida {
             display: inline-block;
             background-color: var(--primary);
@@ -216,22 +220,29 @@
             border: none;
             cursor: pointer;
         }
-        
+
         .btn-bienvenida:hover {
             background-color: var(--primary-dark);
             transform: translateY(-2px);
             box-shadow: 0 14px 28px rgba(46, 125, 50, 0.25);
         }
 
-        /* ==========================================
+        /* ============================
            CATEGORÍAS Y PRODUCTOS
-           ========================================== */
+           ============================ */
         .category-title {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: var(--dark);
             margin: 40px 0 20px 0;
             padding-left: 12px;
             border-left: 6px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .category-title span {
+            font-size: 1.8rem;
         }
 
         .grid {
@@ -242,19 +253,19 @@
 
         .card {
             background: var(--white);
-            border-radius: 14px;
+            border-radius: var(--radius);
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: transform 0.25s ease, box-shadow 0.25s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            border: 1px solid rgba(0,0,0,0.02);
+            border: 1px solid rgba(0, 0, 0, 0.02);
         }
 
         .card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
         }
 
         .img-container {
@@ -263,7 +274,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 220px;
+            height: 200px;
             position: relative;
         }
 
@@ -272,35 +283,52 @@
             max-width: 100%;
             object-fit: contain;
             filter: var(--photoroom-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .img-container img:hover {
+            transform: scale(1.05);
         }
 
         .badge {
             position: absolute;
             top: 12px;
             right: 12px;
-            background: var(--primary);
-            color: var(--white);
             padding: 4px 10px;
             border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: bold;
+            font-size: 0.65rem;
+            font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
+        .badge-esencial {
+            background: var(--primary);
+            color: var(--white);
+        }
         .badge-popular {
             background: #ff6f00;
+            color: var(--white);
         }
-
         .badge-premium {
             background: #6a1b9a;
+            color: var(--white);
         }
-
         .badge-natural {
             background: #00897b;
+            color: var(--white);
+        }
+        .badge-energy {
+            background: #d84315;
+            color: var(--white);
+        }
+        .badge-snack {
+            background: #4e342e;
+            color: var(--white);
         }
 
         .info {
-            padding: 20px;
+            padding: 18px 20px 20px 20px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -308,16 +336,24 @@
         }
 
         .info h3 {
-            font-size: 1.1rem;
-            margin-bottom: 6px;
+            font-size: 1.05rem;
+            margin-bottom: 4px;
             color: var(--dark);
         }
 
-        .info p {
-            font-size: 0.85rem;
+        .info .desc {
+            font-size: 0.8rem;
             color: var(--gray);
             line-height: 1.4;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
+            min-height: 38px;
+        }
+
+        .info .sabor {
+            font-size: 0.75rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
         }
 
         .price-row {
@@ -330,9 +366,15 @@
         }
 
         .price {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--primary);
+        }
+
+        .price small {
+            font-size: 0.7rem;
+            font-weight: 400;
+            color: var(--gray);
         }
 
         .btn-add {
@@ -342,7 +384,7 @@
             padding: 8px 14px;
             border-radius: 6px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             cursor: pointer;
             transition: background 0.2s ease, transform 0.15s ease;
         }
@@ -356,9 +398,9 @@
             transform: scale(0.95);
         }
 
-        /* ==========================================
+        /* ============================
            CARRITO FLOTANTE
-           ========================================== */
+           ============================ */
         .cart-bar {
             position: fixed;
             bottom: 15px;
@@ -374,7 +416,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             z-index: 1000;
         }
@@ -417,22 +459,29 @@
             transform: scale(0.95);
         }
 
-        /* ==========================================
+        /* ============================
            MODAL
-           ========================================== */
+           ============================ */
         .modal-overlay {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6);
-            display: flex; justify-content: center; align-items: center;
-            opacity: 0; pointer-events: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
             transition: opacity 0.3s ease;
             z-index: 2000;
             padding: 10px;
         }
 
         .modal-overlay.active {
-            opacity: 1; pointer-events: auto;
+            opacity: 1;
+            pointer-events: auto;
         }
 
         .modal {
@@ -441,7 +490,7 @@
             border-radius: 16px;
             width: 100%;
             max-width: 440px;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
             max-height: 90vh;
             overflow-y: auto;
         }
@@ -471,7 +520,8 @@
             color: var(--dark);
         }
 
-        .form-group input, .form-group select {
+        .form-group input,
+        .form-group select {
             width: 100%;
             padding: 10px 12px;
             border: 2px solid #e0e0e0;
@@ -481,7 +531,8 @@
             background: #fafafa;
         }
 
-        .form-group input:focus, .form-group select:focus {
+        .form-group input:focus,
+        .form-group select:focus {
             outline: none;
             border-color: var(--primary);
             background: white;
@@ -508,15 +559,28 @@
             background: #ddd;
         }
 
-        /* ==========================================
+        /* ============================
            RESPONSIVE
-           ========================================== */
+           ============================ */
         @media (max-width: 550px) {
-            .bienvenida-pilares { grid-template-columns: 1fr; }
-            .grid { grid-template-columns: 1fr; }
-            .bienvenida-contenido h2 { font-size: 2rem; }
-            .bienvenida-imagen { max-width: 280px; }
-            header h1 { font-size: 1.6rem; }
+            .bienvenida-pilares {
+                grid-template-columns: 1fr;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .bienvenida-contenido h2 {
+                font-size: 2rem;
+            }
+            .bienvenida-imagen {
+                max-width: 280px;
+            }
+            header h1 {
+                font-size: 1.6rem;
+            }
+            .category-title {
+                font-size: 1.2rem;
+            }
         }
 
         @media (max-width: 400px) {
@@ -530,12 +594,14 @@
                 display: flex;
                 justify-content: center;
             }
-            .cart-info h4 { font-size: 0.95rem; }
+            .cart-info h4 {
+                font-size: 0.95rem;
+            }
         }
 
-        /* ==========================================
+        /* ============================
            ANIMACIONES
-           ========================================== */
+           ============================ */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -550,438 +616,692 @@
         .card {
             animation: fadeInUp 0.5s ease forwards;
         }
-
-        .card:nth-child(2) { animation-delay: 0.1s; }
-        .card:nth-child(3) { animation-delay: 0.2s; }
-        .card:nth-child(4) { animation-delay: 0.3s; }
-        .card:nth-child(5) { animation-delay: 0.4s; }
-        .card:nth-child(6) { animation-delay: 0.5s; }
-        .card:nth-child(7) { animation-delay: 0.6s; }
-        .card:nth-child(8) { animation-delay: 0.7s; }
-        .card:nth-child(9) { animation-delay: 0.8s; }
+        .card:nth-child(2) {
+            animation-delay: 0.05s;
+        }
+        .card:nth-child(3) {
+            animation-delay: 0.1s;
+        }
+        .card:nth-child(4) {
+            animation-delay: 0.15s;
+        }
+        .card:nth-child(5) {
+            animation-delay: 0.2s;
+        }
+        .card:nth-child(6) {
+            animation-delay: 0.25s;
+        }
+        .card:nth-child(7) {
+            animation-delay: 0.3s;
+        }
+        .card:nth-child(8) {
+            animation-delay: 0.35s;
+        }
+        .card:nth-child(9) {
+            animation-delay: 0.4s;
+        }
+        .card:nth-child(10) {
+            animation-delay: 0.45s;
+        }
     </style>
 </head>
 <body>
 
-<!-- ==========================================
-     SECCIÓN DE BIENVENIDA CON ASTRID
-     ========================================== -->
-<section class="bienvenida-astrid">
-  <div class="bienvenida-container">
-    <div class="bienvenida-imagen">
-      <!-- 🔹 IMAGEN DE ASTRID: Reemplaza el src con la URL de tu imagen -->
-      <!-- Ejemplo: src="https://tu-sitio.com/imagen-astrid.jpg" -->
-      <!-- También puedes usar imágenes de WhatsApp o Drive -->
-      <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600" alt="Astrid - Asesora de Bienestar Herbalife">
+    <!-- ============================
+    SECCIÓN ASTRID
+    ============================ -->
+    <section class="bienvenida-astrid">
+        <div class="bienvenida-container">
+            <div class="bienvenida-imagen">
+                <!-- IMAGEN DE ASTRID (1000310120.webp) -->
+                <img src="1000310120.webp" alt="Astrid - Asesora de Bienestar Herbalife">
+            </div>
+            <div class="bienvenida-contenido">
+                <span class="bienvenida-badge">✨ Asesoría Basada en la Experiencia Real</span>
+                <h2>Hola, soy <span>Astrid</span></h2>
+                <p class="bienvenida-intro">
+                    Mi recorrido en el mundo del bienestar y la salud integral no proviene únicamente de la teoría, sino de mi propia experiencia y transformación personal. Tras aprender a escuchar mi cuerpo y entender la nutrición celular, convertí esta pasión en mi propósito diario.
+                </p>
+                <p class="bienvenida-invitacion">
+                    Hoy te invito con total entusiasmo, seas <strong>hombre o mujer</strong>, a dar un paso al frente para cuidar de forma consciente tu ser en tres dimensiones esenciales:
+                </p>
+
+                <div class="bienvenida-pilares">
+                    <div class="pilar">
+                        <span class="pilar-icono">🌱</span>
+                        <h3>Cuerpo</h3>
+                        <p>Nutrición equilibrada y energía óptima.</p>
+                    </div>
+                    <div class="pilar">
+                        <span class="pilar-icono">🧘‍♀️</span>
+                        <h3>Mente</h3>
+                        <p>Enfoque claro, paz y balance diario.</p>
+                    </div>
+                    <div class="pilar">
+                        <span class="pilar-icono">✨</span>
+                        <h3>Espíritu</h3>
+                        <p>Conexión profunda y plenitud total.</p>
+                    </div>
+                </div>
+
+                <a href="#catalogo" class="btn-bienvenida">Explorar el Catálogo 🌿</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+    CATÁLOGO
+    ============================ -->
+    <div class="container" id="catalogo">
+        <header>
+            <h1>🌿 Catálogo de Nutrición Oficial</h1>
+            <p>Línea Completa — Precios de Mercado 2026 en COP (Colombia)</p>
+        </header>
+
+        <!-- ===== CATEGORÍA 1: BEBIDAS Y ENERGIZANTES ===== -->
+        <div class="category-title"><span>🥤</span> Bebidas y Energizantes</div>
+        <div class="grid">
+
+            <!-- 1. Golden Beverage -->
+            <div class="card" data-id="P01" data-name="Golden Beverage" data-price="145000">
+                <div class="img-container">
+                    <span class="badge badge-popular">🔥 Popular</span>
+                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/beverages/golden-beverage.png" alt="Golden Beverage" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Golden+Beverage'">
+                </div>
+                <div class="info">
+                    <div>
+                        <h3>Golden Beverage</h3>
+                        <div class="desc">Bebida energizante con sabor a frutas tropicales para iniciar el día con energía.</div>
+                        <div class="sabor">🍍 Sabores: Tropical</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price">$145.000 <small>COP</small></div>
+                        <button class="btn-add" onclick="agregarAlCarrito('P01')">Añadir 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Kickoff -->
+            <div class="card" data-id="P02" data-name="Kickoff" data-price="145000">
+                <div class="img-container">
+                    <span class="badge badge-energy">⚡ Energía</span>
+                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/beverages/kickoff.png" alt="Kickoff" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Kickoff'">
+                </div>
+                <div class="info">
+                    <div>
+                        <h3>Kickoff</h3>
+                        <div class="desc">Bebida energizante para antes del entrenamiento con guaraná y taurina.</div>
+                        <div class="sabor">🍑 Sabores: Durazno, Guaraná Tropical</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price">$145.000 <small>COP</small></div>
+                        <button class="btn-add" onclick="agregarAlCarrito('P02')">Añadir 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Té Grande -->
+            <div class="card" data-id="P03" data-name="Té Grande" data-price="186000">
+                <div class="img-container">
+                    <span class="badge badge-natural">🌿 Natural</span>
+                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/beverages/tea-concentrate.png" alt="Té Grande" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Té+Grande'">
+                </div>
+                <div class="info">
+                    <div>
+                        <h3>Té Grande</h3>
+                        <div class="desc">Té concentrado de hierbas formato grande, ideal para compartir.</div>
+                        <div class="sabor">🍵 5 Sabores disponibles</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price">$186.000 <small>COP</small></div>
+                        <button class="btn-add" onclick="agregarAlCarrito('P03')">Añadir 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Té Pequeño -->
+            <div class="card" data-id="P04" data-name="Té Pequeño" data-price="213000">
+                <div class="img-container">
+                    <span class="badge badge-esencial">⭐ Esencial</span>
+                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/beverages/tea-concentrate-small.png" alt="Té Pequeño" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Té+Pequeño'">
+                </div>
+                <div class="info">
+                    <div>
+                        <h3>Té Pequeño</h3>
+                        <div class="desc">Té concentrado de hierbas formato práctico para llevar a cualquier parte.</div>
+                        <div class="sabor">🍵 5 Sabores disponibles</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price">$213.000 <small>COP</small></div>
+                        <button class="btn-add" onclick="agregarAlCarrito('P04')">Añadir 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Herbal Relax Infusion -->
+            <div class="card" data-id="P05" data-name="Herbal Relax Infusion" data-price="126000">
+                <div class="img-container">
+                    <span class="badge badge-natural">🌙 Relax</span>
+                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/beverages/herbal-relax.png" alt="Herbal Relax" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Herbal+Relax'">
+                </div>
+                <div class="info">
+                    <div>
+                        <h3>Herbal Relax Infusion</h3>
+                        <div class="desc">Infusión relajante con hierbas naturales para momentos de calma.</div>
+                        <div class="sabor">🌿 Sabores: Manzanilla, Lavanda</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price">$126.000 <small>COP</small></div>
+                        <button class="btn-add" onclick="agregarAlCarrito('P05')">Añadir 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. NRG -->
+            <div class="card" data-id="P06" data-name="NRG" data-price="97000">
+                <div class="img-container">
+                    <span class="badge badge-energy">⚡ Energía</span>
+                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/beverages/nrg.png" alt="NRG" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=NRG'">
+                </div>
+                <div class="info">
+                    <div>
+                        <h3>NRG</h3>
+                        <div class="desc">Mezcla energizante con té verde y guaraná. Libre de gluten.</div>
+                        <div class="sabor">🍵 2 Sabores: Original, Chai</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price">$97.000 <small>COP</small></div>
+                        <button class="btn-add" onclick="agregarAlCarrito('P06')">Añadir 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Herbal Aloe -->
+            <div class="card" data-id="P07" data-name="Herbal Aloe" data-price="166000">
+                <div class="img-container">
+                    <span class="badge badge-natural">🌿 Natural</span>
+                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/beverages/herbal-aloe.png" alt="Herbal Aloe" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Herbal+Aloe'">
+                </div>
+                <div class="info">
+                    <div>
+                        <h3>Herbal Aloe</h3>
+                        <div class="desc">Bebida de sábila orgánica que limpia y alivia el tracto digestivo.</div>
+                        <div class="sabor">🍊 3 Sabores: Mandarina, Mango, Guaraná Tropical</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price">$166.000 <small>COP</small></div>
+                        <button class="btn-add" onclick="agregarAlCarrito('P07')">Añadir 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Bebida Herbal -->
+            <div class="card" data-id="P08" data-name="Bebida Herbal" data-price="105000">
+                <div class="img-container">
+                    <span class="badge badge-esencial">⭐ Esencial</span>
+                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/beverages/herbal-beverage.png" alt="Bebida Herbal" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Bebida+Herbal'">
+                </div>
+                <div class="info">
+                    <div>
+                        <h3>Bebida Herbal</h3>
+                        <div class="desc">Bebida instantánea de té verde, té negro y hierbas naturales. 1 kcal por porción.</div>
+                        <div class="sabor">🍵 5 Sabores: Limón, Frambuesa, Chai, Pimenta, Lime</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price">$105.000 <small>COP</small></div>
+                        <button class="btn-add" onclick="agregarAlCarrito('P08')">Añadir 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. Beverage Mix -->
+            <div class="card" data-id="P09" data-name="Beverage Mix" data-price="140000">
+                <div class="img-container">
+                    <span class="badge badge-premium">💎 Premium</span>
+                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/beverages/beverage-mix.png" alt="Beverage Mix" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Beverage+Mix'">
+                </div>
+                <div class="info">
+                    <div>
+                        <h3>Beverage Mix</h3>
+                        <div class="desc">Mezcla para bebida proteica con sabor a frutas. Fácil de preparar.</div>
+                        <div class="sabor">🍓 Sabores: Mezcla de frutas</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price">$140.000 <small>COP</small></div>
+                        <button class="btn-add" onclick="agregarAlCarrito('P09')">Añadir 🛒</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== CATEGORÍA 2: PROTEÍNAS Y NUTRICIÓN ===== -->
+        <div class="category-title"><span>💪</span> Proteínas y Nutrición</div>
+        <div class="grid">
+
+            <!-- 10. Fórmula 1 -->
+            <div class="card" data-id="P10" data-name="Fórmula 1 Batido Nutricional" data-price="142000">
+                <div class="img-container">
+                    <span class="badge badge-popular">🔥 Más Vendido</span>
+                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/nutrition/formula-1-shake.png" alt="Fórmula 1" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Fórmula+1'">
+                </div>
+                <div class="info">
+                    <div>
+                        <h3>Fórmula 1 Batido Nutricional</h3>
+                        <div class="desc">Sustituto de comida saludable con proteínas, fibra y 21 vitaminas.</div>
+                        <div class="sabor">🍦 9 Sabores disponibles</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price">$142.000 <small>COP</small></div>
+                        <button class="btn-add" onclick="agregarAlCarrito('P10')">Añadir 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11. Fórmula 3 -->
+            <div class="card" data-id="P11" data-name="Fórmula 3 Alimento Proteínico" data-price="240000">
+                <div class="img-container">
+                    <span class="badge badge-premium">💎 Premium</span>
+                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/nutrition/formula-3-protein.png" alt="Fórmula 3" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Fórmula+3'">
+                </div>
+                <div class="info">
+                    <div>
+                        <h3>Fórmula 3 Alimento Proteínico</h3>
+                        <div class="desc">Alimento proteínico en polvo para complementar tu nutrición diaria.</div>
+                        <div class="sabor">🥛 2 Sabores disponibles</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price">$240.000 <small>COP</small></div>
+                        <button class="btn-add" onclick="agregarAlCarrito('P11')">Añadir 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12. Proteína PPP -->
+            <div class="card" data-id="P12" data-name="Proteína PPP" data-price="122000">
+                <div class="img-container">
+                    <span class="badge badge-esencial">⭐ Esencial</span>
+                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/nutrition/personalized-protein-powder.png" alt="Proteína PPP" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=PPP'">
+                </div>
+                <div class="info">
+                    <div>
+                        <h3>Proteína PPP</h3>
+                        <div class="desc">Proteína personalizada en polvo, libre de grasas y carbohidratos.</div>
+                        <div class="sabor">🥛 Sin sabor</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price">$122.000 <small>COP</small></div>
+                        <button class="btn-add" onclick="agregarAlCarrito('P12')">Añadir 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 13. Proteína PDM -->
+            <div class="card" data-id="P13" data-name="Proteína PDM" data-price="205000">
+                <div class="img-container">
+                    <span class="badge badge-popular">🔥 Popular</span>
+                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/nutrition/protein-drink-mix.png" alt="Proteína PDM" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=PDM'">
+                </div>
+                <div class="info">
+                    <div>
+                        <h3>Proteína PDM</h3>
+                        <div class="desc">Refuerzo proteico intermedio para saciar el apetito y proteger masa muscular.</div>
+                        <div class="sabor">🥛 2 Sabores disponibles</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price">$205.000 <small>COP</small></div>
+                        <button class="btn-add" onclick="agregarAlCarrito('P13')">Añadir 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 14. Rebuild Strength -->
+            <div class="card" data-id="P14" data-name="Rebuild Strength" data-price="342000">
+                <div class="img-container">
+                    <span class="badge badge-premium">💎 Premium</span>
+                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/nutrition/rebuild-strength.png" alt="Rebuild Strength" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Rebuild+Strength'">
+                </div>
+                <div class="info">
+                    <div>
+                        <h3>Rebuild Strength</h3>
+                        <div class="desc">Proteína para recuperación muscular con vitaminas y minerales.</div>
+                        <div class="sabor">🍫 2 Sabores: Chocolate, Vainilla</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price">$342.000 <small>COP</small></div>
+                        <button class="btn-add" onclick="agregarAlCarrito('P14')">Añadir 🛒</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== CATEGORÍA 3: SUPLEMENTOS Y BIENESTAR ===== -->
+        <div class="category-title"><span>🌿</span> Suplementos y Bienestar</div>
+        <div class="grid">
+
+            <!-- 15. Fibra -->
+            <div class="card" data-id="P15" data-name="Fibra" data-price="135000">
+                <div class="img-container">
+                    <span class="badge badge-natural">🌿 Natural</span>
+                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/supplements/fiber.png" alt="Fibra" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Fibra'">
+                </div>
+                <div class="info">
+                    <div>
+                        <h3>Fibra</h3>
+                        <div class="desc">Suplemento de fibra soluble para una digestión saludable.</div>
+                        <div class="sabor">🌾 Sin sabor</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price">$135.000 <small>COP</small></div>
+                        <button class="btn-add" onclick="agregarAlCarrito('P15')">Añadir 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 16. Xtra Cal Advanced -->
+            <div class="card" data-id="P16" data-name="Xtra Cal Advanced" data-price="69000">
+                <div class="img-container">
+                    <span class="badge badge-esencial">⭐ Esencial</span>
+                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/supplements/xtra-cal.png" alt="Xtra Cal" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Xtra+Cal'">
+                </div>
+                <div class="info">
+                    <div>
+                        <h3>Xtra Cal Advanced</h3>
+                        <div class="desc">Calcio avanzado para mantener huesos y dientes fuertes.</div>
+                        <div class="sabor">💊 Tabletas</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price">$69.000 <small>COP</small></div>
+                        <button class="btn-add" onclick="agregarAlCarrito('P16')">Añadir 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 17. Collagen Drink -->
+            <div class="card" data-id="P17" data-name="Collagen Drink" data-price="194000">
+                <div class="img-container">
+                    <span class="badge badge-premium">💎 Premium</span>
+                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/beauty/collagen-drink.png" alt="Collagen" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Collagen'">
+                </div>
+                <div class="info">
+                    <div>
+                        <h3>Collagen Drink</h3>
+                        <div class="desc">Colágeno hidrolizado para piel, cabello y articulaciones saludables.</div>
+                        <div class="sabor">🍊 Sabor cítrico</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price">$194.000 <small>COP</small></div>
+                        <button class="btn-add" onclick="agregarAlCarrito('P17')">Añadir 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 18. CR7 Drive -->
+            <div class="card" data-id="P18" data-name="CR7 Drive" data-price="167000">
+                <div class="img-container">
+                    <span class="badge badge-energy">⚡ Deportivo</span>
+                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/sports/cr7-drive.png" alt="CR7 Drive" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=CR7+Drive'">
+                </div>
+                <div class="info">
+                    <div>
+                        <h3>CR7 Drive</h3>
+                        <div class="desc">Bebida deportiva con Açaí y frutas tropicales para máximo rendimiento.</div>
+                        <div class="sabor">🍓 Sabores: Açaí, Frutas Tropicales</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price">$167.000 <small>COP</small></div>
+                        <button class="btn-add" onclick="agregarAlCarrito('P18')">Añadir 🛒</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== CATEGORÍA 4: SNACKS Y COMPLEMENTOS ===== -->
+        <div class="category-title"><span>🍫</span> Snacks y Complementos</div>
+        <div class="grid">
+
+            <!-- 19. Crocante de Proteína -->
+            <div class="card" data-id="P19" data-name="Crocante de Proteína" data-price="65000">
+                <div class="img-container">
+                    <span class="badge badge-snack">🍿 Snack</span>
+                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/snacks/protein-crisp.png" alt="Crocante Proteína" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Crocante'">
+                </div>
+                <div class="info">
+                    <div>
+                        <h3>Crocante de Proteína</h3>
+                        <div class="desc">Snack crujiente de proteína para disfrutar entre comidas.</div>
+                        <div class="sabor">🥜 Sin sabor</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price">$65.000 <small>COP</small></div>
+                        <button class="btn-add" onclick="agregarAlCarrito('P19')">Añadir 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 20. Barra de Proteína -->
+            <div class="card" data-id="P20" data-name="Barra de Proteína" data-price="119000">
+                <div class="img-container">
+                    <span class="badge badge-snack">🍫 Snack</span>
+                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/snacks/protein-bar.png" alt="Barra Proteína" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Barra'">
+                </div>
+                <div class="info">
+                    <div>
+                        <h3>Barra de Proteína</h3>
+                        <div class="desc">Barra proteica con vainilla y almendras. 14 barras por caja.</div>
+                        <div class="sabor">🥜 Sabores: Vainilla y Almendras, Chocoavellana</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="price">$119.000 <small>COP</small></div>
+                        <button class="btn-add" onclick="agregarAlCarrito('P20')">Añadir 🛒</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="bienvenida-contenido">
-      <span class="bienvenida-badge">✨ Asesoría Basada en la Experiencia Real</span>
-      <h2>Hola, soy <span>Astrid</span></h2>
-      <p class="bienvenida-intro">
-        Mi recorrido en el mundo del bienestar y la salud integral no proviene únicamente de la teoría, sino de mi propia experiencia y transformación personal. Tras aprender a escuchar mi cuerpo y entender la nutrición celular, convertí esta pasión en mi propósito diario.
-      </p>
-      <p class="bienvenida-invitacion">
-        Hoy te invito con total entusiasmo, seas <strong>hombre o mujer</strong>, a dar un paso al frente para cuidar de forma consciente tu ser en tres dimensiones esenciales:
-      </p>
-      
-      <div class="bienvenida-pilares">
-        <div class="pilar">
-          <span class="pilar-icono">🌱</span>
-          <h3>Cuerpo</h3>
-          <p>Nutrición equilibrada y energía óptima.</p>
+
+    <!-- ============================
+    CARRITO FLOTANTE
+    ============================ -->
+    <div class="cart-bar" id="cartBar">
+        <div class="cart-info">
+            <h4 id="cartTotal">Total: $0 COP</h4>
+            <p id="cartCount">0 productos seleccionados</p>
         </div>
-        <div class="pilar">
-          <span class="pilar-icono">🧘‍♀️</span>
-          <h3>Mente</h3>
-          <p>Enfoque claro, paz y balance diario.</p>
+        <div class="cart-actions">
+            <button class="btn-checkout" onclick="abrirModal()">Confirmar Pedido 🛍️</button>
         </div>
-        <div class="pilar">
-          <span class="pilar-icono">✨</span>
-          <h3>Espíritu</h3>
-          <p>Conexión profunda y plenitud total.</p>
-        </div>
-      </div>
-      
-      <a href="#catalogo" class="btn-bienvenida">Explorar el Catálogo 🌿</a>
     </div>
-  </div>
-</section>
 
-<!-- ==========================================
-     CATÁLOGO DE PRODUCTOS
-     ========================================== -->
-<div class="container" id="catalogo">
-    <header>
-        <h1>🌿 Catálogo de Nutrición Oficial</h1>
-        <p>Línea Completa Expandida — Precios de Mercado 2026 en COP (Colombia)</p>
-    </header>
+    <!-- ============================
+    MODAL
+    ============================ -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <h2>📋 Datos de Entrega</h2>
+            <p class="subtitle">Completa la información para registrar tu orden y coordinar el pago.</p>
 
-    <!-- CATEGORÍA 1 -->
-    <div class="category-title">Nutrición Básica y Control de Peso</div>
-    <div class="grid">
-        
-        <div class="card" data-id="H01" data-name="Fórmula 1 Batido Nutricional" data-price="142000">
-            <div class="img-container">
-                <span class="badge">⭐ Esencial</span>
-                <img src="https://images.unsplash.com/photo-1627318042466-9b5585b9b6d8?auto=format&fit=crop&q=80&w=300" alt="Formula 1 Batido">
+            <div class="form-group">
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" id="nombre" placeholder="Ej. Juan Pérez" required>
             </div>
-            <div class="info">
-                <div>
-                    <h3>Fórmula 1 Batido Nutricional</h3>
-                    <p>Sustituto de comida saludable con proteínas, fibra soluble y 21 vitaminas esenciales.</p>
-                </div>
-                <div class="price-row">
-                    <div class="price">$142.000 COP</div>
-                    <button class="btn-add" onclick="agregarAlCarrito('H01')">Añadir 🛒</button>
-                </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono de Contacto</label>
+                <input type="tel" id="telefono" placeholder="Ej. 3101234567" required>
             </div>
-        </div>
+            <div class="form-group">
+                <label for="direccion">Dirección y Ciudad</label>
+                <input type="text" id="direccion" placeholder="Calle 45 #12-34, Bogotá" required>
+            </div>
+            <div class="form-group">
+                <label for="metodoPago">Método de Transferencia</label>
+                <select id="metodoPago">
+                    <option value="Nequi">Nequi</option>
+                    <option value="Daviplata">Daviplata</option>
+                    <option value="Transferencia Bancaria">Transferencia Bancaria (Bancolombia)</option>
+                </select>
+            </div>
 
-        <div class="card" data-id="H02" data-name="Protein Drink Mix (PDM)" data-price="174000">
-            <div class="img-container">
-                <span class="badge badge-popular">🔥 Popular</span>
-                <img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&q=80&w=300" alt="PDM Protein">
-            </div>
-            <div class="info">
-                <div>
-                    <h3>Protein Drink Mix (PDM)</h3>
-                    <p>Refuerzo proteico intermedio ideal para saciar el apetito y proteger la masa muscular.</p>
-                </div>
-                <div class="price-row">
-                    <div class="price">$174.000 COP</div>
-                    <button class="btn-add" onclick="agregarAlCarrito('H02')">Añadir 🛒</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" data-id="H03" data-name="Polvo de Proteína Personalizado" data-price="119000">
-            <div class="img-container">
-                <img src="https://images.unsplash.com/photo-1594119932057-a37a77b8e1f5?auto=format&fit=crop&q=80&w=300" alt="PPP Protein">
-            </div>
-            <div class="info">
-                <div>
-                    <h3>Polvo de Proteína Personalizado</h3>
-                    <p>Combinación pura de soya y suero de leche libre de grasas y carbohidratos.</p>
-                </div>
-                <div class="price-row">
-                    <div class="price">$119.000 COP</div>
-                    <button class="btn-add" onclick="agregarAlCarrito('H03')">Añadir 🛒</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" data-id="H04" data-name="Fórmula 2 Complejo Multivitamínico" data-price="98000">
-            <div class="img-container">
-                <img src="https://images.unsplash.com/photo-1606132646549-656360c73a62?auto=format&fit=crop&q=80&w=300" alt="Multivitamínico">
-            </div>
-            <div class="info">
-                <div>
-                    <h3>Fórmula 2 Complejo Multivitamínico</h3>
-                    <p>Aporta más de 20 vitaminas y minerales esenciales para la defensa celular.</p>
-                </div>
-                <div class="price-row">
-                    <div class="price">$98.000 COP</div>
-                    <button class="btn-add" onclick="agregarAlCarrito('H04')">Añadir 🛒</button>
-                </div>
+            <div class="modal-buttons">
+                <button class="btn-cancel" onclick="cerrarModal()">Cancelar</button>
+                <button class="btn-checkout" id="btnEnviarFinal" onclick="procesarCompraFinal()">Enviar Pedido 🚀</button>
             </div>
         </div>
     </div>
 
-    <!-- CATEGORÍA 2 -->
-    <div class="category-title">Bienestar Digestivo y Salud Intestinal</div>
-    <div class="grid">
-        
-        <div class="card" data-id="H05" data-name="Herbal Aloe Concentrado" data-price="136000">
-            <div class="img-container">
-                <span class="badge badge-natural">🌿 Natural</span>
-                <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&q=80&w=300" alt="Aloe">
-            </div>
-            <div class="info">
-                <div>
-                    <h3>Herbal Aloe Concentrado</h3>
-                    <p>Bebida refrescante de sábila orgánica que limpia y alivia el tracto digestivo interno.</p>
-                </div>
-                <div class="price-row">
-                    <div class="price">$136.000 COP</div>
-                    <button class="btn-add" onclick="agregarAlCarrito('H05')">Añadir 🛒</button>
-                </div>
-            </div>
-        </div>
+    <script>
+        // ==========================================
+        // CONFIGURACIÓN
+        // ==========================================
+        const WEB_APP_URL =
+            "https://script.google.com/macros/s/AKfycby0BL-lu6GSx5wa8-oTd0lLlPyfmGsY21qyIC_l0_DlHwTYVfZ8KidRcquu1oN-Fw/exec";
+        const NUMERO_WHATSAPP = "573206344590";
 
-        <div class="card" data-id="H06" data-name="Té Concentrado de Hierbas" data-price="125000">
-            <div class="img-container">
-                <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&q=80&w=300" alt="Té Concentrado">
-            </div>
-            <div class="info">
-                <div>
-                    <h3>Té Concentrado de Hierbas</h3>
-                    <p>Eleva los niveles de energía y apoya el metabolismo térmico.</p>
-                </div>
-                <div class="price-row">
-                    <div class="price">$125.000 COP</div>
-                    <button class="btn-add" onclick="agregarAlCarrito('H06')">Añadir 🛒</button>
-                </div>
-            </div>
-        </div>
+        let carrito = {};
 
-        <div class="card" data-id="H08" data-name="Fiber & Herb Complex" data-price="89000">
-            <div class="img-container">
-                <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&q=80&w=300" alt="Fibra">
-            </div>
-            <div class="info">
-                <div>
-                    <h3>Fiber & Herb Complex</h3>
-                    <p>Mezcla de fibra soluble e insoluble para una digestión saludable.</p>
-                </div>
-                <div class="price-row">
-                    <div class="price">$89.000 COP</div>
-                    <button class="btn-add" onclick="agregarAlCarrito('H08')">Añadir 🛒</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- CATEGORÍA 3 -->
-    <div class="category-title">Belleza Inner y Cuidado Personal</div>
-    <div class="grid">
-        
-        <div class="card" data-id="H07" data-name="Collagen Skin Booster" data-price="180000">
-            <div class="img-container">
-                <span class="badge badge-premium">💎 Premium</span>
-                <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=300" alt="Collagen">
-            </div>
-            <div class="info">
-                <div>
-                    <h3>Collagen Skin Booster</h3>
-                    <p>Nutre tu belleza desde adentro con colágeno hidrolizado y vitaminas C y E.</p>
-                </div>
-                <div class="price-row">
-                    <div class="price">$180.000 COP</div>
-                    <button class="btn-add" onclick="agregarAlCarrito('H07')">Añadir 🛒</button>
-                </div>
-            </div>
-        </div>
+        // ==========================================
+        // FUNCIONES DEL CARRITO
+        // ==========================================
+        function agregarAlCarrito(id) {
+            const tarjeta = document.querySelector(`.card[data-id="${id}"]`);
+            if (!tarjeta) return;
 
-        <div class="card" data-id="H09" data-name="NRG Energizante Natural" data-price="97000">
-            <div class="img-container">
-                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=300" alt="NRG">
-            </div>
-            <div class="info">
-                <div>
-                    <h3>NRG Energizante Natural</h3>
-                    <p>Mezcla de té verde y guaraná para un impulso de energía natural.</p>
-                </div>
-                <div class="price-row">
-                    <div class="price">$97.000 COP</div>
-                    <button class="btn-add" onclick="agregarAlCarrito('H09')">Añadir 🛒</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+            const nombre = tarjeta.getAttribute('data-name');
+            const price = parseInt(tarjeta.getAttribute('data-price'));
 
-<!-- ==========================================
-     CARRITO FLOTANTE
-     ========================================== -->
-<div class="cart-bar" id="cartBar">
-    <div class="cart-info">
-        <h4 id="cartTotal">Total: $0 COP</h4>
-        <p id="cartCount">0 productos seleccionados</p>
-    </div>
-    <div class="cart-actions">
-        <button class="btn-checkout" onclick="abrirModal()">Confirmar Pedido 🛍️</button>
-    </div>
-</div>
+            if (carrito[id]) {
+                carrito[id].cantidad += 1;
+            } else {
+                carrito[id] = { nombre: nombre, precio: price, cantidad: 1 };
+            }
+            actualizarInterfazCarrito();
 
-<!-- ==========================================
-     MODAL
-     ========================================== -->
-<div class="modal-overlay" id="modalOverlay">
-    <div class="modal">
-        <h2>📋 Datos de Entrega</h2>
-        <p class="subtitle">Completa la información para registrar tu orden y coordinar el pago.</p>
-        
-        <div class="form-group">
-            <label for="nombre">Nombre Completo</label>
-            <input type="text" id="nombre" placeholder="Ej. Juan Pérez" required>
-        </div>
-        <div class="form-group">
-            <label for="telefono">Teléfono de Contacto</label>
-            <input type="tel" id="telefono" placeholder="Ej. 3101234567" required>
-        </div>
-        <div class="form-group">
-            <label for="direccion">Dirección y Ciudad</label>
-            <input type="text" id="direccion" placeholder="Calle 45 #12-34, Bogotá" required>
-        </div>
-        <div class="form-group">
-            <label for="metodoPago">Método de Transferencia</label>
-            <select id="metodoPago">
-                <option value="Nequi">Nequi</option>
-                <option value="Daviplata">Daviplata</option>
-                <option value="Transferencia Bancaria">Transferencia Bancaria (Bancolombia)</option>
-            </select>
-        </div>
-
-        <div class="modal-buttons">
-            <button class="btn-cancel" onclick="cerrarModal()">Cancelar</button>
-            <button class="btn-checkout" id="btnEnviarFinal" onclick="procesarCompraFinal()">Enviar Pedido 🚀</button>
-        </div>
-    </div>
-</div>
-
-<script>
-    // ==========================================
-    // CONFIGURACIÓN ✅ YA CONFIGURADO
-    // ==========================================
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycby0BL-lu6GSx5wa8-oTd0lLlPyfmGsY21qyIC_l0_DlHwTYVfZ8KidRcquu1oN-Fw/exec";
-    const NUMERO_WHATSAPP = "573206344590";
-
-    let carrito = {};
-
-    // ==========================================
-    // FUNCIONES DEL CARRITO
-    // ==========================================
-    function agregarAlCarrito(id) {
-        const tarjeta = document.querySelector(`.card[data-id="${id}"]`);
-        if (!tarjeta) return;
-        
-        const nombre = tarjeta.getAttribute('data-name');
-        const price = parseInt(tarjeta.getAttribute('data-price'));
-
-        if (carrito[id]) {
-            carrito[id].cantidad += 1;
-        } else {
-            carrito[id] = { nombre: nombre, precio: price, cantidad: 1 };
+            const btn = tarjeta.querySelector('.btn-add');
+            btn.textContent = '✓ Añadido';
+            btn.style.background = '#4caf50';
+            setTimeout(() => {
+                btn.textContent = 'Añadir 🛒';
+                btn.style.background = '';
+            }, 800);
         }
-        actualizarInterfazCarrito();
-        
-        const btn = tarjeta.querySelector('.btn-add');
-        btn.textContent = '✓ Añadido';
-        btn.style.background = '#4caf50';
-        setTimeout(() => {
-            btn.textContent = 'Añadir 🛒';
-            btn.style.background = '';
-        }, 800);
-    }
 
-    function actualizarInterfazCarrito() {
-        const cartBar = document.getElementById('cartBar');
-        let total = 0;
-        let conteo = 0;
+        function actualizarInterfazCarrito() {
+            const cartBar = document.getElementById('cartBar');
+            let total = 0;
+            let conteo = 0;
 
-        for (const id in carrito) {
-            total += carrito[id].precio * carrito[id].cantidad;
-            conteo += carrito[id].cantidad;
+            for (const id in carrito) {
+                total += carrito[id].precio * carrito[id].cantidad;
+                conteo += carrito[id].cantidad;
+            }
+
+            if (conteo > 0) {
+                cartBar.classList.add('active');
+                document.getElementById('cartTotal').innerText = `Total: $${total.toLocaleString('es-CO')} COP`;
+                document.getElementById('cartCount').innerText = `${conteo} producto(s) añadido(s)`;
+            } else {
+                cartBar.classList.remove('active');
+            }
         }
 
-        if (conteo > 0) {
-            cartBar.classList.add('active');
-            document.getElementById('cartTotal').innerText = `Total: $${total.toLocaleString('es-CO')} COP`;
-            document.getElementById('cartCount').innerText = `${conteo} producto(s) añadido(s)`;
-        } else {
-            cartBar.classList.remove('active');
-        }
-    }
-
-    // ==========================================
-    // FUNCIONES DEL MODAL
-    // ==========================================
-    function abrirModal() {
-        const conteo = Object.values(carrito).reduce((sum, item) => sum + item.cantidad, 0);
-        if (conteo === 0) {
-            alert('🛒 Tu carrito está vacío. Agrega algunos productos primero.');
-            return;
-        }
-        document.getElementById('modalOverlay').classList.add('active');
-    }
-
-    function cerrarModal() {
-        document.getElementById('modalOverlay').classList.remove('active');
-    }
-
-    document.getElementById('modalOverlay').addEventListener('click', function(e) {
-        if (e.target === this) cerrarModal();
-    });
-
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') cerrarModal();
-    });
-
-    // ==========================================
-    // PROCESAR COMPRA
-    // ==========================================
-    function procesarCompraFinal() {
-        const nombre = document.getElementById('nombre').value.trim();
-        const telefono = document.getElementById('telefono').value.trim();
-        const direccion = document.getElementById('direccion').value.trim();
-        const metodoPago = document.getElementById('metodoPago').value;
-        const btnSubmit = document.getElementById('btnEnviarFinal');
-
-        if (!nombre || !telefono || !direccion) {
-            alert('⚠️ Por favor completa todos los campos del formulario para continuar.');
-            return;
+        // ==========================================
+        // FUNCIONES DEL MODAL
+        // ==========================================
+        function abrirModal() {
+            const conteo = Object.values(carrito).reduce((sum, item) => sum + item.cantidad, 0);
+            if (conteo === 0) {
+                alert('🛒 Tu carrito está vacío. Agrega algunos productos primero.');
+                return;
+            }
+            document.getElementById('modalOverlay').classList.add('active');
         }
 
-        btnSubmit.disabled = true;
-        btnSubmit.innerText = 'Registrando... ⏳';
-
-        let resumenTexto = '';
-        let totalGeneral = 0;
-        const productosArray = [];
-
-        for (const id in carrito) {
-            const item = carrito[id];
-            const subtotal = item.precio * item.cantidad;
-            totalGeneral += subtotal;
-            productosArray.push(`${item.cantidad}x ${item.nombre}`);
-            resumenTexto += `• ${item.cantidad}x ${item.nombre} ($${subtotal.toLocaleString('es-CO')})\n`;
+        function cerrarModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
         }
 
-        const payload = {
-            nombre: nombre,
-            telefono: telefono,
-            direccion: direccion,
-            metodoPago: metodoPago,
-            productos: productosArray.join(', '),
-            total: totalGeneral,
-            fecha: new Date().toLocaleString('es-CO')
-        };
+        document.getElementById('modalOverlay').addEventListener('click', function(e) {
+            if (e.target === this) cerrarModal();
+        });
 
-        // Envío a Google Apps Script
-        fetch(WEB_APP_URL, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        }).catch(() => {});
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') cerrarModal();
+        });
 
-        // Enviar a WhatsApp
-        despacharWhatsApp(nombre, telefono, resumenTexto, totalGeneral, direccion, metodoPago);
-    }
+        // ==========================================
+        // PROCESAR COMPRA
+        // ==========================================
+        function procesarCompraFinal() {
+            const nombre = document.getElementById('nombre').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const direccion = document.getElementById('direccion').value.trim();
+            const metodoPago = document.getElementById('metodoPago').value;
+            const btnSubmit = document.getElementById('btnEnviarFinal');
 
-    function despacharWhatsApp(nombre, telefono, resumen, total, direccion, pago) {
-        const mensajeWhatsApp = `✨ *NUEVO PEDIDO HERBALIFE* ✨\n\n` +
-                                `👤 *Cliente:* ${nombre}\n` +
-                                `📞 *Contacto:* ${telefono}\n` +
-                                `📍 *Dirección:* ${direccion}\n` +
-                                `💳 *Pago:* Transferencia via ${pago}\n\n` +
-                                `🛒 *Detalle:*\n${resumen}\n` +
-                                `💰 *Total:* $${total.toLocaleString('es-CO')} COP\n\n` +
-                                `Hola Astrid, acabo de generar mi orden desde el sitio web. ¡Quedo atento a tu confirmación! 🙌`;
+            if (!nombre || !telefono || !direccion) {
+                alert('⚠️ Por favor completa todos los campos del formulario para continuar.');
+                return;
+            }
 
-        const urlFinal = `https://api.whatsapp.com/send?phone=${NUMERO_WHATSAPP}&text=${encodeURIComponent(mensajeWhatsApp)}`;
-        
-        carrito = {};
-        actualizarInterfazCarrito();
-        cerrarModal();
-        
-        const btnSubmit = document.getElementById('btnEnviarFinal');
-        btnSubmit.disabled = false;
-        btnSubmit.innerText = 'Enviar Pedido 🚀';
+            btnSubmit.disabled = true;
+            btnSubmit.innerText = 'Registrando... ⏳';
 
-        window.location.href = urlFinal;
-    }
-</script>
+            let resumenTexto = '';
+            let totalGeneral = 0;
+            const productosArray = [];
+
+            for (const id in carrito) {
+                const item = carrito[id];
+                const subtotal = item.precio * item.cantidad;
+                totalGeneral += subtotal;
+                productosArray.push(`${item.cantidad}x ${item.nombre}`);
+                resumenTexto += `• ${item.cantidad}x ${item.nombre} ($${subtotal.toLocaleString('es-CO')})\n`;
+            }
+
+            const payload = {
+                nombre: nombre,
+                telefono: telefono,
+                direccion: direccion,
+                metodoPago: metodoPago,
+                productos: productosArray.join(', '),
+                total: totalGeneral,
+                fecha: new Date().toLocaleString('es-CO')
+            };
+
+            fetch(WEB_APP_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }).catch(() => {});
+
+            despacharWhatsApp(nombre, telefono, resumenTexto, totalGeneral, direccion, metodoPago);
+        }
+
+        function despacharWhatsApp(nombre, telefono, resumen, total, direccion, pago) {
+            const mensajeWhatsApp =
+                `✨ *NUEVO PEDIDO HERBALIFE* ✨\n\n` +
+                `👤 *Cliente:* ${nombre}\n` +
+                `📞 *Contacto:* ${telefono}\n` +
+                `📍 *Dirección:* ${direccion}\n` +
+                `💳 *Pago:* Transferencia via ${pago}\n\n` +
+                `🛒 *Detalle:*\n${resumen}\n` +
+                `💰 *Total:* $${total.toLocaleString('es-CO')} COP\n\n` +
+                `Hola Astrid, acabo de generar mi orden desde el sitio web. ¡Quedo atento a tu confirmación! 🙌`;
+
+            const urlFinal =
+                `https://api.whatsapp.com/send?phone=${NUMERO_WHATSAPP}&text=${encodeURIComponent(mensajeWhatsApp)}`;
+
+            carrito = {};
+            actualizarInterfazCarrito();
+            cerrarModal();
+
+            const btnSubmit = document.getElementById('btnEnviarFinal');
+            btnSubmit.disabled = false;
+            btnSubmit.innerText = 'Enviar Pedido 🚀';
+
+            window.location.href = urlFinal;
+        }
+    </script>
 
 </body>
 </html>
