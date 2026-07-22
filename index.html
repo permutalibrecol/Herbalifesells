@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -57,6 +56,139 @@
         header p {
             color: var(--gray);
             font-size: 1rem;
+        }
+
+        /* ============================
+           BANNER DE ASESORÍA PERSONALIZADA
+           ============================ */
+        .banner-asesoria {
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 40%, #388e3c 70%, #43a047 100%);
+            padding: 45px 30px;
+            border-radius: 20px;
+            margin: 20px 0 50px 0;
+            box-shadow: 0 15px 40px rgba(46, 125, 50, 0.25);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .banner-asesoria::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(255, 179, 0, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .banner-asesoria::after {
+            content: '🌿';
+            position: absolute;
+            font-size: 120px;
+            right: -10px;
+            bottom: -30px;
+            opacity: 0.08;
+            pointer-events: none;
+        }
+
+        .banner-asesoria .banner-contenido {
+            position: relative;
+            z-index: 2;
+        }
+
+        .banner-asesoria .banner-badge {
+            display: inline-block;
+            background: rgba(255, 179, 0, 0.2);
+            color: var(--gold);
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border: 1px solid rgba(255, 179, 0, 0.15);
+            margin-bottom: 15px;
+        }
+
+        .banner-asesoria h2 {
+            color: var(--white);
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .banner-asesoria h2 span {
+            color: var(--gold);
+        }
+
+        .banner-asesoria p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 0 auto 20px auto;
+            line-height: 1.7;
+        }
+
+        .banner-asesoria .btn-asesoria {
+            display: inline-block;
+            background: var(--gold);
+            color: #1b5e20;
+            padding: 14px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 179, 0, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .banner-asesoria .btn-asesoria:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(255, 179, 0, 0.4);
+            background: #ffc107;
+        }
+
+        .banner-asesoria .btn-asesoria i {
+            margin-right: 8px;
+        }
+
+        .banner-ventajas {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .banner-ventajas .ventaja {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .banner-ventajas .ventaja span {
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 600px) {
+            .banner-asesoria h2 {
+                font-size: 1.6rem;
+            }
+            .banner-asesoria {
+                padding: 30px 20px;
+            }
+            .banner-ventajas {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
         }
 
         /* ============================
@@ -225,6 +357,110 @@
             background-color: var(--primary-dark);
             transform: translateY(-2px);
             box-shadow: 0 14px 28px rgba(46, 125, 50, 0.25);
+        }
+
+        /* ============================
+           BLOG - Fuerza, Cuerpo y Vida
+           ============================ */
+        .blog-section {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin: 50px 0;
+            box-shadow: var(--shadow);
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .blog-header h2 {
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+        }
+
+        .blog-header h2 span {
+            color: var(--gold);
+        }
+
+        .blog-header .blog-lema {
+            font-size: 1rem;
+            color: var(--gray);
+            margin-top: 8px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: #fafafa;
+            border-radius: 16px;
+            padding: 25px 25px 30px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            border-color: var(--primary-light);
+        }
+
+        .blog-card .blog-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .blog-card h3 {
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .blog-card p {
+            color: #555;
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .blog-card .blog-tag {
+            display: inline-block;
+            background: #e8f5e9;
+            color: var(--primary);
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .blog-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .blog-link:hover {
+            color: var(--gold);
+        }
+
+        @media (max-width: 500px) {
+            .blog-section {
+                padding: 25px 16px;
+            }
+            .blog-header h2 {
+                font-size: 1.5rem;
+            }
         }
 
         /* ============================
@@ -419,6 +655,7 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             z-index: 1000;
+            gap: 12px;
         }
 
         .cart-bar.active {
@@ -427,6 +664,7 @@
 
         .cart-info {
             color: var(--white);
+            flex: 1;
         }
 
         .cart-info h4 {
@@ -437,6 +675,29 @@
         .cart-info p {
             font-size: 0.8rem;
             color: #ccc;
+        }
+
+        .cart-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-cart-remove {
+            background: #d32f2f;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-cart-remove:hover {
+            background: #b71c1c;
         }
 
         .btn-checkout {
@@ -457,6 +718,20 @@
 
         .btn-checkout:active {
             transform: scale(0.95);
+        }
+
+        @media (max-width: 480px) {
+            .cart-bar {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 12px 16px;
+            }
+            .cart-actions {
+                justify-content: center;
+            }
+            .cart-info h4 {
+                font-size: 0.95rem;
+            }
         }
 
         /* ============================
@@ -583,22 +858,6 @@
             }
         }
 
-        @media (max-width: 400px) {
-            .cart-bar {
-                flex-direction: column;
-                gap: 10px;
-                align-items: stretch;
-                padding: 12px 16px;
-            }
-            .cart-actions {
-                display: flex;
-                justify-content: center;
-            }
-            .cart-info h4 {
-                font-size: 0.95rem;
-            }
-        }
-
         /* ============================
            ANIMACIONES
            ============================ */
@@ -653,7 +912,6 @@
     <section class="bienvenida-astrid">
         <div class="bienvenida-container">
             <div class="bienvenida-imagen">
-                <!-- IMAGEN DE ASTRID (1000310120.webp) -->
                 <img src="1000310120.webp" alt="Astrid - Asesora de Bienestar Herbalife">
             </div>
             <div class="bienvenida-contenido">
@@ -688,6 +946,30 @@
             </div>
         </div>
     </section>
+
+    <!-- ============================
+    BANNER DE ASESORÍA PERSONALIZADA
+    ============================ -->
+    <div class="container">
+        <div class="banner-asesoria">
+            <div class="banner-contenido">
+                <span class="banner-badge">🎯 Oferta Especial</span>
+                <h2>Solicita tu <span>asesoría personalizada</span></h2>
+                <p>
+                    Arma un kit más económico y en combo para complementar tu meta nutricional.
+                    Recibe recomendaciones adaptadas a tu estilo de vida, presupuesto y objetivos.
+                </p>
+                <div class="banner-ventajas">
+                    <div class="ventaja"><span>📦</span> Kits combinados</div>
+                    <div class="ventaja"><span>💰</span> Mejor precio</div>
+                    <div class="ventaja"><span>📞</span> Acompañamiento 1:1</div>
+                </div>
+                <a href="https://wa.me/573206344590?text=Hola%20Astrid%2C%20quiero%20una%20asesor%C3%ADa%20personalizada%20para%20armar%20mi%20kit%20nutricional%20%F0%9F%8C%BF" target="_blank" class="btn-asesoria">
+                    💬 Quiero mi asesoría
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- ============================
     CATÁLOGO
@@ -878,17 +1160,17 @@
         <div class="category-title"><span>💪</span> Proteínas y Nutrición</div>
         <div class="grid">
 
-            <!-- 10. Fórmula 1 -->
+            <!-- 10. Fórmula 1 (Quitamos "Más Vendido") -->
             <div class="card" data-id="P10" data-name="Fórmula 1 Batido Nutricional" data-price="142000">
                 <div class="img-container">
-                    <span class="badge badge-popular">🔥 Más Vendido</span>
+                    <span class="badge badge-esencial">⭐ Esencial</span>
                     <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/nutrition/formula-1-shake.png" alt="Fórmula 1" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Fórmula+1'">
                 </div>
                 <div class="info">
                     <div>
                         <h3>Fórmula 1 Batido Nutricional</h3>
                         <div class="desc">Sustituto de comida saludable con proteínas, fibra y 21 vitaminas.</div>
-                        <div class="sabor">🍦 9 Sabores disponibles</div>
+                        <div class="sabor">🍦 9 Sabores: Cookies & Cream, Dulce de leche, Fresa, Naranja-crema, Vainilla, Banana Caramelo, Café latte, Canela y especias, Chocoavellana</div>
                     </div>
                     <div class="price-row">
                         <div class="price">$142.000 <small>COP</small></div>
@@ -935,17 +1217,17 @@
                 </div>
             </div>
 
-            <!-- 13. Proteína PDM -->
+            <!-- 13. Proteína PDM (Quitamos "Más Vendido") -->
             <div class="card" data-id="P13" data-name="Proteína PDM" data-price="205000">
                 <div class="img-container">
-                    <span class="badge badge-popular">🔥 Popular</span>
+                    <span class="badge badge-premium">💎 Premium</span>
                     <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/nutrition/protein-drink-mix.png" alt="Proteína PDM" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=PDM'">
                 </div>
                 <div class="info">
                     <div>
                         <h3>Proteína PDM</h3>
                         <div class="desc">Refuerzo proteico intermedio para saciar el apetito y proteger masa muscular.</div>
-                        <div class="sabor">🥛 2 Sabores disponibles</div>
+                        <div class="sabor">🥛 2 Sabores: Vainilla y Crema de Maní</div>
                     </div>
                     <div class="price-row">
                         <div class="price">$205.000 <small>COP</small></div>
@@ -954,11 +1236,11 @@
                 </div>
             </div>
 
-            <!-- 14. Rebuild Strength -->
+            <!-- 14. Rebuild Strength (Quitamos "Más Vendido") -->
             <div class="card" data-id="P14" data-name="Rebuild Strength" data-price="342000">
                 <div class="img-container">
                     <span class="badge badge-premium">💎 Premium</span>
-                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/nutrition/rebuild-strength.png" alt="Rebuild Strength" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Rebuild+Strength'">
+                    <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-1417-co.png:pdp-w875h783?fmt=webp-alpha" alt="Rebuild Strength" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Rebuild+Strength'">
                 </div>
                 <div class="info">
                     <div>
@@ -1016,17 +1298,17 @@
                 </div>
             </div>
 
-            <!-- 17. Collagen Drink -->
+            <!-- 17. Collagen Drink (Actualizado con imagen y sabor) -->
             <div class="card" data-id="P17" data-name="Collagen Drink" data-price="194000">
                 <div class="img-container">
                     <span class="badge badge-premium">💎 Premium</span>
-                    <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/beauty/collagen-drink.png" alt="Collagen" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Collagen'">
+                    <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-3987-co.png:pdp-w875h783?fmt=webp-alpha" alt="Collagen" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Collagen'">
                 </div>
                 <div class="info">
                     <div>
                         <h3>Collagen Drink</h3>
                         <div class="desc">Colágeno hidrolizado para piel, cabello y articulaciones saludables.</div>
-                        <div class="sabor">🍊 Sabor cítrico</div>
+                        <div class="sabor">🍓 Limonada de Fresa</div>
                     </div>
                     <div class="price-row">
                         <div class="price">$194.000 <small>COP</small></div>
@@ -1100,6 +1382,56 @@
     </div>
 
     <!-- ============================
+    BLOG - FUERZA, CUERPO Y VIDA
+    ============================ -->
+    <div class="container">
+        <section class="blog-section" id="blog">
+            <div class="blog-header">
+                <h2>📖 <span>Fuerza, Cuerpo y Vida</span></h2>
+                <p class="blog-lema">Equilibrio entre ejercicio, alimentación y bienestar integral</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <span class="blog-icon">🏋️</span>
+                    <h3>Ejercicio: El Motor de tu Energía</h3>
+                    <p>
+                        El movimiento diario no solo fortalece músculos, también mejora tu estado de ánimo,
+                        calidad del sueño y salud cardiovascular. Encuentra la rutina que se adapte a ti,
+                        desde caminatas hasta entrenamiento de fuerza. La clave está en la constancia,
+                        no en la intensidad.
+                    </p>
+                    <span class="blog-tag">💪 Movimiento</span>
+                    <a href="#" class="blog-link">Leer más →</a>
+                </div>
+                <div class="blog-card">
+                    <span class="blog-icon">🥗</span>
+                    <h3>Alimentación Consciente</h3>
+                    <p>
+                        Comer bien no es restringirse, es nutrir tu cuerpo con lo que realmente necesita.
+                        Prioriza proteínas de calidad, grasas saludables, carbohidratos complejos y
+                        una buena hidratación. Aprende a escuchar las señales de tu cuerpo y a
+                        elegir alimentos que te llenen de energía.
+                    </p>
+                    <span class="blog-tag">🍽️ Nutrición</span>
+                    <a href="#" class="blog-link">Leer más →</a>
+                </div>
+                <div class="blog-card">
+                    <span class="blog-icon">🧠</span>
+                    <h3>Vida en Equilibrio</h3>
+                    <p>
+                        El verdadero bienestar integra cuerpo, mente y espíritu. El descanso reparador,
+                        la gestión del estrés y las conexiones sociales son tan importantes como la
+                        alimentación y el ejercicio. Descubre cómo pequeños hábitos diarios pueden
+                        transformar tu calidad de vida.
+                    </p>
+                    <span class="blog-tag">🌟 Bienestar</span>
+                    <a href="#" class="blog-link">Leer más →</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ============================
     CARRITO FLOTANTE
     ============================ -->
     <div class="cart-bar" id="cartBar">
@@ -1108,6 +1440,7 @@
             <p id="cartCount">0 productos seleccionados</p>
         </div>
         <div class="cart-actions">
+            <button class="btn-cart-remove" onclick="vaciarCarrito()" title="Vaciar carrito">🗑️ Vaciar</button>
             <button class="btn-checkout" onclick="abrirModal()">Confirmar Pedido 🛍️</button>
         </div>
     </div>
@@ -1182,6 +1515,24 @@
                 btn.textContent = 'Añadir 🛒';
                 btn.style.background = '';
             }, 800);
+        }
+
+        function eliminarDelCarrito(id) {
+            if (carrito[id]) {
+                carrito[id].cantidad -= 1;
+                if (carrito[id].cantidad <= 0) {
+                    delete carrito[id];
+                }
+                actualizarInterfazCarrito();
+            }
+        }
+
+        function vaciarCarrito() {
+            if (Object.keys(carrito).length === 0) return;
+            if (confirm('¿Estás seguro de vaciar el carrito?')) {
+                carrito = {};
+                actualizarInterfazCarrito();
+            }
         }
 
         function actualizarInterfazCarrito() {
