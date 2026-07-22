@@ -496,12 +496,12 @@
         }
         .solucion-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 25px;
         }
         .solucion-card {
             background: var(--white);
-            padding: 30px 24px;
+            padding: 28px 20px;
             border-radius: var(--radius);
             box-shadow: var(--shadow-sm);
             text-align: center;
@@ -514,17 +514,17 @@
             border-color: rgba(46, 125, 50, 0.08);
         }
         .solucion-card .icon {
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             display: block;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .solucion-card h3 {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--primary-dark);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .solucion-card p {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--gray);
             line-height: 1.6;
         }
@@ -1279,27 +1279,6 @@
         .card:nth-child(14) {
             animation-delay: 0.52s;
         }
-        .card:nth-child(15) {
-            animation-delay: 0.56s;
-        }
-        .card:nth-child(16) {
-            animation-delay: 0.60s;
-        }
-        .card:nth-child(17) {
-            animation-delay: 0.64s;
-        }
-        .card:nth-child(18) {
-            animation-delay: 0.68s;
-        }
-        .card:nth-child(19) {
-            animation-delay: 0.72s;
-        }
-        .card:nth-child(20) {
-            animation-delay: 0.76s;
-        }
-        .card:nth-child(21) {
-            animation-delay: 0.80s;
-        }
     </style>
 </head>
 <body>
@@ -1381,7 +1360,7 @@
                         también tu salud y tu bolsillo.
                     </p>
                     <div class="highlight">
-                        <p>💡 <strong>Mi misión:</strong> Que entiendas tu cuerpo para que tomes decisiones informadas. No vendas humo, educa. Eso es lo que hago.</p>
+                        <p>💡 <strong>Mi misión:</strong> Que entiendas tu cuerpo para que tomes decisiones informadas. No vendo humo, educo. Eso es lo que hago.</p>
                     </div>
                 </div>
                 <div class="problema-imagen">
@@ -1437,13 +1416,15 @@
                 <p>Productos que pueden complementar tu camino, siempre con conocimiento y asesoría.</p>
             </div>
 
-            <!-- CATEGORÍA 1: BEBIDAS Y ENERGIZANTES -->
+            <!-- ===== CATEGORÍA 1: BEBIDAS Y ENERGIZANTES ===== -->
             <div class="category-title"><span>🥤</span> Bebidas y Energizantes</div>
             <div class="grid">
+
+                <!-- Golden Beverage -->
                 <div class="card" data-id="P01" data-name="Golden Beverage" data-price="145000">
                     <div class="card-img">
                         <span class="card-badge popular">🔥 Popular</span>
-                        <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/beverages/golden-beverage.png" alt="Golden Beverage" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Golden'">
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-238k-co.png:pdp-w875h783?fmt=webp-alpha" alt="Golden Beverage" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Golden'">
                     </div>
                     <div class="card-body">
                         <h3>Golden Beverage</h3>
@@ -1455,10 +1436,12 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Kickoff -->
                 <div class="card" data-id="P02" data-name="Kickoff" data-price="145000">
                     <div class="card-img">
                         <span class="card-badge energy">⚡ Energía</span>
-                        <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/beverages/kickoff.png" alt="Kickoff" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Kickoff'">
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-204k-co.png:pdp-w875h783?fmt=webp-alpha" alt="Kickoff" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Kickoff'">
                     </div>
                     <div class="card-body">
                         <h3>Kickoff</h3>
@@ -1470,36 +1453,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" data-id="P03" data-name="Té Grande" data-price="186000">
-                    <div class="card-img">
-                        <span class="card-badge natural">🌿 Natural</span>
-                        <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/beverages/tea-concentrate.png" alt="Té Grande" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Té+Grande'">
-                    </div>
-                    <div class="card-body">
-                        <h3>Té Grande</h3>
-                        <div class="desc">Té concentrado de hierbas formato grande.</div>
-                        <div class="sabor">🍵 5 Sabores</div>
-                        <div class="card-footer">
-                            <div class="card-price">$186.000 <small>COP</small></div>
-                            <button class="btn-add" onclick="agregarAlCarrito('P03')">Añadir</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" data-id="P04" data-name="Té Pequeño" data-price="213000">
-                    <div class="card-img">
-                        <span class="card-badge">⭐ Esencial</span>
-                        <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/beverages/tea-concentrate-small.png" alt="Té Pequeño" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Té+Pequeño'">
-                    </div>
-                    <div class="card-body">
-                        <h3>Té Pequeño</h3>
-                        <div class="desc">Té concentrado práctico para llevar.</div>
-                        <div class="sabor">🍵 5 Sabores</div>
-                        <div class="card-footer">
-                            <div class="card-price">$213.000 <small>COP</small></div>
-                            <button class="btn-add" onclick="agregarAlCarrito('P04')">Añadir</button>
-                        </div>
-                    </div>
-                </div>
+
+                <!-- Herbal Relax Infusion -->
                 <div class="card" data-id="P05" data-name="Herbal Relax Infusion" data-price="126000">
                     <div class="card-img">
                         <span class="card-badge natural">🌙 Relax</span>
@@ -1515,10 +1470,12 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- NRG -->
                 <div class="card" data-id="P06" data-name="NRG" data-price="97000">
                     <div class="card-img">
                         <span class="card-badge energy">⚡ Energía</span>
-                        <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/beverages/nrg.png" alt="NRG" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=NRG'">
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-075k-co.png:pdp-w875h783?fmt=webp-alpha" alt="NRG" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=NRG'">
                     </div>
                     <div class="card-body">
                         <h3>NRG</h3>
@@ -1530,6 +1487,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Herbal Aloe -->
                 <div class="card" data-id="P07" data-name="Herbal Aloe" data-price="166000">
                     <div class="card-img">
                         <span class="card-badge natural">🌿 Natural</span>
@@ -1545,6 +1504,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Bebida Herbal -->
                 <div class="card" data-id="P08" data-name="Bebida Herbal" data-price="105000">
                     <div class="card-img">
                         <span class="card-badge">⭐ Esencial</span>
@@ -1560,11 +1521,30 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Beverage Mix -->
+                <div class="card" data-id="P09" data-name="Beverage Mix" data-price="140000">
+                    <div class="card-img">
+                        <span class="card-badge premium">💎 Premium</span>
+                        <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/beverages/beverage-mix.png" alt="Beverage Mix" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Beverage+Mix'">
+                    </div>
+                    <div class="card-body">
+                        <h3>Beverage Mix</h3>
+                        <div class="desc">Mezcla para bebida proteica con sabor a frutas.</div>
+                        <div class="sabor">🍓 Mezcla de frutas</div>
+                        <div class="card-footer">
+                            <div class="card-price">$140.000 <small>COP</small></div>
+                            <button class="btn-add" onclick="agregarAlCarrito('P09')">Añadir</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- CATEGORÍA 2: PROTEÍNAS Y NUTRICIÓN -->
+            <!-- ===== CATEGORÍA 2: PROTEÍNAS Y NUTRICIÓN ===== -->
             <div class="category-title"><span>💪</span> Proteínas y Nutrición</div>
             <div class="grid">
+
+                <!-- Fórmula 1 -->
                 <div class="card" data-id="P10" data-name="Fórmula 1 Batido Nutricional" data-price="142000">
                     <div class="card-img">
                         <span class="card-badge">⭐ Esencial</span>
@@ -1580,14 +1560,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" data-id="P11" data-name="Fórmula 3 Alimento Proteínico" data-price="240000">
+
+                <!-- Alimento Proteínico (Fórmula 3) -->
+                <div class="card" data-id="P11" data-name="Alimento Proteínico" data-price="240000">
                     <div class="card-img">
                         <span class="card-badge premium">💎 Premium</span>
-                        <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/nutrition/formula-3-protein.png" alt="Fórmula 3" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=F3'">
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-2648-co.png:pdp-w875h783?fmt=webp-alpha" alt="Alimento Proteínico" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Proteínico'">
                     </div>
                     <div class="card-body">
-                        <h3>Fórmula 3 Alimento Proteínico</h3>
-                        <div class="desc">Proteína en polvo para complementar.</div>
+                        <h3>Alimento Proteínico</h3>
+                        <div class="desc">Proteína en polvo para complementar tu nutrición.</div>
                         <div class="sabor">🥛 2 Sabores</div>
                         <div class="card-footer">
                             <div class="card-price">$240.000 <small>COP</small></div>
@@ -1595,21 +1577,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" data-id="P12" data-name="Proteína PPP" data-price="122000">
-                    <div class="card-img">
-                        <span class="card-badge">⭐ Esencial</span>
-                        <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/nutrition/personalized-protein-powder.png" alt="PPP" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=PPP'">
-                    </div>
-                    <div class="card-body">
-                        <h3>Proteína PPP</h3>
-                        <div class="desc">Proteína personalizada sin sabor.</div>
-                        <div class="sabor">🥛 Sin sabor</div>
-                        <div class="card-footer">
-                            <div class="card-price">$122.000 <small>COP</small></div>
-                            <button class="btn-add" onclick="agregarAlCarrito('P12')">Añadir</button>
-                        </div>
-                    </div>
-                </div>
+
+                <!-- Proteína PDM -->
                 <div class="card" data-id="P13" data-name="Proteína PDM" data-price="205000">
                     <div class="card-img">
                         <span class="card-badge premium">💎 Premium</span>
@@ -1625,6 +1594,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Rebuild Strength -->
                 <div class="card" data-id="P14" data-name="Rebuild Strength" data-price="342000">
                     <div class="card-img">
                         <span class="card-badge premium">💎 Premium</span>
@@ -1640,6 +1611,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Fibra Activa -->
                 <div class="card" data-id="P15" data-name="Fibra Activa" data-price="135000">
                     <div class="card-img">
                         <span class="card-badge natural">🌿 Natural</span>
@@ -1657,24 +1630,11 @@
                 </div>
             </div>
 
-            <!-- CATEGORÍA 3: SUPLEMENTOS Y BIENESTAR -->
+            <!-- ===== CATEGORÍA 3: SUPLEMENTOS Y BIENESTAR ===== -->
             <div class="category-title"><span>🌿</span> Suplementos y Bienestar</div>
             <div class="grid">
-                <div class="card" data-id="P16" data-name="Xtra Cal Advanced" data-price="69000">
-                    <div class="card-img">
-                        <span class="card-badge">⭐ Esencial</span>
-                        <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/supplements/xtra-cal.png" alt="Xtra Cal" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Xtra+Cal'">
-                    </div>
-                    <div class="card-body">
-                        <h3>Xtra Cal Advanced</h3>
-                        <div class="desc">Calcio para huesos y dientes.</div>
-                        <div class="sabor">💊 Tabletas</div>
-                        <div class="card-footer">
-                            <div class="card-price">$69.000 <small>COP</small></div>
-                            <button class="btn-add" onclick="agregarAlCarrito('P16')">Añadir</button>
-                        </div>
-                    </div>
-                </div>
+
+                <!-- Collagen Drink -->
                 <div class="card" data-id="P17" data-name="Collagen Drink" data-price="194000">
                     <div class="card-img">
                         <span class="card-badge premium">💎 Premium</span>
@@ -1690,6 +1650,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Beta Glucanor -->
                 <div class="card" data-id="P18" data-name="Beta Glucanor" data-price="167000">
                     <div class="card-img">
                         <span class="card-badge premium">💎 Premium</span>
@@ -1705,6 +1667,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Herbalifeline Plus -->
                 <div class="card" data-id="P19" data-name="Herbalifeline Plus" data-price="185000">
                     <div class="card-img">
                         <span class="card-badge premium">💎 Premium</span>
@@ -1722,13 +1686,15 @@
                 </div>
             </div>
 
-            <!-- CATEGORÍA 4: SNACKS -->
+            <!-- ===== CATEGORÍA 4: SNACKS ===== -->
             <div class="category-title"><span>🍫</span> Snacks y Complementos</div>
             <div class="grid">
+
+                <!-- Crocante de Proteína -->
                 <div class="card" data-id="P20" data-name="Crocante de Proteína" data-price="65000">
                     <div class="card-img">
                         <span class="card-badge snack">🍿 Snack</span>
-                        <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/snacks/protein-crisp.png" alt="Crocante" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Crocante'">
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-040k-co.png:pdp-w875h783?fmt=webp-alpha" alt="Crocante" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Crocante'">
                     </div>
                     <div class="card-body">
                         <h3>Crocante de Proteína</h3>
@@ -1740,10 +1706,12 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Barra de Proteína -->
                 <div class="card" data-id="P21" data-name="Barra de Proteína" data-price="119000">
                     <div class="card-img">
                         <span class="card-badge snack">🍫 Snack</span>
-                        <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/snacks/protein-bar.png" alt="Barra" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Barra'">
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-1119-co.png:pdp-w875h783?fmt=webp-alpha" alt="Barra" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Barra'">
                     </div>
                     <div class="card-body">
                         <h3>Barra de Proteína</h3>
@@ -2147,7 +2115,6 @@
 
             window.location.href = `mailto:${EMAIL_ASTRID}?subject=${asunto}&body=${cuerpo}`;
 
-            // Feedback visual
             const btn = document.querySelector('.btn-form');
             btn.textContent = '✅ Mensaje enviado';
             btn.style.background = '#4caf50';
