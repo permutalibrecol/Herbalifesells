@@ -4,20 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aliméntate Saludable Hoy | Astrid - Educación Nutricional y Bienestar</title>
-    <meta name="description" content="Aprende a alimentar tu cuerpo con conocimiento. Astrid te guía en el mundo de la nutrición, el ejercicio, el café funcional y los suplementos. ¡Empieza tu transformación hoy!" />
-    <meta name="keywords" content="nutrición, educación nutricional, café saludable, marca blanca café, suplementos, ejercicio, bienestar, alimentación saludable, Astrid, asesoría nutricional, asohermosas" />
-    <meta name="author" content="Astrid - Aliméntate Saludable Hoy" />
-    <link rel="canonical" href="https://alimentatesaludablehoy.com/" />
-    <meta property="og:title" content="Aliméntate Saludable Hoy | Educación Nutricional con Astrid" />
-    <meta property="og:description" content="No necesitas suplementos sin conocimiento. Aprende Biohacking Celular, optimiza tu metabolismo y crea tu marca de café con Asohermosas." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://alimentatesaludablehoy.com/" />
-    <meta property="og:image" content="https://raw.githubusercontent.com/permutalibrecol/Herbalifesells/main/imagenes/IMG_20260721_074307.jpg" />
-    <meta name="theme-color" content="#2e7d32" />
     <style>
-        /* ============================
-           VARIABLES Y RESET OPTIMIZADO
-           ============================ */
         :root {
             --primary: #2e7d32;
             --primary-light: #4caf50;
@@ -37,494 +24,163 @@
             --radius-sm: 10px;
             --transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--light-bg); color: var(--dark); padding-bottom: 140px; line-height: 1.6; }
+        img { max-width: 100%; display: block; height: auto; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1240px; margin: 0 auto; padding: 0 20px; }
+        .loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--white); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999; transition: opacity 0.6s ease, visibility 0.6s ease; }
+        .loader.hidden { opacity: 0; visibility: hidden; }
+        .loader-spinner { width: 50px; height: 50px; border: 4px solid var(--gray-light); border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .site-header { background: var(--white); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 100; padding: 15px 0; border-bottom: 2px solid var(--primary); }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+        .header-brand h1 { font-size: 1.2rem; color: var(--primary-dark); font-weight: 800; }
+        .header-nav { display: flex; align-items: center; gap: 15px; }
+        .header-nav a { font-size: 0.85rem; font-weight: 600; color: var(--dark); }
+        .header-whatsapp { background: #25d366; color: white; padding: 6px 14px; border-radius: 50px; font-weight: 600; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 4px; }
+        .hero { background: var(--primary-gradient); padding: 60px 20px; position: relative; overflow: hidden; }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; }
+        .hero-text { color: var(--white); }
+        .hero-text .subtitle { color: var(--gold); font-weight: 700; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+        .hero-text h1 { font-size: 2.6rem; line-height: 1.2; margin-bottom: 20px; font-weight: 800; }
+        .hero-text p { font-size: 1.1rem; margin-bottom: 20px; opacity: 0.9; }
+        .hero-text strong { color: var(--gold-light); }
+        .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 25px; }
+        .btn { padding: 12px 28px; border-radius: 50px; font-weight: 700; font-size: 0.95rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary { background: var(--gold); color: var(--dark); }
+        .btn-secondary { border: 2px solid var(--white); color: var(--white); }
+        .hero-image-wrapper { display: flex; justify-content: center; align-items: center; }
+        .hero-image { width: 100%; max-width: 380px; border-radius: 24px; border: 4px solid rgba(255, 255, 255, 0.15); box-shadow: var(--shadow-lg); aspect-ratio: 1/1; object-fit: cover; }
+        .biohacking-section { background: var(--white); padding: 60px 0; border-bottom: 1px solid var(--gray-light); }
+        .brand-section { background: var(--primary-gradient); color: var(--white); padding: 70px 0; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .section-tag { color: var(--gold); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 10px; display: block; }
+        .brand-section .section-tag { color: var(--gold-light); }
+        .bio-title, .brand-title { font-size: 2.2rem; margin-bottom: 20px; font-weight: 800; }
+        .bio-title { color: var(--primary-dark); }
+        .bio-text, .brand-text { font-size: 1.05rem; line-height: 1.7; margin-bottom: 25px; color: var(--gray); }
+        .brand-text { color: rgba(255, 255, 255, 0.9); }
+        .product-highlight-card { background: var(--light-bg); border: 2px solid var(--primary-light); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow-md); text-align: center; }
+        .product-highlight-card h3 { color: var(--primary-dark); font-size: 1.4rem; }
+        .price-tag { font-size: 1.6rem; color: var(--primary); font-weight: 800; margin: 15px 0; }
+        .btn-brand-action { background: var(--gold); color: var(--dark); padding: 14px 30px; border-radius: 50px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; }
+        .catalog-section { padding: 60px 0; background: var(--light-bg); }
+        .catalog-title { text-align: center; font-size: 2.4rem; color: var(--primary-dark); font-weight: 800; margin-bottom: 10px; }
+        .catalog-subtitle { text-align: center; color: var(--gray); margin-bottom: 50px; }
+        .category-block { margin-bottom: 50px; }
+        .category-title { font-size: 1.5rem; color: var(--primary-dark); border-left: 5px solid var(--gold); padding-left: 12px; margin-bottom: 30px; font-weight: 700; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+        .product-card { background: var(--white); border-radius: var(--radius); padding: 25px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(0,0,0,0.03); }
+        .product-card h4 { font-size: 1.2rem; color: var(--dark); margin-bottom: 10px; }
+        .product-desc { font-size: 0.95rem; color: var(--gray); margin-bottom: 15px; flex-grow: 1; }
+        .product-price { font-size: 1.3rem; color: var(--primary); font-weight: 800; margin-bottom: 20px; }
+        .btn-add { background: var(--primary); color: var(--white); text-align: center; padding: 12px; border-radius: var(--radius-sm); font-weight: 700; cursor: pointer; border: none; width: 100%; }
+        .cart-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--white); box-shadow: 0 -5px 30px rgba(0,0,0,0.08); padding: 20px; z-index: 999; border-top: 4px solid var(--primary); }
+        .cart-inner { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .cart-total { font-size: 1.4rem; font-weight: 800; color: var(--primary-dark); }
+        .btn-checkout { background: #25d366; color: white; padding: 12px 30px; border-radius: 50px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; border: none; cursor: pointer; }
+        @media (max-width: 900px) { .grid-2, .hero-container { grid-template-columns: 1fr; text-align: center; } .hero-image { max-width: 320px; margin: 0 auto; } }
+    </style>
+</head>
+<body>
+    <div class="loader" id="loader"><div class="loader-spinner"></div><p>🌿 Cargando conocimiento...</p></div>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="header-brand"><h1>🌿 Aliméntate Saludable Hoy</h1></div>
+            <nav class="header-nav">
+                <a href="#biohacking">Biohacking</a>
+                <a href="#marca-blanca">Marca Blanca</a>
+                <a href="#catalogo">Catálogo</a>
+                <a href="https://wa.me" class="header-whatsapp">💬 WhatsApp</a>
+            </nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <span class="subtitle">🌟 Educación Nutricional con Propósito</span>
+                <h1>Hola, soy Astrid</h1>
+                <p>Durante años vi cómo personas con disciplina en el gym no lograban resultados porque <strong>nadie les enseñó a alimentar su cuerpo correctamente</strong>. No necesitas más pastillas, necesitas <strong>conocimiento</strong>.</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me" class="btn btn-primary">💬 Quiero aprender</a>
+                    <a href="#catalogo" class="btn btn-secondary">📖 Ver Catálogo</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="https://githubusercontent.com" alt="Astrid" class="hero-image">
+            </div>
+        </div>
+    </section>
+            <div class="category-block">
+                <h3 class="category-title">💪 Proteínas y Nutrición Celular</h3>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <h4>Fórmula 1 Batido Nutricional</h4>
+                        <p class="product-desc">Sustituto de comida completo con 21 vitaminas esenciales.</p>
+                        <div class="product-price">\$142.000 COP</div>
+                        <button class="btn-add" onclick="agregarAlCarrito('Fórmula 1 Batido', 142000)">Añadir</button>
+                    </div>
+                    <div class="product-card">
+                        <h4>Alimento Proteínico Premium</h4>
+                        <p class="product-desc">Proteína en polvo pura para complementar tu requerimiento diario.</p>
+                        <div class="product-price">\$240.000 COP</div>
+                        <button class="btn-add" onclick="agregarAlCarrito('Alimento Proteínico', 240000)">Añadir</button>
+                    </div>
+                    <div class="product-card">
+                        <h4>Proteína PDM</h4>
+                        <p class="product-desc">Refuerzo proteico intermedio cremoso sabor vainilla.</p>
+                        <div class="product-price">\$205.000 COP</div>
+                        <button class="btn-add" onclick="agregarAlCarrito('Proteína PDM', 205000)">Añadir</button>
+                    </div>
+                    <div class="product-card">
+                        <h4>Rebuild Strength</h4>
+                        <p class="product-desc">Proteína premium post-entreno para recuperación muscular rápida.</p>
+                        <div class="product-price">\$342.000 COP</div>
+                        <button class="btn-add" onclick="agregarAlCarrito('Rebuild Strength', 342000)">Añadir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    <div class="cart-bar">
+        <div class="cart-inner">
+            <div class="cart-total" id="texto-total">Total: \$0 COP (0 productos)</div>
+            <button class="btn-checkout" onclick="enviarPedido()">Confirmar Pedido por WhatsApp 🚀</button>
+        </div>
+    </div>
+
+    <script>
+        let carrito = [];
+        let totalDinero = 0;
+
+        function agregarAlCarrito(nombre, precio) {
+            carrito.push({ nombre, precio });
+            totalDinero += precio;
+            document.getElementById('texto-total').innerText = `Total: $${totalDinero.toLocaleString('es-CO')} COP (${carrito.length} productos)`;
         }
 
-        html {
-            scroll-behavior: smooth;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-            background: var(--light-bg);
-            color: var(--dark);
-            padding-bottom: 130px;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-            height: auto;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            max-width: 1240px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* ============================
-           LOADING SCREEN
-           ============================ */
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--white);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.6s ease, visibility 0.6s ease;
-        }
-        .loader.hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-        .loader-spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid var(--gray-light);
-            border-top-color: var(--primary);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-        }
-        .loader p {
-            margin-top: 16px;
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-        }
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
+        function enviarPedido() {
+            if(carrito.length === 0) {
+                alert("Por favor añade al menos un producto a tu pedido.");
+                return;
             }
+            let textoMensaje = "Hola Astrid! Me gustaría realizar un pedido desde tu web:\n\n";
+            carrito.forEach((item, index) => {
+                textoMensaje += `${index + 1}. ${item.nombre} - $${item.precio.toLocaleString('es-CO')} COP\n`;
+            });
+            textoMensaje += `\n*Total: $${totalDinero.toLocaleString('es-CO')} COP*`;
+            window.open(`https://wa.me{encodeURIComponent(textoMensaje)}`, '_blank');
         }
 
-        /* ============================
-           HEADER
-           ============================ */
-        .site-header {
-            background: var(--white);
-            box-shadow: var(--shadow-sm);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 10px 0;
-            border-bottom: 2px solid var(--primary);
-        }
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .header-brand {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .header-brand .logo-icon {
-            font-size: 1.8rem;
-        }
-        .header-brand h1 {
-            font-size: 1.1rem;
-            color: var(--primary-dark);
-            font-weight: 800;
-            line-height: 1.2;
-        }
-        .header-brand h1 span {
-            color: var(--gold);
-        }
-        .header-nav {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        .header-nav a {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--dark);
-            transition: var(--transition);
-            padding: 4px 0;
-            position: relative;
-        }
-        .header-nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: var(--transition);
-        }
-        .header-nav a:hover::after {
-            width: 100%;
-        }
-        .header-nav a:hover {
-            color: var(--primary);
-        }
-        .header-whatsapp {
-            background: #25d366;
-            color: white;
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.75rem;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-        }
-        .header-whatsapp:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-        }
-
-        @media (max-width: 650px) {
-            .header-inner {
-                flex-direction: column;
-                text-align: center;
-            }
-            .header-nav {
-                justify-content: center;
-            }
-            .header-brand h1 {
-                font-size: 1rem;
-            }
-        }
-        @media (max-width: 420px) {
-            .header-nav a {
-                font-size: 0.7rem;
-            }
-            .header-whatsapp {
-                font-size: 0.7rem;
-                padding: 4px 12px;
-            }
-        }
-
-        /* ============================
-           HERO SECTION - INTRODUCCIÓN DE ASTRID
-           ============================ */
-        .hero {
-            background: var(--primary-gradient);
-            padding: 60px 20px;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-        .hero::before {
-            content: '🌿';
-            position: absolute;
-            font-size: 250px;
-            right: -40px;
-            bottom: -80px;
-            opacity: 0.05;
-            pointer-events: none;
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: -60%;
-            left: -20%;
-            width: 70%;
-            height: 200%;
-            background: radial-gradient(ellipse, rgba(255, 179, 0, 0.04) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 40px;
-            position: relative;
-            z-index: 2;
-        }
-        .hero-text {
-            color: var(--white);
-        }
-        .hero-text .subtitle {
-            color: var(--gold);
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            display: block;
-        }
-        .hero-text h1 {
-            font-size: 2.5rem;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-        .hero-text p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-        .hero-text p strong {
-            color: var(--gold-light);
-        }
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        .btn {
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .btn-primary {
-            background: var(--gold);
-            color: var(--dark);
-        }
-        .btn-primary:hover {
-            background: var(--gold-light);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 179, 0, 0.3);
-        }
-        .btn-secondary {
-            border: 2px solid var(--white);
-            color: var(--white);
-        }
-        .btn-secondary:hover {
-
-background: var(--white);
-color: var(--primary-dark);
-transform: translateY(-2px);
-}
-.hero-image-wrapper {
-display: flex;
-justify-content: center;
-align-items: center;
-}
-.hero-image {
-width: 100%;
-max-width: 420px;
-border-radius: 24px;
-border: 4px solid rgba(255, 255, 255, 0.15);
-box-shadow: var(--shadow-lg);
-object-fit: cover;
-aspect-ratio: 1 / 1;
-}
-@media (max-width: 900px) {
-.hero {
-padding: 40px 20px;
-}
-.hero-container {
-grid-template-columns: 1fr;
-text-align: center;
-gap: 30px;
-}
-.hero-text h1 {
-font-size: 2rem;
-}
-.hero-buttons {
-justify-content: center;
-}
-.hero-image {
-max-width: 320px;
-}
-}
-/* ==========================================
-NUEVAS SECCIONES: BIOHACKING Y MARCA BLANCA
-========================================== */
-.biohacking-section {
-background: var(--white);
-padding: 60px 0;
-border-bottom: 1px solid var(--gray-light);
-}
-.brand-section {
-background: var(--primary-gradient);
-color: var(--white);
-padding: 70px 0;
-position: relative;
-overflow: hidden;
-}
-.brand-section::before {
-content: '☕';
-position: absolute;
-font-size: 200px;
-left: -50px;
-bottom: -50px;
-opacity: 0.05;
-pointer-events: none;
-}
-.grid-2 {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 40px;
-align-items: center;
-}
-.section-tag {
-color: var(--gold);
-font-weight: 700;
-text-transform: uppercase;
-font-size: 0.85rem;
-letter-spacing: 1px;
-margin-bottom: 10px;
-display: block;
-}
-.brand-section .section-tag {
-color: var(--gold-light);
-}
-.bio-title {
-font-size: 2.2rem;
-color: var(--primary-dark);
-margin-bottom: 20px;
-font-weight: 800;
-}
-.brand-title {
-font-size: 2.2rem;
-color: var(--white);
-margin-bottom: 20px;
-font-weight: 800;
-}
-.bio-text, .brand-text {
-font-size: 1.05rem;
-line-height: 1.7;
-margin-bottom: 25px;
-color: var(--gray);
-}
-.brand-text {
-color: rgba(255, 255, 255, 0.9);
-}
-.brand-text strong {
-color: var(--gold-light);
-}
-.product-highlight-card {
-background: var(--light-bg);
-border: 2px solid var(--primary-light);
-border-radius: var(--radius);
-padding: 30px;
-box-shadow: var(--shadow-md);
-text-align: center;
-}
-.product-highlight-card h3 {
-color: var(--primary-dark);
-font-size: 1.4rem;
-margin-bottom: 10px;
-}
-.price-tag {
-font-size: 1.6rem;
-color: var(--primary);
-font-weight: 800;
-margin: 15px 0;
-}
-.btn-brand-action {
-background: var(--gold);
-color: var(--dark);
-padding: 14px 30px;
-border-radius: 50px;
-font-weight: 700;
-display: inline-flex;
-align-items: center;
-gap: 10px;
-box-shadow: var(--shadow-sm);
-transition: var(--transition);
-}
-.btn-brand-action:hover {
-background: var(--gold-light);
-transform: translateY(-3px);
-box-shadow: 0 10px 25px rgba(255, 179, 0, 0.4);
-}
-@media (max-width: 768px) {
-.grid-2 {
-grid-template-columns: 1fr;
-text-align: center;
-}
-.product-highlight-card {
-max-width: 400px;
-margin: 0 auto;
-}
-.bio-title, .brand-title {
-font-size: 1.8rem;
-}
-}
-
-
-🌿 Cargando conocimiento...
-🌿
-Aliméntate Saludable Hoy
-
-
-Biohacking
-Marca Blanca
-💬 WhatsApp
-
-
-🌟 Educación Nutricional con Propósito
-Hola, soy Astrid
-Te ayudo a entender tu cuerpo y construir una vida saludable basada en conocimiento real.
-
-💬 Quiero aprender
-📖 Conoce mi enfoque
-
-
-
-
-
-
-⚡ Rendimiento Celular
-Biohacking Nutricional: Optimiza tu energía diaria
-
-El bienestar se logra combinando ciencia nutricional y hábitos inteligentes para despertar tu metabolismo.
-
-🔥 Lanzamiento Exclusivo
-Café Funcional Termogénico
-Tu hábito optimizado para acelerar la quema de grasa natural.
-$135.000 COP
-
-🛒 Añadir al Plan
-
-
-
-💼
-Alianza Estratégica con Asohermosas
-🚀 Oportunidad de Expansión
-Lanza tu propia marca de Café Saludable
-
-Monetiza tu comunidad con un producto de alta demanda gracias a nuestra alianza comercial de marca blanca con Asohermosas.
-
-
-🤝 Hablar sobre Distribución Marca Blanca
-
-
-
-window.addEventListener('DOMContentLoaded', () => {
-setTimeout(() => {
-const loader = document.getElementById('loader');
-if (loader) loader.classList.add('hidden');
-}, 500);
-});
-
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                if (loader) loader.classList.add('hidden');
+            }, 500);
+        });
+    </script>
+</body>
+</html>
