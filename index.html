@@ -4,16 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aliméntate Saludable Hoy | Astrid - Educación Nutricional y Bienestar</title>
-    <meta name="description" content="Aprende a alimentar tu cuerpo con conocimiento. Astrid te guía en el mundo de la nutrición, el ejercicio y los suplementos. ¡Empieza tu transformación hoy!" />
-    <meta name="keywords" content="nutrición, educación nutricional, suplementos, ejercicio, bienestar, alimentación saludable, Astrid, asesoría nutricional, café funcional, asohermosas" />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Aprende a alimentar tu cuerpo con conocimiento. Astrid te guía en nutrición, ejercicio, suplementos y café funcional. ¡Empieza tu transformación hoy!" />
+    <meta name="keywords" content="nutrición, educación nutricional, suplementos, ejercicio, bienestar, alimentación saludable, Astrid, asesoría nutricional, café funcional, asohermosas, marca blanca café" />
     <meta name="author" content="Astrid - Aliméntate Saludable Hoy" />
-    <link rel="canonical" href="https://alimentatesaludablehoy.com" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://alimentatesaludablehoy.com/" />
+
+    <!-- Open Graph / Facebook / WhatsApp Meta -->
+    <meta property="og:site_name" content="Aliméntate Saludable Hoy" />
     <meta property="og:title" content="Aliméntate Saludable Hoy | Educación Nutricional con Astrid" />
     <meta property="og:description" content="No necesitas suplementos sin conocimiento. Aprende a entender tu cuerpo y transforma tu vida con acompañamiento real." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://alimentatesaludablehoy.com" />
-    <meta property="og:image" content="https://githubusercontent.com" />
+    <meta property="og:url" content="https://alimentatesaludablehoy.com/" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/permutalibrecol/Herbalifesells/main/imagenes/IMG_20260721_074307.jpg" />
+    <meta property="og:image:alt" content="Astrid - Educación Nutricional" />
+    <meta property="og:locale" content="es_CO" />
+
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aliméntate Saludable Hoy | Astrid Nutrición" />
+    <meta name="twitter:description" content="Aprende a nutrir tu cuerpo con ciencia y sentido común. Asesoría integral con Astrid." />
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/permutalibrecol/Herbalifesells/main/imagenes/IMG_20260721_074307.jpg" />
+
     <meta name="theme-color" content="#2e7d32" />
+
+    <!-- JSON-LD Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "Aliméntate Saludable Hoy - Astrid",
+      "url": "https://alimentatesaludablehoy.com/",
+      "image": "https://raw.githubusercontent.com/permutalibrecol/Herbalifesells/main/imagenes/IMG_20260721_074307.jpg",
+      "description": "Educación nutricional, asesoría personalizada en suplementación, ejercicio y café funcional en Bogotá, Colombia.",
+      "telephone": "+573206344590",
+      "email": "astridvidasana@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bogotá",
+        "addressCountry": "CO"
+      },
+      "priceRange": "$$"
+    }
+    </script>
+
     <style>
         :root {
             --primary: #2e7d32;
@@ -34,40 +70,78 @@
             --radius-sm: 10px;
             --transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; background: var(--light-bg); color: var(--dark); padding-bottom: 140px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; background: var(--light-bg); color: var(--dark); padding-bottom: 140px; line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         img { max-width: 100%; display: block; height: auto; }
         a { text-decoration: none; color: inherit; }
         .container { max-width: 1240px; margin: 0 auto; padding: 0 20px; }
+
+        /* LOADER */
         .loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--white); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999; transition: opacity 0.6s ease, visibility 0.6s ease; }
         .loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
         .loader-spinner { width: 50px; height: 50px; border: 4px solid var(--gray-light); border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite; }
+        .loader p { margin-top: 16px; color: var(--primary); font-weight: 600; font-size: 1rem; letter-spacing: 0.5px; }
         @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* HEADER */
         .site-header { background: var(--white); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 100; padding: 10px 0; border-bottom: 2px solid var(--primary); }
         .header-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
         .header-brand { display: flex; align-items: center; gap: 8px; }
+        .header-brand .logo-icon { font-size: 1.8rem; }
         .header-brand h1 { font-size: 1.1rem; color: var(--primary-dark); font-weight: 800; line-height: 1.2; }
+        .header-brand h1 span { color: var(--gold); }
         .header-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-        .header-nav a { font-size: 0.8rem; font-weight: 600; color: var(--dark); transition: var(--transition); padding: 4px 0; }
+        .header-nav a { font-size: 0.8rem; font-weight: 600; color: var(--dark); transition: var(--transition); padding: 4px 0; position: relative; }
+        .header-nav a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--primary); transition: var(--transition); }
+        .header-nav a:hover::after { width: 100%; }
         .header-nav a:hover { color: var(--primary); }
         .header-whatsapp { background: #25d366; color: white; padding: 6px 14px; border-radius: 50px; font-weight: 600; font-size: 0.75rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 4px; }
         .header-whatsapp:hover { transform: scale(1.05); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
-        .hero { background: var(--primary-gradient); padding: 60px 20px; position: relative; overflow: hidden; margin-bottom: 10px; }
-        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; position: relative; z-index: 2; }
-        .hero-text { color: var(--white); }
-        .hero-text .subtitle { color: var(--gold); font-weight: 700; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 10px; display: block; }
-        .hero-text h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 20px; font-weight: 800; }
-        .hero-text p { font-size: 1.1rem; margin-bottom: 20px; opacity: 0.9; }
-        .hero-text strong { color: var(--gold-light); }
-        .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
-        .btn { padding: 12px 28px; border-radius: 50px; font-weight: 700; font-size: 0.95rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; border: none; cursor: pointer; }
-        .btn-primary { background: var(--gold); color: var(--dark); }
-        .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
-        .btn-secondary { border: 2px solid var(--white); color: var(--white); background: transparent; }
-        .btn-secondary:hover { background: var(--white); color: var(--primary-dark); }
-        .hero-image-wrapper { display: flex; justify-content: center; align-items: center; }
-        .hero-image { width: 100%; max-width: 420px; border-radius: 24px; border: 4px solid rgba(255, 255, 255, 0.15); box-shadow: var(--shadow-lg); object-fit: cover; aspect-ratio: 1 / 1; }
+
+        /* HERO */
+        .hero { background: var(--primary-gradient); padding: 70px 20px 60px; position: relative; overflow: hidden; margin-bottom: 10px; }
+        .hero-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 50px; position: relative; z-index: 2; }
+        .hero-imagen { flex: 0 0 320px; max-width: 320px; }
+        .hero-imagen img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 50%; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25), 0 0 0 6px rgba(255, 255, 255, 0.1); transition: var(--transition); }
+        .hero-imagen img:hover { transform: scale(1.02); }
+        .hero-contenido { flex: 1; color: var(--white); }
+        .hero-badge { display: inline-block; background: rgba(255, 179, 0, 0.15); color: var(--gold-light); padding: 4px 18px; border-radius: 50px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; border: 1px solid rgba(255, 179, 0, 0.15); margin-bottom: 14px; }
+        .hero-contenido h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.15; margin-bottom: 8px; }
+        .hero-contenido h1 span { color: var(--gold); }
+        .hero-contenido .subtitulo { font-size: 1.3rem; font-weight: 300; color: rgba(255, 255, 255, 0.85); margin-bottom: 16px; }
+        .hero-contenido .intro-texto { font-size: 1.05rem; line-height: 1.8; color: rgba(255, 255, 255, 0.92); max-width: 650px; margin-bottom: 20px; }
+        .hero-contenido .intro-texto strong { color: var(--gold-light); }
+        .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+        .btn-hero-primary { background: var(--gold); color: var(--primary-dark); padding: 14px 34px; border-radius: 50px; font-weight: 700; font-size: 1rem; transition: var(--transition); box-shadow: 0 8px 25px rgba(255, 179, 0, 0.25); border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-hero-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255, 179, 0, 0.35); background: var(--gold-light); }
+        .btn-hero-secondary { background: rgba(255, 255, 255, 0.1); color: var(--white); padding: 14px 34px; border-radius: 50px; font-weight: 600; font-size: 1rem; transition: var(--transition); border: 2px solid rgba(255, 255, 255, 0.15); backdrop-filter: blur(4px); }
+        .btn-hero-secondary:hover { background: rgba(255, 255, 255, 0.2); transform: translateY(-3px); }
+
+        /* SECCIONES COMUNES */
+        .problema-section { padding: 60px 0 40px; background: var(--white); }
+        .problema-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .problema-contenido h2 { font-size: 2rem; color: var(--primary-dark); margin-bottom: 16px; }
+        .problema-contenido h2 span { color: var(--gold); }
+        .problema-contenido p { font-size: 1rem; line-height: 1.8; color: var(--gray); margin-bottom: 12px; }
+        .problema-contenido .highlight { background: #f0f7f0; padding: 20px 24px; border-radius: var(--radius-sm); border-left: 4px solid var(--primary); margin-top: 16px; }
+        .problema-contenido .highlight p { margin-bottom: 0; font-weight: 500; color: var(--dark); }
+        .problema-imagen { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: var(--radius); padding: 40px; text-align: center; min-height: 250px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .problema-imagen .emoji-big { font-size: 4rem; margin-bottom: 12px; }
+
+        .solucion-section { padding: 50px 0; background: var(--light-bg); }
+        .solucion-header { text-align: center; margin-bottom: 40px; }
+        .solucion-header h2 { font-size: 2rem; color: var(--primary-dark); }
+        .solucion-header h2 span { color: var(--gold); }
+        .solucion-header p { color: var(--gray); font-size: 1rem; max-width: 600px; margin: 8px auto 0; }
+        .solucion-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+        .solucion-card { background: var(--white); padding: 28px 20px; border-radius: var(--radius); box-shadow: var(--shadow-sm); text-align: center; transition: var(--transition); border: 1px solid rgba(0, 0, 0, 0.02); }
+        .solucion-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: rgba(46, 125, 50, 0.08); }
+        .solucion-card .icon { font-size: 2.6rem; display: block; margin-bottom: 10px; }
+        .solucion-card h3 { font-size: 1.05rem; color: var(--primary-dark); margin-bottom: 6px; }
+
+        /* B2B MARCA BLANCA Y BIOHACKING */
         .biohacking-section { background: var(--white); padding: 60px 0; border-bottom: 1px solid var(--gray-light); }
         .brand-section { background: var(--primary-gradient); color: var(--white); padding: 70px 0; }
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
@@ -82,125 +156,200 @@
         .price-tag { font-size: 1.6rem; color: var(--primary); font-weight: 800; margin: 15px 0; }
         .btn-brand-action { background: var(--gold); color: var(--dark); padding: 14px 30px; border-radius: 50px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); border: none; cursor: pointer; }
         .btn-brand-action:hover { background: var(--gold-light); transform: translateY(-3px); }
-        .problem-section { padding: 60px 0; background: var(--white); text-align: center; }
-        .problem-container { max-width: 800px; margin: 0 auto; }
-        .enfoque-section { padding: 60px 0; background: var(--white); }
-        .enfoque-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 30px; }
-        .enfoque-card { background: var(--light-bg); padding: 25px; border-radius: var(--radius); box-shadow: var(--shadow-sm); }
-        .enfoque-card .icon { font-size: 2rem; margin-bottom: 10px; display: block; }
-        .enfoque-card h3 { color: var(--primary-dark); margin-bottom: 10px; }
-        .catalog-section { padding: 60px 0; background: var(--light-bg); }
-        .catalog-title { text-align: center; font-size: 2.2rem; color: var(--primary-dark); font-weight: 800; }
-        .catalog-subtitle { text-align: center; color: var(--gray); margin-bottom: 40px; }
-        .category-block { margin-bottom: 40px; }
-        .category-title { font-size: 1.3rem; color: var(--primary); border-left: 4px solid var(--gold); padding-left: 10px; margin-bottom: 20px; font-weight: 700; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
-        .product-card { background: var(--white); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between; position: relative; border: 1px solid rgba(0,0,0,0.02); }
-        .badge { position: absolute; top: 15px; right: 15px; background: var(--primary-dark); color: white; font-size: 0.65rem; padding: 3px 8px; border-radius: 20px; font-weight: 700; }
-        .badge.popular { background: #e65100; }
-        .badge.essential { background: var(--primary); }
-        .badge.premium { background: var(--primary-dark); }
-        .badge.natural { background: #2e7d32; }
-        .product-card h4 { font-size: 1.1rem; color: var(--dark); margin-bottom: 8px; }
-        .product-desc { font-size: 0.85rem; color: var(--gray); margin-bottom: 12px; }
-        .product-price { font-size: 1.2rem; color: var(--primary-dark); font-weight: 800; margin-bottom: 15px; }
-        .btn-add { background: var(--primary); color: white; text-align: center; padding: 10px; border-radius: var(--radius-sm); font-weight: 600; width: 100%; border: none; cursor: pointer; transition: var(--transition); }
-        .btn-add:hover { background: var(--primary-dark); }
-        .vida-section { padding: 60px 0; background: var(--white); }
-        .vida-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
-        .vida-card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); padding: 25px; border: 1px solid var(--gray-light); }
-        .vida-card .icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
-        .vida-card h3 { color: var(--primary-dark); margin-bottom: 10px; }
-        .footer-section { background: #0d1f0d; color: var(--white); padding: 50px 20px; font-size: 0.9rem; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; max-width: 1240px; margin: 0 auto; }
-        .footer-block h4 { color: var(--gold); margin-bottom: 15px; font-size: 1.1rem; }
-        .footer-block p, .footer-block a { color: rgba(255,255,255,0.8); line-height: 1.6; }
-        .cart-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--white); box-shadow: 0 -5px 25px rgba(0,0,0,0.08); padding: 15px 20px; z-index: 999; border-top: 3px solid var(--primary); }
-        .cart-inner { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-        .cart-total { font-size: 1.25rem; font-weight: 800; color: var(--primary-dark); }
-        .btn-checkout { background: #25d366; color: white; padding: 10px 25px; border-radius: 50px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; border: none; cursor: pointer; transition: var(--transition); font-size: 0.9rem; }
-        .btn-checkout:hover { transform: scale(1.02); box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
-        @media (max-width: 900px) { .grid-2, .hero-container { grid-template-columns: 1fr; text-align: center; } .hero-image { max-width: 300px; margin: 0 auto; } .hero-buttons { justify-content: center; } }
+
+        /* CATÁLOGO */
+        .catalogo-section { padding: 50px 0; background: var(--white); }
+        .catalogo-header { text-align: center; margin-bottom: 35px; }
+        .catalogo-header h2 { font-size: 2rem; color: var(--primary-dark); }
+        .catalogo-header h2 span { color: var(--gold); }
+        .catalogo-header p { color: var(--gray); font-size: 0.95rem; margin-top: 4px; }
+        .category-title { font-size: 1.4rem; color: var(--dark); margin: 35px 0 18px 0; padding-left: 14px; border-left: 5px solid var(--primary); display: flex; align-items: center; gap: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+        .card { background: var(--white); border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); border: 1px solid rgba(0, 0, 0, 0.03); display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(46, 125, 50, 0.06); }
+        .card-img { background: #fafafa; padding: 16px; display: flex; justify-content: center; align-items: center; height: 170px; position: relative; }
+        .card-img img { max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.06)); transition: var(--transition); }
+        .card-img img:hover { transform: scale(1.04); }
+        .card-badge { position: absolute; top: 8px; right: 8px; padding: 3px 10px; border-radius: 50px; font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; background: var(--primary); color: var(--white); }
+        .card-badge.popular { background: #ff6f00; }
+        .card-badge.premium { background: #6a1b9a; }
+        .card-badge.natural { background: #00897b; }
+        .card-badge.energy { background: #d84315; }
+        .card-badge.snack { background: #4e342e; }
+        .card-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; }
+        .card-body h3 { font-size: 0.95rem; font-weight: 700; color: var(--dark); margin-bottom: 3px; line-height: 1.3; }
+        .card-body .desc { font-size: 0.75rem; color: var(--gray); line-height: 1.4; margin-bottom: 6px; min-height: 32px; }
+        .card-body .sabor { font-size: 0.7rem; color: var(--primary); font-weight: 600; margin-bottom: 8px; }
+        .card-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 10px; border-top: 1px solid var(--gray-light); margin-top: auto; }
+        .card-price { font-size: 1.1rem; font-weight: 700; color: var(--primary); }
+        .card-price small { font-size: 0.6rem; font-weight: 400; color: var(--gray); }
+        .btn-add { background: var(--primary); color: var(--white); border: none; padding: 6px 14px; border-radius: 6px; font-weight: 600; font-size: 0.8rem; cursor: pointer; transition: var(--transition); }
+        .btn-add:hover { background: var(--primary-light); transform: scale(1.04); }
+
+        /* BLOG */
+        .blog-section { padding: 50px 0; background: var(--light-bg); }
+        .blog-header { text-align: center; margin-bottom: 35px; }
+        .blog-header h2 { font-size: 2rem; color: var(--primary-dark); }
+        .blog-header h2 span { color: var(--gold); }
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+        .blog-card { background: var(--white); border-radius: var(--radius-sm); padding: 24px 22px 26px; transition: var(--transition); border: 1px solid rgba(0, 0, 0, 0.03); box-shadow: var(--shadow-sm); }
+        .blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+        /* CONTACTO Y FORMULARIO */
+        .contacto-section { padding: 50px 0; background: var(--white); }
+        .contacto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+        .contacto-info h2 { font-size: 2rem; color: var(--primary-dark); margin-bottom: 12px; }
+        .contacto-info .redes { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+        .contacto-info .redes a { background: var(--light-bg); padding: 8px 18px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; transition: var(--transition); color: var(--dark); }
+        .contacto-info .redes a:hover { background: var(--primary); color: var(--white); }
+        .contacto-form { background: var(--light-bg); padding: 30px 28px; border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+        .contacto-form .form-group { margin-bottom: 14px; }
+        .contacto-form .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--dark); margin-bottom: 4px; }
+        .contacto-form .form-group input, .contacto-form .form-group textarea, .contacto-form .form-group select { width: 100%; padding: 10px 14px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 0.9rem; transition: var(--transition); background: var(--white); font-family: inherit; }
+        .contacto-form .form-group textarea { min-height: 80px; resize: vertical; }
+
+        /* FOOTER */
+        .site-footer { background: var(--dark); color: rgba(255, 255, 255, 0.8); padding: 35px 20px 20px; margin-top: 10px; }
+        .footer-grid { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
+        .footer-col h4 { color: var(--white); font-size: 1rem; margin-bottom: 10px; }
+        .footer-bottom { max-width: 1240px; margin: 25px auto 0; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.06); text-align: center; font-size: 0.8rem; color: rgba(255, 255, 255, 0.35); }
+
+        /* CARRITO FLOTANTE */
+        .cart-bar { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%) translateY(180px); width: 92%; max-width: 620px; background: rgba(13, 31, 13, 0.96); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-radius: var(--radius-sm); padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; gap: 10px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4); transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1); z-index: 1000; border: 1px solid rgba(255, 255, 255, 0.04); }
+        .cart-bar.active { transform: translateX(-50%) translateY(0); }
+        .cart-info { color: var(--white); flex: 1; }
+        .cart-actions { display: flex; gap: 6px; align-items: center; }
+        .btn-cart-remove { background: rgba(211, 47, 47, 0.15); color: #ef5350; border: 1px solid rgba(211, 47, 47, 0.1); padding: 6px 12px; border-radius: 6px; font-weight: 600; font-size: 0.7rem; cursor: pointer; }
+        .btn-checkout { background: #25d366; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; cursor: pointer; }
+
+        /* MODAL */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.55); backdrop-filter: blur(4px); display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.35s ease; z-index: 2000; padding: 16px; }
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+        .modal { background: var(--white); padding: 28px 24px; border-radius: var(--radius); width: 100%; max-width: 420px; box-shadow: var(--shadow-lg); max-height: 90vh; overflow-y: auto; }
+
+        @media (max-width: 900px) { .grid-2, .hero-container { flex-direction: column; text-align: center; } .hero-imagen { flex: 0 0 220px; max-width: 220px; } .hero-buttons { justify-content: center; } }
+        @media (max-width: 768px) { .problema-grid, .contacto-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-    <div class="loader" id="loader"><div class="loader-spinner"></div><p>🌿 Cargando conocimiento...</p></div>
+
+    <!-- LOADING SCREEN -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+        <p>🌿 Cargando conocimiento...</p>
+    </div>
+
+    <!-- HEADER -->
     <header class="site-header">
         <div class="container header-inner">
-            <div class="header-brand"><span class="logo-icon">🌿</span><h1>Aliméntate Saludable Hoy</h1></div>
+            <div class="header-brand">
+                <span class="logo-icon">🌿</span>
+                <h1>Aliméntate <span>Saludable</span> Hoy</h1>
+            </div>
             <nav class="header-nav">
-                <a href="#problema">El Problema</a><a href="#enfoque">La Solución</a><a href="#biohacking">Biohacking</a><a href="#marca-blanca">Marca Blanca</a><a href="#catalogo">Catálogo</a><a href="https://wa.me" class="header-whatsapp" target="_blank">💬 WhatsApp</a>
+                <a href="#problema">El Problema</a>
+                <a href="#solucion">La Solución</a>
+                <a href="#biohacking">Biohacking</a>
+                <a href="#cafe-pestana" target="_blank">☕ Café Funcional</a>
+                <a href="#catalogo">Catálogo</a>
+                <a href="#blog">Blog</a>
+                <a href="#contacto">Contacto</a>
+                <a href="https://wa.me/573206344590?text=Hola%20Astrid%2C%20quiero%20empezar%20mi%20transformaci%C3%B3n%20nutricional%20%F0%9F%8C%BF" target="_blank" class="header-whatsapp">
+                    💬 WhatsApp
+                </a>
             </nav>
         </div>
     </header>
-    <!-- ============================
-       HERO SECTION - INTRODUCCIÓN DE ASTRID
-       ============================ -->
+
+    <!-- HERO -->
     <section class="hero">
-        <div class="container hero-container">
-            <div class="hero-text">
-                <span class="subtitle">🌟 Educación Nutricional con Propósito</span>
-                <h1>Hola, soy Astrid</h1>
-                <p>Y sé lo que es sentirte perdido en el mundo de los suplementos...</p>
-                <!-- [Contenido HTML del Bloque 3: Hero section y sección de problema educativa] -->
-                <div class="hero-buttons">
-                    <a href="https://wa.me" class="btn btn-primary" target="_blank">💬 Quiero aprender</a>
-                    <a href="#enfoque" class="btn btn-secondary">📖 Conoce mi enfoque</a>
-                </div>
+        <div class="hero-container">
+            <div class="hero-imagen">
+                <img src="https://raw.githubusercontent.com/permutalibrecol/Herbalifesells/main/imagenes/IMG_20260721_074307.jpg" alt="Astrid - Educación Nutricional y Bienestar" loading="lazy" />
             </div>
-            <div class="hero-image-wrapper">
-                <img src="https://githubusercontent.com" alt="Astrid" class="hero-image" onerror="this.src='https://githubusercontent.com'">
+            <div class="hero-contenido">
+                <span class="hero-badge">🌟 Educación Nutricional con Propósito</span>
+                <h1>Hola, soy <span>Astrid</span></h1>
+                <p class="subtitulo">Y sé lo que es sentirte perdido en el mundo de los suplementos</p>
+                <p class="intro-texto">
+                    Durante años vi cómo personas con disciplina en el gym no lograban resultados porque
+                    <strong>nadie les enseñó a alimentar su cuerpo correctamente</strong>.
+                    No necesitas más pastillas, necesitas <strong>conocimiento</strong>.
+                    Yo te ayudo a entender tu cuerpo, a elegir lo que realmente necesitas y a construir
+                    una vida saludable sostenible. Porque el cambio real no viene de un frasco,
+                    <strong>viene de entenderte a ti mismo</strong>.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn-hero-primary">💬 Quiero aprender</a>
+                    <a href="#problema" class="btn-hero-secondary">📖 Conoce mi enfoque</a>
+                    <a href="https://wa.me/573206344590?text=Hola%20Astrid%2C%20quiero%20conocer%20sobre%20el%20Caf%C3%A9%20Funcional%20y%20Marca%20Blanca" target="_blank" class="btn-hero-primary" style="background:var(--primary-light); color:white;">☕ Pestaña Café & B2B 🚀</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================
-       SECCIÓN EL PROBLEMA
-       ============================ -->
-    <section class="problem-section" id="problema">
-        <div class="container problem-container">
-            <h2 class="bio-title" style="text-align: center;">¿Entrenas duro pero no ves resultados?</h2>
-            <p class="bio-text" style="text-align: center;">
-                No estás solo. Miles de personas invierten tiempo y dinero en suplementos sin entender qué necesita realmente su cuerpo.
-            </p>
+    <!-- EL PROBLEMA -->
+    <section class="problema-section" id="problema">
+        <div class="container">
+            <div class="problema-grid">
+                <div class="problema-contenido">
+                    <h2>¿Entrenas duro pero <span>no ves resultados</span>?</h2>
+                    <p>
+                        No estás solo. Miles de personas invierten tiempo y dinero en suplementos
+                        sin entender qué necesita realmente su cuerpo. Compran lo que está de moda,
+                        lo que un influencer recomienda o lo que vieron en un anuncio.
+                    </p>
+                    <p>
+                        <strong>El problema no es el suplemento, es la falta de educación.</strong>
+                        Sin conocimiento, estás navegando a ciegas. Y eso no solo afecta tus resultados,
+                        también tu salud y tu bolsillo.
+                    </p>
+                    <div class="highlight">
+                        <p>💡 <strong>Mi misión:</strong> Que entiendas tu cuerpo para que tomes decisiones informadas. No vendo humo, educo. Eso es lo que hago.</p>
+                    </div>
+                </div>
+                <div class="problema-imagen">
+                    <span class="emoji-big">🤔</span>
+                    <p>¿Cuánto has gastado en suplementos sin saber si realmente los necesitas?</p>
+                    <p style="font-size:0.8rem;color:var(--gray);margin-top:6px;">La educación nutricional cambia eso.</p>
+                </div>
+            </div>
         </div>
     </section>
-    <!-- ============================
-       SECCIÓN MI ENFOQUE
-       ============================ -->
-    <section class="enfoque-section" id="enfoque">
+
+    <!-- LA SOLUCIÓN -->
+    <section class="solucion-section" id="solucion">
         <div class="container">
-            <h2 class="bio-title" style="text-align: center;">Mi enfoque: Educar para Empoderar</h2>
-            <p class="bio-text" style="text-align: center;">No te vendo productos, te enseño a elegir. El conocimiento es la herramienta más poderosa para transformar tu vida.</p>
-            
-            <div class="enfoque-grid">
-                <div class="enfoque-card">
+            <div class="solucion-header">
+                <h2>Mi enfoque: <span>Educar para Empoderar</span></h2>
+                <p>No te vendo productos, te enseño a elegir. El conocimiento es la herramienta más poderosa para transformar tu vida.</p>
+            </div>
+            <div class="solucion-grid">
+                <div class="solucion-card">
                     <span class="icon">📚</span>
                     <h3>Educación Nutricional</h3>
-                    <p class="bio-text">Aprende a leer etiquetas, entender macronutrientes y elegir alimentos que realmente nutran tu cuerpo.</p>
+                    <p>Aprende a leer etiquetas, entender macronutrientes y elegir alimentos que realmente nutran tu cuerpo.</p>
                 </div>
-                <div class="enfoque-card">
+                <div class="solucion-card">
                     <span class="icon">🧬</span>
                     <h3>Entendiendo tu Cuerpo</h3>
-                    <p class="bio-text">Cada cuerpo es único. Te ayudo a identificar lo que realmente necesitas según tu estilo de vida y objetivos.</p>
+                    <p>Cada cuerpo es único. Te ayudo a identificar lo que realmente necesitas según tu estilo de vida y objetivos.</p>
                 </div>
-                <div class="enfoque-card">
+                <div class="solucion-card">
                     <span class="icon">🤝</span>
                     <h3>Acompañamiento Real</h3>
-                    <p class="bio-text">No estás solo en este camino. Te guío paso a paso con seguimiento personalizado y ajustes según tu evolución.</p>
+                    <p>No estás solo en este camino. Te guío paso a paso con seguimiento personalizado y ajustes según tu evolución.</p>
                 </div>
-                <div class="enfoque-card">
+                <div class="solucion-card">
                     <span class="icon">🎯</span>
                     <h3>Suplementos con Sentido</h3>
-                    <p class="bio-text">Cuando realmente los necesites, te enseño a elegir los adecuados. Sin presión, sin ventas forzadas.</p>
+                    <p>Cuando realmente los necesites, te enseño a elegir los adecuados. Sin presión, sin ventas forzadas.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==========================================
-         SECCIÓN 1: BIOHACKING NUTRICIONAL (B2C)
-         ========================================== -->
+    <!-- SECCIÓN B2C BIOHACKING NUTRICIONAL & CAFÉ -->
     <section class="biohacking-section" id="biohacking">
         <div class="container grid-2">
             <div>
@@ -210,7 +359,7 @@
                     El verdadero bienestar no se trata de añadir procesos complejos a tu vida, sino de <strong>hackear de forma inteligente tus hábitos cotidianos</strong>. Al combinar la ciencia de la nutrición celular con alimentos funcionales de alto impacto, despiertas el máximo potencial de tu metabolismo.
                 </p>
                 <p class="bio-text">
-                    Aprende a estructurar un ecosistema donde tu café matutino activa la termogénesis natural, las proteínas premium de Herbalife reconstruyen tus músculos y los micronutrientes esenciales protegen tu salud cardiovascular desde la primera hora del día.
+                    Aprende a estructurar un ecosistema donde tu café matutino activa la termogénesis natural, las proteínas premium reconstruyen tus músculos y los micronutrientes esenciales protegen tu salud cardiovascular desde la primera hora del día.
                 </p>
             </div>
             
@@ -219,17 +368,15 @@
                 <h3>Café Funcional Termogénico</h3>
                 <p style="font-size: 0.9rem; color: var(--gray);">Tu hábito de siempre, optimizado para acelerar la quema de grasa y darte enfoque láser en el gym.</p>
                 <div class="price-tag">$135.000 COP</div>
-                <button class="btn-add" onclick="agregarAlCarrito('Café Funcional Termogénico', 135000)">
+                <button class="btn-add" style="padding:10px 20px; font-size:0.9rem;" onclick="agregarAlCarritoPorDatos('P00_CAFE', 'Café Funcional Termogénico', 135000)">
                     🛒 Añadir al Pedido
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- ==========================================
-         SECCIÓN 2: DISTRIBUCIÓN MARCA BLANCA (B2B)
-         ========================================== -->
-    <section class="brand-section" id="marca-blanca">
+    <!-- SECCIÓN B2B MARCA BLANCA / ASOHERMOSAS (SECCIÓN DE CAFÉ DESTRICADA) -->
+    <section class="brand-section" id="cafe-pestana">
         <div class="container grid-2">
             <div style="text-align: center;">
                 <span style="font-size: 5rem;">💼</span>
@@ -246,293 +393,674 @@
                     Si eres dueño de un gimnasio, influencer fitness, profesional de la salud o emprendedor, es momento de monetizar tu comunidad con un producto propio de alta demanda en Colombia. 
                 </p>
                 <p class="brand-text">
-                    A través de nuestra alianza con <strong>Asohermosas</strong>, te ofrecemos el servicio completo de <strong>maquila y distribución de marca blanca</strong> de café funcional. Astrid te asesora paso a paso en el perfil nutricional y la estructura comercial para que lances una línea exitosa, rentable y con los más altos estándares de calidad.
+                    A través de nuestra alianza con <strong>Asohermosas</strong>, te ofrecemos el servicio completo de <strong>maquila y distribución de marca blanca</strong> de café funcional. Astrid te asesora paso a paso en el perfil nutricional y la estructura comercial.
                 </p>
-                <a href="https://wa.me" class="btn-brand-action" target="_blank">
-                    🤝 Hablar con Astrid sobre Distribución
+                <a href="https://wa.me/573206344590?text=Hola%20Astrid%2C%20estoy%20interesado%20en%20crear%20mi%20propia%20marca%20de%20Caf%C3%A9%20Saludable%20(Marca%20Blanca%20Asohermosas)" class="btn-brand-action" target="_blank">
+                    🤝 Hablar con Astrid sobre Distribución (Nueva Pestaña) ↗
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- ============================
-       INICIO DEL CATÁLOGO DE PRODUCTOS
-       ============================ -->
-    <section class="catalog-section" id="catalogo">
+    <!-- CATÁLOGO DE PRODUCTOS -->
+    <section class="catalogo-section" id="catalogo">
         <div class="container">
-            <h2 class="catalog-title">🌿 Herramientas Recomendadas</h2>
-            <p class="catalog-subtitle">Productos que pueden complementar tu camino, siempre con conocimiento y asesoría.</p>
-            <!-- CATEGORÍA: BEBIDAS Y ENERGIZANTES -->
-            <div class="category-block">
-                <h3 class="category-title">🥤 Bebidas y Energizantes</h3>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <span class="badge popular">🔥 Popular</span>
-                        <h4>Golden Beverage</h4>
-                        <p class="product-desc">Bebida energizante con frutas tropicales. Sabor: Tropical.</p>
-                        <div class="product-price">$145.000 COP</div>
-                        <button class="btn-add" onclick="agregarAlCarrito('Golden Beverage (Tropical)', 145000)">Añadir al Carrito</button>
+            <div class="catalogo-header">
+                <h2>🌿 <span>Herramientas</span> Recomendadas</h2>
+                <p>Productos que pueden complementar tu camino, siempre con conocimiento y asesoría.</p>
+            </div>
+
+            <!-- ===== CATEGORÍA 1: BEBIDAS Y ENERGIZANTES ===== -->
+            <div class="category-title"><span>🥤</span> Bebidas y Energizantes</div>
+            <div class="grid">
+
+                <div class="card" data-id="P01" data-name="Golden Beverage" data-price="145000">
+                    <div class="card-img">
+                        <span class="card-badge popular">🔥 Popular</span>
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-238k-co.png:pdp-w875h783?fmt=webp-alpha" alt="Golden Beverage" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Golden'">
                     </div>
-                    <div class="product-card">
-                        <span class="badge essential">⚡ Energía</span>
-                        <h4>Kickoff</h4>
-                        <p class="product-desc">Energizante concentrado con guaraná y taurina. Sabores: Durazno, Guaraná Tropical.</p>
-                        <div class="product-price">$145.000 COP</div>
-                        <button class="btn-add" onclick="agregarAlCarrito('Kickoff (Energizante)', 145000)">Añadir al Carrito</button>
+                    <div class="card-body">
+                        <h3>Golden Beverage</h3>
+                        <div class="desc">Bebida energizante con frutas tropicales.</div>
+                        <div class="sabor">🍍 Tropical</div>
+                        <div class="card-footer">
+                            <div class="card-price">$145.000 <small>COP</small></div>
+                            <button class="btn-add" onclick="agregarAlCarrito('P01')">Añadir</button>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <span class="badge">🌙 Relax</span>
-                        <h4>Herbal Relax Infusion</h4>
-                        <p class="product-desc">Infusión relajante con hierbas naturales seleccionadas. Sabor: Menta.</p>
-                        <div class="product-price">$126.000 COP</div>
-                        <button class="btn-add" onclick="agregarAlCarrito('Herbal Relax Infusion', 126000)">Añadir al Carrito</button>
+                </div>
+
+                <div class="card" data-id="P02" data-name="Kickoff" data-price="145000">
+                    <div class="card-img">
+                        <span class="card-badge energy">⚡ Energía</span>
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-204k-co.png:pdp-w875h783?fmt=webp-alpha" alt="Kickoff" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Kickoff'">
                     </div>
-                    <div class="product-card">
-                        <span class="badge essential">⚡ Energía</span>
-                        <h4>NRG</h4>
-                        <p class="product-desc">Mezcla energizante limpia a base de té verde. Sabores: Original, Chai.</p>
-                        <div class="product-price">$97.000 COP</div>
-                        <button class="btn-add" onclick="agregarAlCarrito('NRG (Té Verde)', 97000)">Añadir al Carrito</button>
+                    <div class="card-body">
+                        <h3>Kickoff</h3>
+                        <div class="desc">Energizante con guaraná y taurina.</div>
+                        <div class="sabor">🍑 Durazno, Guaraná Tropical</div>
+                        <div class="card-footer">
+                            <div class="card-price">$145.000 <small>COP</small></div>
+                            <button class="btn-add" onclick="agregarAlCarrito('P02')">Añadir</button>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <span class="badge natural">🌿 Natural</span>
-                        <h4>Herbal Aloe</h4>
-                        <p class="product-desc">Bebida premium de sábila orgánica concentrada. Sabores: Mandarina, Mango, Original.</p>
-                        <div class="product-price">$166.000 COP</div>
-                        <button class="btn-add" onclick="agregarAlCarrito('Herbal Aloe', 166000)">Añadir al Carrito</button>
+                </div>
+
+                <div class="card" data-id="P05" data-name="Herbal Relax Infusion" data-price="126000">
+                    <div class="card-img">
+                        <span class="card-badge natural">🌙 Relax</span>
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-044k-co.png:pdp-w875h783?fmt=webp-alpha" alt="Herbal Relax" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Relax'">
                     </div>
-                    <div class="product-card">
-                        <span class="badge essential">⭐ Esencial</span>
-                        <h4>Bebida Herbal</h4>
-                        <p class="product-desc">Té instantáneo concentrado con hierbas finas. Sabores: Limón, Frambuesa, Chai, Durazno, Original.</p>
-                        <div class="product-price">$105.000 COP</div>
-                        <button class="btn-add" onclick="agregarAlCarrito('Bebida Herbal (Té)', 105000)">Añadir al Carrito</button>
+                    <div class="card-body">
+                        <h3>Herbal Relax Infusion</h3>
+                        <div class="desc">Infusión relajante con hierbas naturales.</div>
+                        <div class="sabor">🌿 Menta</div>
+                        <div class="card-footer">
+                            <div class="card-price">$126.000 <small>COP</small></div>
+                            <button class="btn-add" onclick="agregarAlCarrito('P05')">Añadir</button>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <span class="badge premium">💎 Premium</span>
-                        <h4>Beverage Mix</h4>
-                        <p class="product-desc">Mezcla refrescante para bebida proteica con sabor a frutas. Sabor: Mezcla de frutas.</p>
-                        <div class="product-price">$140.000 COP</div>
-                        <button class="btn-add" onclick="agregarAlCarrito('Beverage Mix (Proteína Frutal)', 140000)">Añadir al Carrito</button>
+                </div>
+
+                <div class="card" data-id="P06" data-name="NRG" data-price="97000">
+                    <div class="card-img">
+                        <span class="card-badge energy">⚡ Energía</span>
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-075k-co.png:pdp-w875h783?fmt=webp-alpha" alt="NRG" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=NRG'">
+                    </div>
+                    <div class="card-body">
+                        <h3>NRG</h3>
+                        <div class="desc">Mezcla energizante con té verde.</div>
+                        <div class="sabor">🍵 Original, Chai</div>
+                        <div class="card-footer">
+                            <div class="card-price">$97.000 <small>COP</small></div>
+                            <button class="btn-add" onclick="agregarAlCarrito('P06')">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-id="P07" data-name="Herbal Aloe" data-price="166000">
+                    <div class="card-img">
+                        <span class="card-badge natural">🌿 Natural</span>
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-2631-co.png:pdp-w875h783?fmt=webp-alpha" alt="Herbal Aloe" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Aloe'">
+                    </div>
+                    <div class="card-body">
+                        <h3>Herbal Aloe</h3>
+                        <div class="desc">Bebida de sábila orgánica.</div>
+                        <div class="sabor">🍊 Mandarina, Mango, Original</div>
+                        <div class="card-footer">
+                            <div class="card-price">$166.000 <small>COP</small></div>
+                            <button class="btn-add" onclick="agregarAlCarrito('P07')">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-id="P08" data-name="Bebida Herbal" data-price="105000">
+                    <div class="card-img">
+                        <span class="card-badge">⭐ Esencial</span>
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-0106-co.png:pdp-w875h783?fmt=webp-alpha" alt="Bebida Herbal" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Bebida+Herbal'">
+                    </div>
+                    <div class="card-body">
+                        <h3>Bebida Herbal</h3>
+                        <div class="desc">Té instantáneo con hierbas.</div>
+                        <div class="sabor">🍵 Limón, Frambuesa, Chai, Durazno, Original</div>
+                        <div class="card-footer">
+                            <div class="card-price">$105.000 <small>COP</small></div>
+                            <button class="btn-add" onclick="agregarAlCarrito('P08')">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-id="P09" data-name="Beverage Mix" data-price="140000">
+                    <div class="card-img">
+                        <span class="card-badge premium">💎 Premium</span>
+                        <img src="https://www.herbalife.com.co/content/dam/herbalife/brand-products/beverages/beverage-mix.png" alt="Beverage Mix" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Beverage+Mix'">
+                    </div>
+                    <div class="card-body">
+                        <h3>Beverage Mix</h3>
+                        <div class="desc">Mezcla para bebida proteica con sabor a frutas.</div>
+                        <div class="sabor">🍓 Mezcla de frutas</div>
+                        <div class="card-footer">
+                            <div class="card-price">$140.000 <small>COP</small></div>
+                            <button class="btn-add" onclick="agregarAlCarrito('P09')">Añadir</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-                        <!-- CATEGORÍA: 💪 PROTEÍNAS Y NUTRICIÓN -->
-            <div class="category-block">
-                <h3 class="category-title">💪 Proteínas y Nutrición Celular</h3>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <span class="badge essential">⭐ Esencial</span>
-                        <h4>Fórmula 1 Batido Nutricional</h4>
-                        <p class="product-desc">Sustituto de comida completo con 21 vitaminas esenciales. Disponible en 9 sabores deliciosos.</p>
-                        <div class="product-price">$142.000 COP</div>
-                        <button class="btn-add" onclick="agregarAlCarrito('Fórmula 1 Batido Nutricional', 142000)">Añadir al Carrito</button>
+            <!-- ===== CATEGORÍA 2: PROTEÍNAS Y NUTRICIÓN ===== -->
+            <div class="category-title"><span>💪</span> Proteínas y Nutrición</div>
+            <div class="grid">
+
+                <div class="card" data-id="P10" data-name="Fórmula 1 Batido Nutricional" data-price="142000">
+                    <div class="card-img">
+                        <span class="card-badge">⭐ Esencial</span>
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-0146-co.png:pdp-w875h783?fmt=webp-alpha" alt="Fórmula 1" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=F1'">
                     </div>
-                    <div class="product-card">
-                        <span class="badge premium">💎 Premium</span>
-                        <h4>Alimento Proteínico Premium</h4>
-                        <p class="product-desc">Proteína en polvo pura de alta calidad para complementar eficazmente tu requerimiento diario. 2 Sabores.</p>
-                        <div class="product-price">$240.000 COP</div>
-                        <button class="btn-add" onclick="agregarAlCarrito('Alimento Proteínico Premium', 240000)">Añadir al Carrito</button>
-                    </div>
-                    <div class="product-card">
-                        <span class="badge premium">💎 Premium</span>
-                        <h4>Proteína PDM</h4>
-                        <p class="product-desc">Refuerzo proteico intermedio cremoso. Sabores: Vainilla y Crema de Maní.</p>
-                        <div class="product-price">$205.000 COP</div>
-                        <button class="btn-add" onclick="agregarAlCarrito('Proteína PDM', 205000)">Añadir al Carrito</button>
-                    </div>
-                    <div class="product-card">
-                        <span class="badge premium">💎 Premium</span>
-                        <h4>Rebuild Strength</h4>
-                        <p class="product-desc">Proteína premium post-entreno diseñada para una recuperación muscular rápida y efectiva. Sabores: Chocolate, Vainilla.</p>
-                        <div class="product-price">$342.000 COP</div>
-                        <button class="btn-add" onclick="agregarAlCarrito('Rebuild Strength', 342000)">Añadir al Carrito</button>
-                    </div>
-                    <div class="product-card">
-                        <span class="badge natural">🌿 Natural</span>
-                        <h4>Fibra Activa</h4>
-                        <p class="product-desc">Fibra soluble de alta calidad para promover una digestión saludable y regular. Sabor: Manzana.</p>
-                        <div class="product-price">$135.000 COP</div>
-                        <button class="btn-add" onclick="agregarAlCarrito('Fibra Activa', 135000)">Añadir al Carrito</button>
+                    <div class="card-body">
+                        <h3>Fórmula 1 Batido Nutricional</h3>
+                        <div class="desc">Sustituto de comida con 21 vitaminas.</div>
+                        <div class="sabor">🍦 9 Sabores</div>
+                        <div class="card-footer">
+                            <div class="card-price">$142.000 <small>COP</small></div>
+                            <button class="btn-add" onclick="agregarAlCarrito('P10')">Añadir</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- CATEGORÍA: 🌿 SUPLEMENTOS Y BIENESTAR -->
-            <div class="category-block">
-                <h3 class="category-title">🌿 Suplementos y Bienestar</h3>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <span class="badge premium">💎 Premium</span>
-                        <h4>Collagen Drink</h4>
-                        <p class="product-desc">Colágeno hidrolizado de calidad superior para el cuidado de la piel y articulaciones. Sabor: Limonada de Fresa.</p>
-                        <div class="product-price">$194.000 COP</div>
-                        <button class="btn-add" onclick="agregarAlCarrito('Collagen Drink', 194000)">Añadir al Carrito</button>
+
+                <div class="card" data-id="P11" data-name="Alimento Proteínico" data-price="240000">
+                    <div class="card-img">
+                        <span class="card-badge premium">💎 Premium</span>
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-2648-co.png:pdp-w875h783?fmt=webp-alpha" alt="Alimento Proteínico" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Proteínico'">
                     </div>
-                    <div class="product-card">
-                        <span class="badge premium">💎 Premium</span>
-                        <h4>Beta Glucanor</h4>
-                        <p class="product-desc">Apoya activamente el sistema inmunológico y una digestión saludable. Sabor: Vainilla.</p>
-                        <div class="product-price">$167.000 COP</div>
-                        <button class="btn-add" onclick="agregarAlCarrito('Beta Glucanor', 167000)">Añadir al Carrito</button>
+                    <div class="card-body">
+                        <h3>Alimento Proteínico</h3>
+                        <div class="desc">Proteína en polvo para complementar tu nutrición.</div>
+                        <div class="sabor">🥛 2 Sabores</div>
+                        <div class="card-footer">
+                            <div class="card-price">$240.000 <small>COP</small></div>
+                            <button class="btn-add" onclick="agregarAlCarrito('P11')">Añadir</button>
+                        </div>
                     </div>
-                    <div class="product-card">
-                        <span class="badge premium">💎 Premium</span>
-                        <h4>Herbalifeline Plus</h4>
-                        <p class="product-desc">Ácidos grasos esenciales Omega-3 que benefician el funcionamiento del corazón y el cerebro. Contiene 60 cápsulas.</p>
-                        <div class="product-price">$185.000 COP</div>
-                        <button class="btn-add" onclick="agregarAlCarrito('Herbalifeline Plus', 185000)">Añadir al Carrito</button>
+                </div>
+
+                <div class="card" data-id="P13" data-name="Proteína PDM" data-price="205000">
+                    <div class="card-img">
+                        <span class="card-badge premium">💎 Premium</span>
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-1122-co.png:pdp-w875h783?fmt=webp-alpha" alt="PDM" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=PDM'">
+                    </div>
+                    <div class="card-body">
+                        <h3>Proteína PDM</h3>
+                        <div class="desc">Refuerzo proteico intermedio.</div>
+                        <div class="sabor">🥛 Vainilla, Crema de Maní</div>
+                        <div class="card-footer">
+                            <div class="card-price">$205.000 <small>COP</small></div>
+                            <button class="btn-add" onclick="agregarAlCarrito('P13')">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-id="P14" data-name="Rebuild Strength" data-price="342000">
+                    <div class="card-img">
+                        <span class="card-badge premium">💎 Premium</span>
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-1417-co.png:pdp-w875h783?fmt=webp-alpha" alt="Rebuild Strength" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Rebuild'">
+                    </div>
+                    <div class="card-body">
+                        <h3>Rebuild Strength</h3>
+                        <div class="desc">Proteína para recuperación muscular.</div>
+                        <div class="sabor">🍫 Chocolate, Vainilla</div>
+                        <div class="card-footer">
+                            <div class="card-price">$342.000 <small>COP</small></div>
+                            <button class="btn-add" onclick="agregarAlCarrito('P14')">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-id="P15" data-name="Fibra Activa" data-price="135000">
+                    <div class="card-img">
+                        <span class="card-badge natural">🌿 Natural</span>
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-2864-co.png:pdp-w875h783?fmt=webp-alpha" alt="Fibra Activa" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Fibra'">
+                    </div>
+                    <div class="card-body">
+                        <h3>Fibra Activa</h3>
+                        <div class="desc">Fibra soluble para digestión saludable.</div>
+                        <div class="sabor">🍎 Manzana</div>
+                        <div class="card-footer">
+                            <div class="card-price">$135.000 <small>COP</small></div>
+                            <button class="btn-add" onclick="agregarAlCarrito('P15')">Añadir</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- CATEGORÍA: 🍫 SNACKS Y COMPLEMENTOS -->
-            <div class="category-block">
-                <h3 class="category-title">🍫 Snacks y Complementos</h3>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <span class="badge">🍿 Snack</span>
-                        <h4>Crocante de Proteína</h4>
-                        <p class="product-desc">Snack crujiente y delicioso ideal para consumir entre comidas. Sabor: Sin sabor.</p>
-                        <div class="product-price">$65.000 COP</div>
-                        <button class="btn-add" onclick="agregarAlCarrito('Crocante de Proteína', 65000)">Añadir al Carrito</button>
+            <!-- ===== CATEGORÍA 3: SUPLEMENTOS Y BIENESTAR ===== -->
+            <div class="category-title"><span>🌿</span> Suplementos y Bienestar</div>
+            <div class="grid">
+
+                <div class="card" data-id="P17" data-name="Collagen Drink" data-price="194000">
+                    <div class="card-img">
+                        <span class="card-badge premium">💎 Premium</span>
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-3987-co.png:pdp-w875h783?fmt=webp-alpha" alt="Collagen" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Collagen'">
                     </div>
-                    <div class="product-card">
-                        <span class="badge">🍫 Snack</span>
-                        <h4>Barra de Proteína</h4>
-                        <p class="product-desc">Caja que contiene 14 deliciosas barras de proteína. Sabores: Vainilla Almendras, Chocoavellana.</p>
-                        <div class="product-price">$119.000 COP</div>
-                        <button class="btn-add" onclick="agregarAlCarrito('Barra de Proteína (Caja)', 119000)">Añadir al Carrito</button>
+                    <div class="card-body">
+                        <h3>Collagen Drink</h3>
+                        <div class="desc">Colágeno hidrolizado para piel y articulaciones.</div>
+                        <div class="sabor">🍓 Limonada de Fresa</div>
+                        <div class="card-footer">
+                            <div class="card-price">$194.000 <small>COP</small></div>
+                            <button class="btn-add" onclick="agregarAlCarrito('P17')">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-id="P18" data-name="Beta Glucanor" data-price="167000">
+                    <div class="card-img">
+                        <span class="card-badge premium">💎 Premium</span>
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-0267-co.png:pdp-w875h783?fmt=webp-alpha" alt="Beta Glucanor" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Beta'">
+                    </div>
+                    <div class="card-body">
+                        <h3>Beta Glucanor</h3>
+                        <div class="desc">Apoya sistema inmunológico y digestión.</div>
+                        <div class="sabor">🥛 Vainilla</div>
+                        <div class="card-footer">
+                            <div class="card-price">$167.000 <small>COP</small></div>
+                            <button class="btn-add" onclick="agregarAlCarrito('P18')">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-id="P19" data-name="Herbalifeline Plus" data-price="185000">
+                    <div class="card-img">
+                        <span class="card-badge premium">💎 Premium</span>
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-0065-co.png:pdp-w875h783?fmt=webp-alpha" alt="Herbalifeline" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Herbalifeline'">
+                    </div>
+                    <div class="card-body">
+                        <h3>Herbalifeline Plus</h3>
+                        <div class="desc">Ácidos grasos para corazón y cerebro.</div>
+                        <div class="sabor">💊 60 cápsulas</div>
+                        <div class="card-footer">
+                            <div class="card-price">$185.000 <small>COP</small></div>
+                            <button class="btn-add" onclick="agregarAlCarrito('P19')">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== CATEGORÍA 4: SNACKS ===== -->
+            <div class="category-title"><span>🍫</span> Snacks y Complementos</div>
+            <div class="grid">
+
+                <div class="card" data-id="P20" data-name="Crocante de Proteína" data-price="65000">
+                    <div class="card-img">
+                        <span class="card-badge snack">🍿 Snack</span>
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-040k-co.png:pdp-w875h783?fmt=webp-alpha" alt="Crocante" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Crocante'">
+                    </div>
+                    <div class="card-body">
+                        <h3>Crocante de Proteína</h3>
+                        <div class="desc">Snack crujiente para entre comidas.</div>
+                        <div class="sabor">🥜 Sin sabor</div>
+                        <div class="card-footer">
+                            <div class="card-price">$65.000 <small>COP</small></div>
+                            <button class="btn-add" onclick="agregarAlCarrito('P20')">Añadir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" data-id="P21" data-name="Barra de Proteína" data-price="119000">
+                    <div class="card-img">
+                        <span class="card-badge snack">🍫 Snack</span>
+                        <img src="https://www.herbalife.com/dmassets/market-reusable-assets/amer/colombia/images/canister/pc-1119-co.png:pdp-w875h783?fmt=webp-alpha" alt="Barra" loading="lazy" onerror="this.src='https://via.placeholder.com/200x200/2e7d32/ffffff?text=Barra'">
+                    </div>
+                    <div class="card-body">
+                        <h3>Barra de Proteína</h3>
+                        <div class="desc">14 barras por caja. Vainilla y almendras.</div>
+                        <div class="sabor">🥜 Vainilla Almendras, Chocoavellana</div>
+                        <div class="card-footer">
+                            <div class="card-price">$119.000 <small>COP</small></div>
+                            <button class="btn-add" onclick="agregarAlCarrito('P21')">Añadir</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ============================
-       📖 FUERZA, CUERPO Y VIDA
-       ============================ -->
-    <section class="vida-section" id="vida">
+
+    <!-- BLOG -->
+    <section class="blog-section" id="blog">
         <div class="container">
-            <h2 class="bio-title" style="text-align: center; margin-bottom: 10px;">📖 Fuerza, Cuerpo y Vida</h2>
-            <p class="bio-text" style="text-align: center; margin-bottom: 40px;">Equilibrio entre ejercicio, alimentación y bienestar integral</p>
-            
-            <div class="vida-grid">
-                <div class="vida-card">
-                    <span class="icon">🏋</span>
+            <div class="blog-header">
+                <h2>📖 <span>Fuerza, Cuerpo y Vida</span></h2>
+                <p class="lema">Equilibrio entre ejercicio, alimentación y bienestar integral</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <span class="icon">🏋️</span>
                     <h3>Ejercicio: El Motor de tu Energía</h3>
-                    <p class="bio-text" style="font-size: 0.95rem;">El movimiento diario fortalece músculos, estado de ánimo y salud cardiovascular mediante constancia y rutinas adaptadas a tu ritmo.</p>
+                    <p>
+                        El movimiento diario no solo fortalece músculos, también mejora tu estado de ánimo,
+                        calidad del sueño y salud cardiovascular. Encuentra la rutina que se adapte a ti.
+                    </p>
+                    <span class="tag">💪 Movimiento</span>
                 </div>
-                
-                <div class="vida-card">
+                <div class="blog-card">
                     <span class="icon">🥗</span>
                     <h3>Alimentación Consciente</h3>
-                    <p class="bio-text" style="font-size: 0.95rem;">Nutre tu cuerpo priorizando proteínas, grasas saludables e hidratación para mantener alta tu vitalidad.</p>
+                    <p>
+                        Comer bien no es restringirse, es nutrir tu cuerpo con lo que realmente necesita.
+                        Prioriza proteínas de calidad, grasas saludables y carbohidratos complejos.
+                    </p>
+                    <span class="tag">🍽️ Nutrición</span>
                 </div>
-                
-                <div class="vida-card">
+                <div class="blog-card">
                     <span class="icon">🧠</span>
                     <h3>Vida en Equilibrio</h3>
-                    <p class="bio-text" style="font-size: 0.95rem;">Integra el descanso, la gestión del estrés y pequeños hábitos diarios para transformar tu bienestar de forma duradera.</p>
+                    <p>
+                        El verdadero bienestar integra cuerpo, mente y espíritu. El descanso reparador
+                        y la gestión del estrés son tan importantes como el ejercicio.
+                    </p>
+                    <span class="tag">🌟 Bienestar</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================
-       ¿LISTO PARA TRANSFORMAR TU VIDA?
-       ============================ -->
-    <section class="problem-section" style="background: var(--light-bg); border-top: 1px solid var(--gray-light);">
-        <div class="container problem-container">
-            <h2 class="bio-title">¿Listo para transformar tu vida?</h2>
-            <p class="bio-text">
-                Da el paso hacia el conocimiento real con un enfoque 100% personalizado.
+    <!-- CONTACTO Y FORMULARIO -->
+    <section class="contacto-section" id="contacto">
+        <div class="container">
+            <div class="contacto-grid">
+                <div class="contacto-info">
+                    <h2>¿Listo para <span>transformar</span> tu vida?</h2>
+                    <p>
+                        No importa si estás empezando o ya llevas tiempo en el mundo del fitness.
+                        Lo importante es que des el paso hacia el conocimiento real. Yo te acompaño
+                        en cada etapa con educación y seguimiento 100% personalizado.
+                    </p>
+                    <p>
+                        <strong>Escríbeme y empecemos a construir juntos tu camino saludable.</strong>
+                    </p>
+                    <a href="mailto:astridvidasana@gmail.com?subject=Quiero%20empezar%20mi%20transformaci%C3%B3n%20nutricional&body=Hola%20Astrid%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tu%20asesor%C3%ADa%20nutricional." class="btn-hero-primary" style="margin-top:15px;">
+                        ✉️ Escribir a Astrid
+                    </a>
+                    <div class="redes">
+                        <a href="https://www.instagram.com/astridvidasana/" target="_blank">📸 Instagram</a>
+                        <a href="https://www.facebook.com/astridvidasana" target="_blank">📘 Facebook</a>
+                        <a href="https://www.youtube.com/@astridvidasana" target="_blank">▶️ YouTube</a>
+                        <a href="https://wa.me/573206344590" target="_blank">💬 WhatsApp</a>
+                    </div>
+                </div>
+                <div class="contacto-form">
+                    <h3>📩 Déjame tu mensaje</h3>
+                    <p style="font-size:0.85rem; color:var(--gray); margin-bottom:18px;">Cuéntame sobre ti y lo que necesitas, te responderé a la brevedad.</p>
+                    <form id="formContacto" onsubmit="enviarFormulario(event)">
+                        <div class="form-group">
+                            <label for="nombreForm">Nombre completo</label>
+                            <input type="text" id="nombreForm" placeholder="Ej. María González" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="emailForm">Correo electrónico</label>
+                            <input type="email" id="emailForm" placeholder="tucorreo@ejemplo.com" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="telefonoForm">Teléfono (opcional)</label>
+                            <input type="tel" id="telefonoForm" placeholder="Ej. 3101234567" />
+                        </div>
+                        <div class="form-group">
+                            <label for="mensajeForm">¿Qué te gustaría aprender o mejorar?</label>
+                            <textarea id="mensajeForm" placeholder="Cuéntame sobre tus objetivos o dudas..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-hero-primary" style="width:100%; justify-content:center;">Enviar mensaje ✉️</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>🌿 Aliméntate Saludable Hoy</h4>
+                <p>
+                    Educación nutricional con propósito. Acompañamiento real para que entiendas tu cuerpo
+                    y tomes decisiones informadas sobre tu salud y bienestar.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>📞 Contacto</h4>
+                <p>
+                    <a href="mailto:astridvidasana@gmail.com">✉️ astridvidasana@gmail.com</a><br />
+                    <a href="https://wa.me/573206344590">💬 +57 320 634 4590</a>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>🔗 Sígueme</h4>
+                <div class="redes" style="margin-top:10px;">
+                    <a href="https://www.instagram.com/astridvidasana/" target="_blank" style="color:white;">📸 Instagram</a>
+                    <a href="https://www.facebook.com/astridvidasana" target="_blank" style="color:white;">📘 Facebook</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>
+                © 2026 <strong>Astrid - Aliméntate Saludable Hoy</strong>.
+                Todos los derechos reservados. | Hecho con ❤️ para tu salud y bienestar.
             </p>
         </div>
-    </section>
-    <!-- ============================
-       📩 FORMULARIO DE CONTACTO Y REDES
-       ============================ -->
-    <section class="footer-section" style="background: #0d1f0d; color: var(--white); padding: 50px 20px;">
-        <div class="footer-grid">
-            <div class="footer-block">
-                <h4>🌿 Aliméntate Saludable Hoy</h4>
-                <p>Educación nutricional con propósito. Acompañamiento real para que entiendas tu cuerpo y tomes decisiones informadas sobre tu salud y bienestar.</p>
-                <div style="margin-top: 20px;">
-                    <a href="https://wa.me" target="_blank" style="margin-right: 15px; font-size: 1.3rem;">💬</a>
-                    <a href="#" style="margin-right: 15px; font-size: 1.3rem;">📸</a>
-                    <a href="#" style="margin-right: 15px; font-size: 1.3rem;">📘</a>
-                </div>
-            </div>
-            
-            <div class="footer-block">
-                <h4>📞 Contacto Directo</h4>
-                <p>✉ astridvidasana@gmail.com</p>
-                <p>💬 +57 320 634 4590</p>
-                <p style="margin-top: 15px; color: var(--gold-light);">📍 Bogotá, Colombia</p>
-            </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; color: rgba(255,255,255,0.6);">
-            © 2026 <strong>Astrid - Aliméntate Saludable Hoy</strong>. Todos los derechos reservados. | Hecho con ❤ para tu salud y bienestar.
-        </div>
-    </section>
+    </footer>
 
-    <!-- ============================
-       🛒 BARRA DEL CARRITO FLOTANTE
-       ============================ -->
-    <div class="cart-bar">
-        <div class="cart-inner">
-            <div class="cart-total" id="texto-total">Total: \$0 COP (0 productos)</div>
-            <button class="btn-checkout" onclick="enviarPedido()">
-                Confirmar Pedido por WhatsApp 🚀
-            </button>
+    <!-- CARRITO FLOTANTE -->
+    <div class="cart-bar" id="cartBar">
+        <div class="cart-info">
+            <h4 id="cartTotal">Total: $0 COP</h4>
+            <p id="cartCount">0 productos seleccionados</p>
+        </div>
+        <div class="cart-actions">
+            <button class="btn-cart-remove" onclick="vaciarCarrito()" title="Vaciar carrito">🗑️ Vaciar</button>
+            <button class="btn-checkout" onclick="abrirModal()">Confirmar 🛍️</button>
         </div>
     </div>
 
-    <!-- ============================
-       ⚙️ SCRIPT DE LOGICA Y FUNCIONAMIENTO
-       ============================ -->
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <h2>📋 Datos de Entrega</h2>
+            <p style="font-size: 0.8rem; color: var(--gray); margin-bottom: 16px;">Completa la información para registrar tu orden y coordinar el pago.</p>
+
+            <div class="form-group">
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" id="nombre" placeholder="Ej. Juan Pérez" required />
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono de Contacto</label>
+                <input type="tel" id="telefono" placeholder="Ej. 3101234567" required />
+            </div>
+            <div class="form-group">
+                <label for="direccion">Dirección y Ciudad</label>
+                <input type="text" id="direccion" placeholder="Calle 45 #12-34, Bogotá" required />
+            </div>
+            <div class="form-group">
+                <label for="metodoPago">Método de Transferencia</label>
+                <select id="metodoPago">
+                    <option value="Nequi">Nequi</option>
+                    <option value="Daviplata">Daviplata</option>
+                    <option value="Transferencia Bancaria">Transferencia Bancaria (Bancolombia)</option>
+                </select>
+            </div>
+
+            <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:16px;">
+                <button style="background:var(--gray-light); border:none; padding:8px 18px; border-radius:6px; cursor:pointer;" onclick="cerrarModal()">Cancelar</button>
+                <button class="btn-checkout" id="btnEnviarFinal" onclick="procesarCompraFinal()">Enviar Pedido 🚀</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
     <script>
-        let carrito = [];
-        let totalDinero = 0;
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                if (loader) loader.classList.add('hidden');
+            }, 500);
+        });
 
-        function agregarAlCarrito(nombre, precio) {
-            carrito.push({ nombre, precio });
-            totalDinero += precio;
-            actualizarInterfaz();
-        }
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycby0BL-lu6GSx5wa8-oTd0lLlPyfmGsY21qyIC_l0_DlHwTYVfZ8KidRcquu1oN-Fw/exec";
+        const NUMERO_WHATSAPP = "573206344590";
+        const EMAIL_ASTRID = "astridvidasana@gmail.com";
 
-        function actualizarInterfaz() {
-            const textoTotal = document.getElementById('texto-total');
-            if (textoTotal) {
-                textoTotal.innerText = `Total: $${totalDinero.toLocaleString('es-CO')} COP (${carrito.length} productos)`;
+        let carrito = {};
+
+        function agregarAlCarrito(id) {
+            const tarjeta = document.querySelector(`.card[data-id="${id}"]`);
+            if (!tarjeta) return;
+
+            const nombre = tarjeta.getAttribute('data-name');
+            const price = parseInt(tarjeta.getAttribute('data-price'));
+
+            agregarAlCarritoPorDatos(id, nombre, price);
+
+            const btn = tarjeta.querySelector('.btn-add');
+            if (btn) {
+                btn.textContent = '✓';
+                btn.style.background = '#4caf50';
+                setTimeout(() => {
+                    btn.textContent = 'Añadir';
+                    btn.style.background = '';
+                }, 700);
             }
         }
 
-        function enviarPedido() {
-            if (carrito.length === 0) {
-                alert("Por favor añade al menos un producto a tu pedido usando los botones del catálogo.");
+        function agregarAlCarritoPorDatos(id, nombre, precio) {
+            if (carrito[id]) {
+                carrito[id].cantidad += 1;
+            } else {
+                carrito[id] = { nombre: nombre, precio: precio, cantidad: 1 };
+            }
+            actualizarInterfazCarrito();
+        }
+
+        function vaciarCarrito() {
+            if (Object.keys(carrito).length === 0) return;
+            if (confirm('¿Estás seguro de vaciar el carrito?')) {
+                carrito = {};
+                actualizarInterfazCarrito();
+            }
+        }
+
+        function actualizarInterfazCarrito() {
+            const cartBar = document.getElementById('cartBar');
+            let total = 0;
+            let conteo = 0;
+
+            for (const id in carrito) {
+                total += carrito[id].precio * carrito[id].cantidad;
+                conteo += carrito[id].cantidad;
+            }
+
+            if (conteo > 0) {
+                cartBar.classList.add('active');
+                document.getElementById('cartTotal').innerText = `Total: $${total.toLocaleString('es-CO')} COP`;
+                document.getElementById('cartCount').innerText = `${conteo} producto(s) seleccionado(s)`;
+            } else {
+                cartBar.classList.remove('active');
+            }
+        }
+
+        function abrirModal() {
+            const conteo = Object.values(carrito).reduce((sum, item) => sum + item.cantidad, 0);
+            if (conteo === 0) {
+                alert('🛒 Tu carrito está vacío. Agrega algunos productos primero.');
                 return;
             }
-            
-            let textoMensaje = "Hola Astrid! Me gustaría realizar un pedido desde la web:\n\n";
-            carrito.forEach((item, index) => {
-                textoMensaje += `${index + 1}. ${item.nombre} - $${item.precio.toLocaleString('es-CO')} COP\n`;
-            });
-            textoMensaje += `\n*Total estimado: $${totalDinero.toLocaleString('es-CO')} COP*`;
-            
-            const urlWhatsApp = `https://wa.me?text=${encodeURIComponent(textoMensaje)}`;
-            // Abre WhatsApp estrictamente en una pestaña limpia y nueva sin recargar la web de Astrid
-            window.open(urlWhatsApp, '_blank');
+            document.getElementById('modalOverlay').classList.add('active');
         }
 
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                const loader = document.getElementById('loader');
-                if (loader) loader.classList.add('hidden');
-            }, 600);
+        function cerrarModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+        }
+
+        document.getElementById('modalOverlay').addEventListener('click', function(e) {
+            if (e.target === this) cerrarModal();
         });
+
+        function procesarCompraFinal() {
+            const nombre = document.getElementById('nombre').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const direccion = document.getElementById('direccion').value.trim();
+            const metodoPago = document.getElementById('metodoPago').value;
+            const btnSubmit = document.getElementById('btnEnviarFinal');
+
+            if (!nombre || !telefono || !direccion) {
+                alert('⚠️ Por favor completa todos los campos del formulario para continuar.');
+                return;
+            }
+
+            btnSubmit.disabled = true;
+            btnSubmit.innerText = 'Registrando... ⏳';
+
+            let resumenTexto = '';
+            let totalGeneral = 0;
+            const productosArray = [];
+
+            for (const id in carrito) {
+                const item = carrito[id];
+                const subtotal = item.precio * item.cantidad;
+                totalGeneral += subtotal;
+                productosArray.push(`${item.cantidad}x ${item.nombre}`);
+                resumenTexto += `• ${item.cantidad}x ${item.nombre} ($${subtotal.toLocaleString('es-CO')})\n`;
+            }
+
+            const payload = {
+                nombre: nombre,
+                telefono: telefono,
+                direccion: direccion,
+                metodoPago: metodoPago,
+                productos: productosArray.join(', '),
+                total: totalGeneral,
+                fecha: new Date().toLocaleString('es-CO')
+            };
+
+            fetch(WEB_APP_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }).catch(() => {});
+
+            despacharWhatsApp(nombre, telefono, resumenTexto, totalGeneral, direccion, metodoPago);
+        }
+
+        function despacharWhatsApp(nombre, telefono, resumen, total, direccion, pago) {
+            const mensajeWhatsApp =
+                `✨ *NUEVO PEDIDO - ALIMÉNTATE SALUDABLE HOY* ✨\n\n` +
+                `👤 *Cliente:* ${nombre}\n` +
+                `📞 *Contacto:* ${telefono}\n` +
+                `📍 *Dirección:* ${direccion}\n` +
+                `💳 *Pago:* Transferencia via ${pago}\n\n` +
+                `🛒 *Detalle:*\n${resumen}\n` +
+                `💰 *Total:* $${total.toLocaleString('es-CO')} COP\n\n` +
+                `Hola Astrid, acabo de generar mi orden desde tu sitio web. ¡Quedo atento a tu confirmación! 🙌`;
+
+            const urlFinal = `https://api.whatsapp.com/send?phone=${NUMERO_WHATSAPP}&text=${encodeURIComponent(mensajeWhatsApp)}`;
+
+            carrito = {};
+            actualizarInterfazCarrito();
+            cerrarModal();
+
+            const btnSubmit = document.getElementById('btnEnviarFinal');
+            btnSubmit.disabled = false;
+            btnSubmit.innerText = 'Enviar Pedido 🚀';
+
+            window.open(urlFinal, '_blank');
+        }
+
+        function enviarFormulario(e) {
+            e.preventDefault();
+
+            const nombre = document.getElementById('nombreForm').value.trim();
+            const email = document.getElementById('emailForm').value.trim();
+            const telefono = document.getElementById('telefonoForm').value.trim();
+            const mensaje = document.getElementById('mensajeForm').value.trim();
+
+            if (!nombre || !email || !mensaje) {
+                alert('⚠️ Por favor completa todos los campos obligatorios.');
+                return;
+            }
+
+            const asunto = encodeURIComponent('Consulta desde Aliméntate Saludable Hoy');
+            const cuerpo = encodeURIComponent(
+                `Hola Astrid,\n\nMi nombre es ${nombre}.\nMi correo es: ${email}\n${telefono ? `Mi teléfono es: ${telefono}\n\n` : '\n'}Te escribo porque: ${mensaje}\n\n¡Espero tu respuesta!`
+            );
+
+            window.location.href = `mailto:${EMAIL_ASTRID}?subject=${asunto}&body=${cuerpo}`;
+
+            const btn = document.querySelector('.btn-hero-primary');
+            if(btn) {
+                btn.textContent = '✅ Mensaje enviado';
+                setTimeout(() => {
+                    btn.textContent = 'Enviar mensaje ✉️';
+                    document.getElementById('formContacto').reset();
+                }, 2500);
+            }
+        }
     </script>
 </body>
 </html>
