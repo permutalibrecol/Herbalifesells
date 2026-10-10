@@ -30,6 +30,9 @@
 
     <meta name="theme-color" content="#2e7d32" />
 
+    <!-- Librería StPageFlip para el Visor Interactivo de Tríptico -->
+    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+
     <!-- JSON-LD Schema.org Structured Data -->
     <script type="application/ld+json">
     {
@@ -85,20 +88,24 @@
         .loader p { margin-top: 16px; color: var(--primary); font-weight: 600; font-size: 1rem; letter-spacing: 0.5px; }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* HEADER */
+        /* HEADER & MOBILE MENU */
         .site-header { background: var(--white); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 100; padding: 10px 0; border-bottom: 2px solid var(--primary); }
-        .header-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap; gap: 10px; }
         .header-brand { display: flex; align-items: center; gap: 8px; }
         .header-brand .logo-icon { font-size: 1.8rem; }
         .header-brand h1 { font-size: 1.1rem; color: var(--primary-dark); font-weight: 800; line-height: 1.2; }
         .header-brand h1 span { color: var(--gold); }
+        
         .header-nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
         .header-nav a { font-size: 0.8rem; font-weight: 600; color: var(--dark); transition: var(--transition); padding: 4px 0; position: relative; }
         .header-nav a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--primary); transition: var(--transition); }
         .header-nav a:hover::after { width: 100%; }
         .header-nav a:hover { color: var(--primary); }
-        .header-whatsapp { background: #25d366; color: white; padding: 6px 14px; border-radius: 50px; font-weight: 600; font-size: 0.75rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 4px; }
+        .header-whatsapp { background: #25d366; color: white !important; padding: 6px 14px; border-radius: 50px; font-weight: 600; font-size: 0.75rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 4px; }
         .header-whatsapp:hover { transform: scale(1.05); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+
+        /* Botón Menú Hamburguesa Móvil */
+        .menu-toggle { display: none; background: none; border: none; font-size: 1.8rem; color: var(--primary-dark); cursor: pointer; padding: 4px; }
 
         /* HERO */
         .hero { background: var(--primary-gradient); padding: 70px 20px 60px; position: relative; overflow: hidden; margin-bottom: 10px; }
@@ -154,10 +161,12 @@
         .product-highlight-card { background: var(--light-bg); border: 2px solid var(--primary-light); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow-md); text-align: center; }
         .product-highlight-card h3 { color: var(--primary-dark); font-size: 1.4rem; margin-bottom: 10px; }
         .price-tag { font-size: 1.6rem; color: var(--primary); font-weight: 800; margin: 15px 0; }
-        .btn-brand-action { background: var(--gold); color: var(--dark); padding: 14px 30px; border-radius: 50px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); border: none; cursor: pointer; }
+        .btn-brand-action { background: var(--gold); color: var(--dark); padding: 14px 30px; border-radius: 50px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); border: none; cursor: pointer; text-decoration: none; }
         .btn-brand-action:hover { background: var(--gold-light); transform: translateY(-3px); }
+        .btn-triptico-trigger { background: #ffffff; color: var(--primary-dark); padding: 14px 30px; border-radius: 50px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); border: none; cursor: pointer; margin-top: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .btn-triptico-trigger:hover { background: var(--gold-light); transform: translateY(-3px); }
 
-        /* CATÁLOGO */
+        /* CATÁLOGOS */
         .catalogo-section { padding: 50px 0; background: var(--white); }
         .catalogo-header { text-align: center; margin-bottom: 35px; }
         .catalogo-header h2 { font-size: 2rem; color: var(--primary-dark); }
@@ -222,13 +231,38 @@
         .btn-cart-remove { background: rgba(211, 47, 47, 0.15); color: #ef5350; border: 1px solid rgba(211, 47, 47, 0.1); padding: 6px 12px; border-radius: 6px; font-weight: 600; font-size: 0.7rem; cursor: pointer; }
         .btn-checkout { background: #25d366; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; cursor: pointer; }
 
-        /* MODAL */
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.55); backdrop-filter: blur(4px); display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.35s ease; z-index: 2000; padding: 16px; }
+        /* MODALES */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(6px); display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.35s ease; z-index: 2000; padding: 16px; }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
         .modal { background: var(--white); padding: 28px 24px; border-radius: var(--radius); width: 100%; max-width: 420px; box-shadow: var(--shadow-lg); max-height: 90vh; overflow-y: auto; }
 
-        @media (max-width: 900px) { .grid-2, .hero-container { flex-direction: column; text-align: center; } .hero-imagen { flex: 0 0 220px; max-width: 220px; } .hero-buttons { justify-content: center; } }
-        @media (max-width: 768px) { .problema-grid, .contacto-grid { grid-template-columns: 1fr; } }
+        /* MODAL DEL TRÍPTICO INTERACTIVO */
+        .modal-triptico { max-width: 1050px; width: 95%; background: #121212; color: white; padding: 20px; border-radius: var(--radius); position: relative; }
+        .modal-triptico-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+        .modal-triptico-header h3 { color: var(--gold); font-size: 1.3rem; }
+        .close-triptico { background: rgba(255,255,255,0.2); border: none; color: white; font-size: 1.2rem; border-radius: 50%; width: 32px; height: 32px; cursor: pointer; }
+        
+        #flipbook-container { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; }
+        #flipbook { box-shadow: 0 10px 30px rgba(0,0,0,0.8); border-radius: 4px; overflow: hidden; }
+        .triptico-page { background: #fff; display: flex; justify-content: center; align-items: center; }
+        .triptico-page img { width: 100%; height: 100%; object-fit: fill; }
+        
+        .triptico-controls { margin-top: 15px; display: flex; gap: 15px; align-items: center; justify-content: center; }
+        .btn-flip { background: var(--gold); color: #1c1c1c; border: none; padding: 8px 18px; border-radius: 20px; font-weight: bold; cursor: pointer; }
+
+        /* MEDIA QUERIES MOBILE-FIRST */
+        @media (max-width: 900px) { 
+            .grid-2, .hero-container { flex-direction: column; text-align: center; } 
+            .hero-imagen { flex: 0 0 220px; max-width: 220px; } 
+            .hero-buttons { justify-content: center; } 
+        }
+        @media (max-width: 768px) { 
+            .problema-grid, .contacto-grid { grid-template-columns: 1fr; } 
+            .menu-toggle { display: block; }
+            .header-nav { position: fixed; top: 0; right: -100%; width: 75%; max-width: 300px; height: 100vh; background: var(--white); flex-direction: column; padding: 80px 25px 30px; box-shadow: -5px 0 25px rgba(0,0,0,0.15); transition: right 0.4s ease; z-index: 99; align-items: flex-start; gap: 18px; }
+            .header-nav.active { right: 0; }
+            .header-nav a { font-size: 1rem; width: 100%; }
+        }
     </style>
 </head>
 <body>
@@ -239,21 +273,25 @@
         <p>🌿 Cargando conocimiento...</p>
     </div>
 
-    <!-- HEADER -->
+    <!-- HEADER & NAVEGACIÓN MOBILE-FIRST -->
     <header class="site-header">
         <div class="container header-inner">
             <div class="header-brand">
                 <span class="logo-icon">🌿</span>
                 <h1>Aliméntate <span>Saludable</span> Hoy</h1>
             </div>
-            <nav class="header-nav">
-                <a href="#problema">El Problema</a>
-                <a href="#solucion">La Solución</a>
-                <a href="#biohacking">Biohacking</a>
-                <a href="#cafe-pestana" target="_blank">☕ Café Funcional</a>
-                <a href="#catalogo">Catálogo</a>
-                <a href="#blog">Blog</a>
-                <a href="#contacto">Contacto</a>
+            
+            <!-- Botón Hamburguesa para Móviles -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+
+            <nav class="header-nav" id="headerNav">
+                <a href="#problema" onclick="toggleMenu()">El Problema</a>
+                <a href="#solucion" onclick="toggleMenu()">La Solución</a>
+                <a href="#biohacking" onclick="toggleMenu()">Biohacking</a>
+                <a href="#cafe-pestana" onclick="toggleMenu()">☕ Café Funcional</a>
+                <a href="#catalogo" onclick="toggleMenu()">Catálogo</a>
+                <a href="#blog" onclick="toggleMenu()">Blog</a>
+                <a href="#contacto" onclick="toggleMenu()">Contacto</a>
                 <a href="https://wa.me/573206344590?text=Hola%20Astrid%2C%20quiero%20empezar%20mi%20transformaci%C3%B3n%20nutricional%20%F0%9F%8C%BF" target="_blank" class="header-whatsapp">
                     💬 WhatsApp
                 </a>
@@ -359,7 +397,7 @@
                     El verdadero bienestar no se trata de añadir procesos complejos a tu vida, sino de <strong>hackear de forma inteligente tus hábitos cotidianos</strong>. Al combinar la ciencia de la nutrición celular con alimentos funcionales de alto impacto, despiertas el máximo potencial de tu metabolismo.
                 </p>
                 <p class="bio-text">
-                    Aprende a estructurar un ecosistema donde tu café matutino activa la termogénesis natural, las proteínas premium reconstruyen tus músculos y los micronutrientes esenciales protegen tu salud cardiovascular desde la primera hora del día.
+                    Aprende a estructurar un ecosistema donde tu café matutino activa la termogénesis natural, las proteínas premium重建tus músculos y los micronutrientes esenciales protegen tu salud cardiovascular desde la primera hora del día.
                 </p>
             </div>
             
@@ -375,7 +413,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN B2B MARCA BLANCA / ASOHERMOSAS (SECCIÓN DE CAFÉ DESTRICADA) -->
+    <!-- SECCIÓN B2B MARCA BLANCA / ASOHERMOSAS (CON VISOR DE TRÍPTICO LOCAL) -->
     <section class="brand-section" id="cafe-pestana">
         <div class="container grid-2">
             <div style="text-align: center;">
@@ -384,6 +422,10 @@
                 <p style="font-size: 0.95rem; opacity: 0.8; margin-top: 10px; max-width: 380px; margin-left: auto; margin-right: auto; color: white;">
                     Respaldo técnico, nutricional y logístico para poner en el mercado un producto premium y con propósito social.
                 </p>
+                <!-- BOTÓN PARA DESPLEGAR EL TRÍPTICO MEJORADO -->
+                <button class="btn-triptico-trigger" onclick="abrilModalTriptico()">
+                    📖 Ver Tríptico Interactivo Asohermosas ↗
+                </button>
             </div>
             
             <div>
@@ -402,7 +444,7 @@
         </div>
     </section>
 
-    <!-- CATÁLOGO DE PRODUCTOS -->
+    <!-- CATÁLOGO DE PRODUCTOS COMPLETO DE HERBALIFE -->
     <section class="catalogo-section" id="catalogo">
         <div class="container">
             <div class="catalogo-header">
@@ -839,7 +881,7 @@
         </div>
     </div>
 
-    <!-- MODAL -->
+    <!-- MODAL DATOS ENTREGA -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal">
             <h2>📋 Datos de Entrega</h2>
@@ -873,7 +915,36 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- MODAL TRÍPTICO INTERACTIVO ASOHERMOSAS -->
+    <div class="modal-overlay" id="modalTripticoOverlay">
+        <div class="modal-triptico">
+            <div class="modal-triptico-header">
+                <h3>☕ Tríptico Interactivo - Marca Blanca Asohermosas</h3>
+                <button class="close-triptico" onclick="cerrarModalTriptico()">✕</button>
+            </div>
+            <div id="flipbook-container">
+                <div id="flipbook">
+                    <!-- Páginas Locales del Tríptico Optimizado -->
+                    <div class="triptico-page">
+                        <img src="imagenes/triptico-1.webp.jpg" alt="Tríptico Asohermosas - Cara 1">
+                    </div>
+                    <div class="triptico-page">
+                        <img src="imagenes/triptico-2.webp.jpg" alt="Tríptico Asohermosas - Cara 2">
+                    </div>
+                    <div class="triptico-page">
+                        <img src="imagenes/triptico-3.webp.jpg" alt="Tríptico Asohermosas - Cara 3">
+                    </div>
+                </div>
+                <div class="triptico-controls">
+                    <button class="btn-flip" id="prevTriptico">← Anterior</button>
+                    <span id="pageInfoTriptico" style="font-size:0.9rem;">Página 1 de 3</span>
+                    <button class="btn-flip" id="nextTriptico">Siguiente →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC COMPLETA -->
     <script>
         window.addEventListener('load', function() {
             const loader = document.getElementById('loader');
@@ -882,6 +953,59 @@
             }, 500);
         });
 
+        // Menú Hamburguesa Móvil
+        const menuToggle = document.getElementById('menuToggle');
+        const headerNav = document.getElementById('headerNav');
+
+        menuToggle.addEventListener('click', () => {
+            headerNav.classList.toggle('active');
+        });
+
+        function toggleMenu() {
+            if (window.innerWidth <= 768) {
+                headerNav.classList.remove('active');
+            }
+        }
+
+        // Lógica del Tríptico Interactivo
+        let pageFlip = null;
+
+        function abrilModalTriptico() {
+            document.getElementById('modalTripticoOverlay').classList.add('active');
+            
+            if (!pageFlip) {
+                setTimeout(() => {
+                    const isMobile = window.innerWidth <= 600;
+                    pageFlip = new St.PageFlip(document.getElementById("flipbook"), {
+                        width: isMobile ? 320 : 460,
+                        height: isMobile ? 480 : 650,
+                        size: "stretch",
+                        minWidth: 280,
+                        maxWidth: 600,
+                        minHeight: 400,
+                        maxHeight: 800,
+                        maxShadowOpacity: 0.5,
+                        showCover: true,
+                        mobileScrollSupport: true
+                    });
+
+                    pageFlip.loadFromHTML(document.querySelectorAll(".triptico-page"));
+
+                    document.getElementById("prevTriptico").addEventListener("click", () => pageFlip.flipPrev());
+                    document.getElementById("nextTriptico").addEventListener("click", () => pageFlip.flipNext());
+
+                    pageFlip.on("flip", (e) => {
+                        document.getElementById("pageInfoTriptico").textContent = `Página ${e.data + 1} de 3`;
+                    });
+                }, 200);
+            }
+        }
+
+        function cerrarModalTriptico() {
+            document.getElementById('modalTripticoOverlay').classList.remove('active');
+        }
+
+        // Carrito de compras y Pedidos
         const WEB_APP_URL = "https://script.google.com/macros/s/AKfycby0BL-lu6GSx5wa8-oTd0lLlPyfmGsY21qyIC_l0_DlHwTYVfZ8KidRcquu1oN-Fw/exec";
         const NUMERO_WHATSAPP = "573206344590";
         const EMAIL_ASTRID = "astridvidasana@gmail.com";
