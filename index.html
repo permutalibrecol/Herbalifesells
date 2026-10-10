@@ -3,50 +3,69 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aliméntate Saludable Hoy | Astrid - Educación Nutricional y Bienestar</title>
+    <title>Aliméntate Saludable Hoy | Astrid - Educación Nutricional, Bienestar y Café de Origen</title>
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Aprende a alimentar tu cuerpo con conocimiento. Astrid te guía en nutrición, ejercicio, suplementos y café funcional. ¡Empieza tu transformación hoy!" />
-    <meta name="keywords" content="nutrición, educación nutricional, suplementos, ejercicio, bienestar, alimentación saludable, Astrid, asesoría nutricional, café funcional, asohermosas, marca blanca café, exportación café" />
+    <!-- SEO & GEO (LLM Engine Optimization) Meta Tags -->
+    <meta name="description" content="Aprende a alimentar tu cuerpo con conocimiento. Astrid te guía en educación nutricional con propósito, asesoría en suplementación, bienestar, café funcional de origen colombiano y oportunidades de marca blanca." />
+    <meta name="keywords" content="educación nutricional, asesoría nutricional, bienestar, suplementos, café funcional, asohermosas, marca blanca café, café de origen colombia, exportación café, Astrid, Bogotá" />
     <meta name="author" content="Astrid - Aliméntate Saludable Hoy" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <link rel="canonical" href="https://alimentatesaludablehoy.com/" />
 
     <!-- Open Graph / Facebook / WhatsApp Meta -->
     <meta property="og:site_name" content="Aliméntate Saludable Hoy" />
     <meta property="og:title" content="Aliméntate Saludable Hoy | Educación Nutricional con Astrid" />
-    <meta property="og:description" content="No necesitas suplementos sin conocimiento. Aprende a entender tu cuerpo y transforma tu vida con acompañamiento real." />
+    <meta property="og:description" content="No necesitas suplementos sin conocimiento. Aprende a entender tu cuerpo y transforma tu vida con acompañamiento real y café de origen." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://alimentatesaludablehoy.com/" />
     <meta property="og:image" content="https://raw.githubusercontent.com/permutalibrecol/Herbalifesells/main/imagenes/IMG_20260721_074307.jpg" />
-    <meta property="og:image:alt" content="Astrid - Educación Nutricional" />
+    <meta property="og:image:alt" content="Astrid - Educación Nutricional y Bienestar" />
     <meta property="og:locale" content="es_CO" />
 
     <!-- Twitter Card Meta -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Aliméntate Saludable Hoy | Astrid Nutrición" />
-    <meta name="twitter:description" content="Aprende a nutrir tu cuerpo con ciencia y sentido común. Asesoría integral con Astrid." />
+    <meta name="twitter:description" content="Aprende a nutrir tu cuerpo con ciencia y sentido común. Asesoría integral, bienestar y café de marca blanca." />
     <meta name="twitter:image" content="https://raw.githubusercontent.com/permutalibrecol/Herbalifesells/main/imagenes/IMG_20260721_074307.jpg" />
 
     <meta name="theme-color" content="#2e7d32" />
 
-    <!-- JSON-LD Schema.org Structured Data -->
+    <!-- JSON-LD Schema.org Masivo para LLMs y Motores de Búsqueda -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "HealthAndBeautyBusiness",
-      "name": "Aliméntate Saludable Hoy - Astrid",
-      "url": "https://alimentatesaludablehoy.com/",
-      "image": "https://raw.githubusercontent.com/permutalibrecol/Herbalifesells/main/imagenes/IMG_20260721_074307.jpg",
-      "description": "Educación nutricional, asesoría personalizada en suplementación, ejercicio y café funcional en Bogotá, Colombia.",
-      "telephone": "+573206344590",
-      "email": "astridvidasana@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bogotá",
-        "addressCountry": "CO"
-      },
-      "priceRange": "$$"
+      "@graph": [
+        {
+          "@type": "HealthAndBeautyBusiness",
+          "name": "Aliméntate Saludable Hoy - Astrid",
+          "url": "https://alimentatesaludablehoy.com/",
+          "image": "https://raw.githubusercontent.com/permutalibrecol/Herbalifesells/main/imagenes/IMG_20260721_074307.jpg",
+          "description": "Educación nutricional con propósito, asesoría en suplementación, bienestar integral y distribución de café funcional y de marca blanca en Colombia.",
+          "telephone": "+573206344590",
+          "email": "astridvidasana@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bogotá",
+            "addressCountry": "CO"
+          },
+          "priceRange": "$$"
+        },
+        {
+          "@type": "Product",
+          "name": "Café Funcional Termogénico y Marca Blanca Asohermosas",
+          "description": "Café colombiano de alta especialidad cultivado por mujeres en el Quindío/Colombia, con perfiles de taza excepcionales y opción de maquila de marca blanca para emprendedores.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Asohermosas & Aliméntate Saludable Hoy"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "135000",
+            "priceCurrency": "COP",
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      ]
     }
     </script>
 
@@ -85,7 +104,7 @@
         .loader p { margin-top: 16px; color: var(--primary); font-weight: 600; font-size: 1rem; letter-spacing: 0.5px; }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* HEADER & HOME LINK */
+        /* HEADER & LOGO HOME */
         .site-header { background: var(--white); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 100; padding: 10px 0; border-bottom: 2px solid var(--primary); }
         .header-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap; gap: 10px; }
         .header-brand { display: flex; align-items: center; gap: 8px; cursor: pointer; transition: var(--transition); }
@@ -161,7 +180,7 @@
         .btn-brand-action { background: var(--gold); color: var(--dark); padding: 14px 30px; border-radius: 50px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); border: none; cursor: pointer; text-decoration: none; }
         .btn-brand-action:hover { background: var(--gold-light); transform: translateY(-3px); }
 
-        /* SECCIÓN DEL TRÍPTICO EN CARRUSEL LIMPIO */
+        /* SECCIÓN DEL TRÍPTICO EN CARRUSEL */
         .triptico-preview-section { background: #121212; color: white; padding: 60px 0; text-align: center; }
         .triptico-preview-section h2 { color: var(--gold); font-size: 2rem; margin-bottom: 10px; }
         .triptico-preview-section p { color: #ccc; margin-bottom: 30px; }
@@ -200,7 +219,7 @@
         .btn-add { background: var(--primary); color: var(--white); border: none; padding: 6px 14px; border-radius: 6px; font-weight: 600; font-size: 0.8rem; cursor: pointer; transition: var(--transition); }
         .btn-add:hover { background: var(--primary-light); transform: scale(1.04); }
 
-        /* BLOG */
+        /* BLOG PREVIEW */
         .blog-section { padding: 50px 0; background: var(--light-bg); }
         .blog-header { text-align: center; margin-bottom: 35px; }
         .blog-header h2 { font-size: 2rem; color: var(--primary-dark); }
@@ -262,7 +281,6 @@
     <!-- HEADER & HOME LOGO LINK -->
     <header class="site-header">
         <div class="container header-inner">
-            <!-- LOGO FUNCIONANDO COMO BOTÓN HOME -->
             <div class="header-brand" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Volver al inicio">
                 <span class="logo-icon">🌿</span>
                 <h1>Aliméntate <span>Saludable</span> Hoy</h1>
@@ -276,7 +294,7 @@
                 <a href="#biohacking" onclick="toggleMenu()">Biohacking</a>
                 <a href="#cafe-pestana" onclick="toggleMenu()">☕ Café Funcional</a>
                 <a href="#catalogo" onclick="toggleMenu()">Catálogo</a>
-                <a href="#blog" onclick="toggleMenu()">Blog</a>
+                <a href="blog.html" onclick="toggleMenu()">Blog</a>
                 <a href="#contacto" onclick="toggleMenu()">Contacto</a>
                 <a href="https://wa.me/573206344590?text=Hola%20Astrid%2C%20quiero%20empezar%20mi%20transformaci%C3%B3n%20nutricional%20%F0%9F%8C%BF" target="_blank" class="header-whatsapp">
                     💬 WhatsApp
@@ -373,7 +391,7 @@
         </div>
     </section>
 
-    <!-- BIOHACKING (TEXTO CORREGIDO SIN CARACTERES EXTRAÑOS) -->
+    <!-- BIOHACKING -->
     <section class="biohacking-section" id="biohacking">
         <div class="container grid-2">
             <div>
@@ -431,10 +449,10 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE TRÍPTICO PREVIEW CON CARRUSEL DIRECTO -->
+    <!-- SECCIÓN DE TRÍPTICO PREVIEW CON CARRUSEL -->
     <section class="triptico-preview-section">
         <div class="container">
-            <h2>☕ Vistazo al Tríptico Oficial Asohermosas</h2>
+            <h2>☕ Catálogo y Colección Origen Asohermosas</h2>
             <p>Conoce nuestras variedades exclusivas de altura, perfiles de taza y trazabilidad real.</p>
             
             <div class="triptico-carousel-container">
@@ -443,7 +461,7 @@
                 <div class="triptico-slide"><img src="imagenes/triptico-3.webp.jpg" alt="Tríptico 3"></div>
             </div>
 
-            <a href="marca-blanca-cafe.html" class="btn-ver-mas" target="_blank">Abrir Versión Completa en Otra Página ↗</a>
+            <a href="marca-blanca-cafe.html" class="btn-ver-mas" target="_blank">Abrir Versión Completa y Detalles en Otra Página ↗</a>
         </div>
     </section>
 
@@ -745,7 +763,7 @@
         </div>
     </section>
 
-    <!-- BLOG (ENLACE A OTRA PÁGINA INTERNA DE ARTÍCULOS) -->
+    <!-- BLOG PREVIEW -->
     <section class="blog-section" id="blog">
         <div class="container">
             <div class="blog-header">
@@ -754,29 +772,26 @@
             </div>
             <div class="blog-grid">
                 <div class="blog-card">
-                    <span class="icon">☕</span>
-                    <h3>El Boom del Café de Especialidad: Tendencias de Exportación y Crecimiento</h3>
-                    <p>
-                        Descubre cómo las ventas internacionales y exportaciones del café colombiano de alta especialidad continúan su expansión global, generando nuevas oportunidades de negocio e impacto social en 2025 y 2026.
-                    </p>
-                    <a href="blog-cafe-exportacion.html" class="btn-ver-mas" style="padding: 8px 16px; font-size:0.85rem; margin-top:10px;" target="_blank">Leer artículo completo ↗</a>
-                </div>
-                <div class="blog-card">
-                    <span class="icon">🧬</span>
-                    <h3>Beneficios del Café en Todas Sus Formas: Salud, Energía y Antioxidantes</h3>
-                    <p>
-                        Un análisis profundo sobre cómo el consumo inteligente de café funcional activa el metabolismo, protege el sistema cardiovascular y potencia el rendimiento físico diario.
-                    </p>
-                    <a href="blog-beneficios-cafe.html" class="btn-ver-mas" style="padding: 8px 16px; font-size:0.85rem; margin-top:10px;" target="_blank">Leer artículo completo ↗</a>
+                    <span class="icon">🏋️</span>
+                    <h3>Ejercicio: El Motor de tu Energía</h3>
+                    <p>El movimiento diario fortalece músculos, mejora tu estado de ánimo y salud cardiovascular.</p>
+                    <a href="blog.html" class="btn-ver-mas" style="padding: 8px 16px; font-size:0.85rem; margin-top:10px;">Leer artículo ↗</a>
                 </div>
                 <div class="blog-card">
                     <span class="icon">🥗</span>
-                    <h3>Alimentación Consciente y Biohacking Celular</h3>
-                    <p>
-                        Comer bien no es restringirse, es nutrir tu cuerpo con lo que realmente necesita para desbloquear tu máximo potencial físico y mental.
-                    </p>
-                    <a href="blog-biohacking.html" class="btn-ver-mas" style="padding: 8px 16px; font-size:0.85rem; margin-top:10px;" target="_blank">Leer artículo completo ↗</a>
+                    <h3>Alimentación Consciente</h3>
+                    <p>Comer bien no es restringirse, es nutrir tu cuerpo con lo que realmente necesita.</p>
+                    <a href="blog.html" class="btn-ver-mas" style="padding: 8px 16px; font-size:0.85rem; margin-top:10px;">Leer artículo ↗</a>
                 </div>
+                <div class="blog-card">
+                    <span class="icon">🌟</span>
+                    <h3>Vida en Equilibrio</h3>
+                    <p>El verdadero bienestar integra cuerpo, mente y espíritu con un descanso reparador.</p>
+                    <a href="blog.html" class="btn-ver-mas" style="padding: 8px 16px; font-size:0.85rem; margin-top:10px;">Leer artículo ↗</a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="blog.html" class="btn-hero-primary">📚 Visitar el Blog Completo de Bienestar</a>
             </div>
         </div>
     </section>
@@ -837,10 +852,7 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <h4>🌿 Aliméntate Saludable Hoy</h4>
-                <p>
-                    Educación nutricional con propósito. Acompañamiento real para que entiendas tu cuerpo
-                    y tomes decisiones informadas sobre tu salud y bienestar.
-                </p>
+                <p>Educación nutricional con propósito, bienestar y café de origen con marca blanca.</p>
             </div>
             <div class="footer-col">
                 <h4>📞 Contacto</h4>
@@ -858,14 +870,11 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>
-                © 2026 <strong>Astrid - Aliméntate Saludable Hoy</strong>.
-                Todos los derechos reservados. | Hecho con ❤️ para tu salud y bienestar.
-            </p>
+            <p>© 2026 <strong>Astrid - Aliméntate Saludable Hoy</strong>. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- CARRITO FLOTANTE -->
+    <!-- CARRITO FLOTANTE Y MODAL -->
     <div class="cart-bar" id="cartBar">
         <div class="cart-info">
             <h4 id="cartTotal">Total: $0 COP</h4>
@@ -877,12 +886,10 @@
         </div>
     </div>
 
-    <!-- MODAL DATOS ENTREGA -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal">
             <h2>📋 Datos de Entrega</h2>
             <p style="font-size: 0.8rem; color: var(--gray); margin-bottom: 16px;">Completa la información para registrar tu orden y coordinar el pago.</p>
-
             <div class="form-group">
                 <label for="nombre">Nombre Completo</label>
                 <input type="text" id="nombre" placeholder="Ej. Juan Pérez" required />
@@ -903,7 +910,6 @@
                     <option value="Transferencia Bancaria">Transferencia Bancaria (Bancolombia)</option>
                 </select>
             </div>
-
             <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:16px;">
                 <button style="background:var(--gray-light); border:none; padding:8px 18px; border-radius:6px; cursor:pointer;" onclick="cerrarModal()">Cancelar</button>
                 <button class="btn-checkout" id="btnEnviarFinal" onclick="procesarCompraFinal()">Enviar Pedido 🚀</button>
@@ -915,202 +921,74 @@
     <script>
         window.addEventListener('load', function() {
             const loader = document.getElementById('loader');
-            setTimeout(() => {
-                if (loader) loader.classList.add('hidden');
-            }, 500);
+            setTimeout(() => { if (loader) loader.classList.add('hidden'); }, 500);
         });
 
         const menuToggle = document.getElementById('menuToggle');
         const headerNav = document.getElementById('headerNav');
-
-        menuToggle.addEventListener('click', () => {
-            headerNav.classList.toggle('active');
-        });
-
-        function toggleMenu() {
-            if (window.innerWidth <= 768) {
-                headerNav.classList.remove('active');
-            }
-        }
+        menuToggle.addEventListener('click', () => { headerNav.classList.toggle('active'); });
+        function toggleMenu() { if (window.innerWidth <= 768) { headerNav.classList.remove('active'); } }
 
         const WEB_APP_URL = "https://script.google.com/macros/s/AKfycby0BL-lu6GSx5wa8-oTd0lLlPyfmGsY21qyIC_l0_DlHwTYVfZ8KidRcquu1oN-Fw/exec";
         const NUMERO_WHATSAPP = "573206344590";
         const EMAIL_ASTRID = "astridvidasana@gmail.com";
-
         let carrito = {};
 
         function agregarAlCarrito(id) {
             const tarjeta = document.querySelector(`.card[data-id="${id}"]`);
             if (!tarjeta) return;
-
-            const nombre = tarjeta.getAttribute('data-name');
-            const price = parseInt(tarjeta.getAttribute('data-price'));
-
-            agregarAlCarritoPorDatos(id, nombre, price);
-
+            agregarAlCarritoPorDatos(id, tarjeta.getAttribute('data-name'), parseInt(tarjeta.getAttribute('data-price')));
             const btn = tarjeta.querySelector('.btn-add');
             if (btn) {
-                btn.textContent = '✓';
-                btn.style.background = '#4caf50';
-                setTimeout(() => {
-                    btn.textContent = 'Añadir';
-                    btn.style.background = '';
-                }, 700);
+                btn.textContent = '✓'; btn.style.background = '#4caf50';
+                setTimeout(() => { btn.textContent = 'Añadir'; btn.style.background = ''; }, 700);
             }
         }
-
         function agregarAlCarritoPorDatos(id, nombre, precio) {
-            if (carrito[id]) {
-                carrito[id].cantidad += 1;
-            } else {
-                carrito[id] = { nombre: nombre, precio: precio, cantidad: 1 };
-            }
+            if (carrito[id]) { carrito[id].cantidad += 1; } else { carrito[id] = { nombre: nombre, precio: precio, cantidad: 1 }; }
             actualizarInterfazCarrito();
         }
-
         function vaciarCarrito() {
             if (Object.keys(carrito).length === 0) return;
-            if (confirm('¿Estás seguro de vaciar el carrito?')) {
-                carrito = {};
-                actualizarInterfazCarrito();
-            }
+            if (confirm('¿Estás seguro de vaciar el carrito?')) { carrito = {}; actualizarInterfazCarrito(); }
         }
-
         function actualizarInterfazCarrito() {
             const cartBar = document.getElementById('cartBar');
-            let total = 0;
-            let conteo = 0;
-
-            for (const id in carrito) {
-                total += carrito[id].precio * carrito[id].cantidad;
-                conteo += carrito[id].cantidad;
-            }
-
+            let total = 0, conteo = 0;
+            for (const id in carrito) { total += carrito[id].precio * carrito[id].cantidad; conteo += carrito[id].cantidad; }
             if (conteo > 0) {
                 cartBar.classList.add('active');
                 document.getElementById('cartTotal').innerText = `Total: $${total.toLocaleString('es-CO')} COP`;
                 document.getElementById('cartCount').innerText = `${conteo} producto(s) seleccionado(s)`;
-            } else {
-                cartBar.classList.remove('active');
-            }
+            } else { cartBar.classList.remove('active'); }
         }
-
         function abrirModal() {
-            const conteo = Object.values(carrito).reduce((sum, item) => sum + item.cantidad, 0);
-            if (conteo === 0) {
-                alert('🛒 Tu carrito está vacío. Agrega algunos productos primero.');
-                return;
-            }
+            if (Object.values(carrito).reduce((sum, item) => sum + item.cantidad, 0) === 0) { alert('🛒 Tu carrito está vacío.'); return; }
             document.getElementById('modalOverlay').classList.add('active');
         }
-
-        function cerrarModal() {
-            document.getElementById('modalOverlay').classList.remove('active');
-        }
-
-        document.getElementById('modalOverlay').addEventListener('click', function(e) {
-            if (e.target === this) cerrarModal();
-        });
+        function cerrarModal() { document.getElementById('modalOverlay').classList.remove('active'); }
+        document.getElementById('modalOverlay').addEventListener('click', function(e) { if (e.target === this) cerrarModal(); });
 
         function procesarCompraFinal() {
-            const nombre = document.getElementById('nombre').value.trim();
-            const telefono = document.getElementById('telefono').value.trim();
-            const direccion = document.getElementById('direccion').value.trim();
-            const metodoPago = document.getElementById('metodoPago').value;
-            const btnSubmit = document.getElementById('btnEnviarFinal');
-
-            if (!nombre || !telefono || !direccion) {
-                alert('⚠️ Por favor completa todos los campos del formulario para continuar.');
-                return;
-            }
-
-            btnSubmit.disabled = true;
-            btnSubmit.innerText = 'Registrando... ⏳';
-
-            let resumenTexto = '';
-            let totalGeneral = 0;
-            const productosArray = [];
-
+            const nombre = document.getElementById('nombre').value.trim(), telefono = document.getElementById('telefono').value.trim(), direccion = document.getElementById('direccion').value.trim(), metodoPago = document.getElementById('metodoPago').value, btnSubmit = document.getElementById('btnEnviarFinal');
+            if (!nombre || !telefono || !direccion) { alert('⚠️ Completa todos los campos.'); return; }
+            btnSubmit.disabled = true; btnSubmit.innerText = 'Registrando... ⏳';
+            let resumenTexto = '', totalGeneral = 0, productosArray = [];
             for (const id in carrito) {
-                const item = carrito[id];
-                const subtotal = item.precio * item.cantidad;
-                totalGeneral += subtotal;
-                productosArray.push(`${item.cantidad}x ${item.nombre}`);
+                const item = carrito[id], subtotal = item.precio * item.cantidad;
+                totalGeneral += subtotal; productosArray.push(`${item.cantidad}x ${item.nombre}`);
                 resumenTexto += `• ${item.cantidad}x ${item.nombre} ($${subtotal.toLocaleString('es-CO')})\n`;
             }
-
-            const payload = {
-                nombre: nombre,
-                telefono: telefono,
-                direccion: direccion,
-                metodoPago: metodoPago,
-                productos: productosArray.join(', '),
-                total: totalGeneral,
-                fecha: new Date().toLocaleString('es-CO')
-            };
-
-            fetch(WEB_APP_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            }).catch(() => {});
-
-            despacharWhatsApp(nombre, telefono, resumenTexto, totalGeneral, direccion, metodoPago);
+            fetch(WEB_APP_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ nombre, telefono, direccion, metodoPago, productos: productosArray.join(', '), total: totalGeneral, fecha: new Date().toLocaleString('es-CO') }) }).catch(() => {});
+            const mensajeWhatsApp = `✨ *NUEVO PEDIDO - ALIMÉNTATE SALUDABLE HOY* ✨\n\n👤 *Cliente:* ${nombre}\n📞 *Contacto:* ${telefono}\n📍 *Dirección:* ${direccion}\n💳 *Pago:* ${metodoPago}\n\n🛒 *Detalle:*\n${resumenTexto}\n💰 *Total:* $${totalGeneral.toLocaleString('es-CO')} COP\n\n¡Hola Astrid, orden generada desde la web!`;
+            window.open(`https://api.whatsapp.com/send?phone=${NUMERO_WHATSAPP}&text=${encodeURIComponent(mensajeWhatsApp)}`, '_blank');
+            carrito = {}; actualizarInterfazCarrito(); cerrarModal(); btnSubmit.disabled = false; btnSubmit.innerText = 'Enviar Pedido 🚀';
         }
-
-        function despacharWhatsApp(nombre, telefono, resumen, total, direccion, pago) {
-            const mensajeWhatsApp =
-                `✨ *NUEVO PEDIDO - ALIMÉNTATE SALUDABLE HOY* ✨\n\n` +
-                `👤 *Cliente:* ${nombre}\n` +
-                `📞 *Contacto:* ${telefono}\n` +
-                `📍 *Dirección:* ${direccion}\n` +
-                `💳 *Pago:* Transferencia via ${pago}\n\n` +
-                `🛒 *Detalle:*\n${resumen}\n` +
-                `💰 *Total:* $${total.toLocaleString('es-CO')} COP\n\n` +
-                `Hola Astrid, acabo de generar mi orden desde tu sitio web. ¡Quedo atento a tu confirmación! 🙌`;
-
-            const urlFinal = `https://api.whatsapp.com/send?phone=${NUMERO_WHATSAPP}&text=${encodeURIComponent(mensajeWhatsApp)}`;
-
-            carrito = {};
-            actualizarInterfazCarrito();
-            cerrarModal();
-
-            const btnSubmit = document.getElementById('btnEnviarFinal');
-            btnSubmit.disabled = false;
-            btnSubmit.innerText = 'Enviar Pedido 🚀';
-
-            window.open(urlFinal, '_blank');
-        }
-
         function enviarFormulario(e) {
             e.preventDefault();
-
-            const nombre = document.getElementById('nombreForm').value.trim();
-            const email = document.getElementById('emailForm').value.trim();
-            const telefono = document.getElementById('telefonoForm').value.trim();
-            const mensaje = document.getElementById('mensajeForm').value.trim();
-
-            if (!nombre || !email || !mensaje) {
-                alert('⚠️ Por favor completa todos los campos obligatorios.');
-                return;
-            }
-
-            const asunto = encodeURIComponent('Consulta desde Aliméntate Saludable Hoy');
-            const cuerpo = encodeURIComponent(
-                `Hola Astrid,\n\nMi nombre es ${nombre}.\nMi correo es: ${email}\n${telefono ? `Mi teléfono es: ${telefono}\n\n` : '\n'}Te escribo porque: ${mensaje}\n\n¡Espero tu respuesta!`
-            );
-
-            window.location.href = `mailto:${EMAIL_ASTRID}?subject=${asunto}&body=${cuerpo}`;
-
-            const btn = document.querySelector('.btn-hero-primary');
-            if(btn) {
-                btn.textContent = '✅ Mensaje enviado';
-                setTimeout(() => {
-                    btn.textContent = 'Enviar mensaje ✉️';
-                    document.getElementById('formContacto').reset();
-                }, 2500);
-            }
+            const nombre = document.getElementById('nombreForm').value.trim(), email = document.getElementById('emailForm').value.trim(), telefono = document.getElementById('telefonoForm').value.trim(), mensaje = document.getElementById('mensajeForm').value.trim();
+            if (!nombre || !email || !mensaje) { alert('⚠️ Completa los campos obligatorios.'); return; }
+            window.location.href = `mailto:${EMAIL_ASTRID}?subject=${encodeURIComponent('Consulta web')}&body=${encodeURIComponent(`Hola Astrid,\n\nNombre: ${nombre}\nCorreo:${email}\nTeléfono: ${telefono}\n\nMensaje:${mensaje}`)}`;
         }
     </script>
 </body>
