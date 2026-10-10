@@ -3,75 +3,122 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog de Bienestar, Nutrición y Ciencia | Aliméntate Saludable Hoy</title>
-    <meta name="description" content="Artículos científicos sobre mitocondrias, biohacking celular, termogénesis y nutrición consciente explicados por Astrid." />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+    <title>Blog Científico de Salud Celular, Biohacking y Rendimiento | Astrid</title>
+    
+    <meta name="description" content="Artículos científicos sobre fisiología del entrenamiento, biogénesis mitocondrial, polifenoles del café de origen y síntesis proteica muscular explicados por Astrid." />
+    <meta name="keywords" content="biohacking nutricional, ciencia del ejercicio, mitocondrias, acido clorogenico cafe, leucina sintesis proteica, Astrid nutrición, salud celular" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://alimentatesaludablehoy.com/blog.html" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap">
+
     <style>
-        :root { --primary: #2e7d32; --gold: #ffb300; --dark: #0d1f0d; --light: #f7faf7; --white: #ffffff; }
+        :root {
+            --primary: #2e7d32;
+            --primary-dark: #1b5e20;
+            --gold: #ffb300;
+            --dark: #121212;
+            --light: #f7faf7;
+            --white: #ffffff;
+            --gray: #444;
+            --shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); line-height: 1.7; }
+        body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); line-height: 1.8; }
 
-        header { background: var(--white); padding: 12px 20px; border-bottom: 2px solid var(--primary); sticky: top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 800; color: var(--primary); text-decoration: none; font-size: 1.1rem; }
-        .btn-home { background: var(--primary); color: white; padding: 8px 18px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; text-decoration: none; }
+        header { background: var(--white); padding: 14px 24px; border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.04); }
+        .logo { font-weight: 800; font-size: 1.15rem; color: var(--primary-dark); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .logo span { color: var(--gold); }
+        .btn-home { background: var(--primary); color: white; padding: 8px 20px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; transition: all 0.3s ease; }
+        .btn-home:hover { background: var(--primary-dark); }
 
-        .hero-blog { background: linear-gradient(135deg, #0d1f0d, #2e7d32); color: white; padding: 50px 20px; text-align: center; }
-        .hero-blog h1 { font-size: clamp(2rem, 4vw, 2.8rem); color: var(--gold); font-weight: 800; }
+        .hero-blog { background: linear-gradient(135deg, #0d1f0d 0%, #1b5e20 60%, #2e7d32 100%); color: white; padding: 65px 20px; text-align: center; }
+        .hero-blog h1 { font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 800; color: var(--gold); margin-bottom: 12px; }
+        .hero-blog p { font-size: 1.15rem; max-width: 700px; margin: 0 auto; opacity: 0.9; font-weight: 300; }
 
-        .container { max-width: 850px; margin: 40px auto; padding: 0 20px; }
-        .article { background: var(--white); padding: 35px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 35px; border-left: 5px solid var(--gold); }
-        .article h2 { color: var(--primary); font-size: 1.6rem; font-weight: 800; margin-bottom: 10px; }
-        .meta { font-size: 0.85rem; color: #777; margin-bottom: 16px; font-weight: 600; }
-        .article p { color: #444; font-size: 1.05rem; margin-bottom: 14px; }
-        .article h3 { font-size: 1.2rem; color: var(--dark); margin: 18px 0 8px; font-weight: 700; }
+        .container { max-width: 900px; margin: 50px auto; padding: 0 20px; }
 
-        footer { text-align: center; padding: 30px; background: var(--dark); color: white; font-size: 0.85rem; }
+        .article-card { background: var(--white); padding: 45px; border-radius: 16px; box-shadow: var(--shadow); margin-bottom: 45px; border-left: 6px solid var(--gold); }
+        .article-card h2 { color: var(--primary-dark); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 12px; line-height: 1.3; }
+        .meta-author { font-size: 0.85rem; color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 20px; display: block; }
+        .article-card p { font-size: 1.05rem; color: var(--gray); margin-bottom: 18px; }
+        .article-card h3 { font-size: 1.25rem; color: var(--primary-dark); margin: 22px 0 10px; font-weight: 700; }
+
+        .cta-consult { background: #f0f7f0; border-radius: 12px; padding: 20px; text-align: center; margin-top: 25px; border: 1px solid #d0e5d0; }
+        .btn-consult { background: var(--primary); color: white; padding: 10px 24px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: inline-block; margin-top: 8px; }
+
+        footer { text-align: center; padding: 35px 20px; background: #0d1f0d; color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-top: 60px; }
+
+        @media (max-width: 768px) {
+            .article-card { padding: 25px; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="index.html" class="logo">🌿 Aliméntate Saludable Hoy</a>
+        <a href="index.html" class="logo">🌿 Aliméntate <span>Saludable</span> Hoy</a>
         <a href="index.html" class="btn-home">← Volver al Home</a>
     </header>
 
     <section class="hero-blog">
-        <h1>Fuerza, Ciencia y Salud Celular</h1>
-        <p style="opacity:0.9;">Artículos científicos sobre nutrición consciente y biohacking por Astrid</p>
+        <h1>Fuerza, Ciencia y Nutrición Celular</h1>
+        <p>Divulgación científica con rigor fisiológico escrita por Astrid para transformar tu cuerpo con conocimiento real.</p>
     </section>
 
     <div class="container">
 
-        <!-- ARTÍCULO 1: MITOCONDRIAS Y EJERCICIO -->
-        <article class="article">
-            <h2>🏋️ Biogénesis Mitocondrial: Cómo el Ejercicio Reprograma tu Metabolismo</h2>
-            <div class="meta">Por Astrid | Educación Nutricional & Fisiología</div>
-            <p>Las mitocondrias son los motores celulares encargados de sintetizar trifosfato de adenosina (ATP). Cuando realizamos entrenamiento de fuerza guiado y ejercicio de alta intensidad, desencadenamos la expresión del coactivador genético PGC-1α, responsable de estimular la síntesis de nuevas mitocondrias.</p>
-            <h3>El impacto directo en la grasa visceral</h3>
-            <p>A mayor densidad mitocondrial en el tejido muscular esquelético, mayor es la tasa metabólica basal (TMB). Esto significa que tu cuerpo utiliza de forma prioritaria los ácidos grasos circulantes como sustrato energético durante todo el día.</p>
+        <!-- ARTÍCULO 1 -->
+        <article class="article-card">
+            <h2>🏋️ Biogénesis Mitocondrial: Cómo el Ejercicio Reprograma tu Metabolismo Celular</h2>
+            <span class="meta-author">Por Astrid • Consultora en Educación Nutricional y Fisiología</span>
+            <p>Las mitocondrias no son simples organelos energéticos; son los directores de orquesta del metabolismo humano. Encargadas de sintetizar trifosfato de adenosina (ATP) mediante la fosforilación oxidativa, su densidad y eficiencia determinan tu capacidad de quemar sustratos energéticos y resistir la fatiga.</p>
+            <p>Cuando aplicamos estímulos de tensión mecánica mediante el entrenamiento de fuerza guiado, activamos de manera directa la expresión de la proteína coactivadora transcripcional <strong>PGC-1α</strong>. Este factor desencadena la biogénesis mitocondrial: la creación de mitocondrias más jóvenes y eficientes en las fibras musculares esqueléticas.</p>
+            <h3>El impacto real en la flexibilidad metabólica</h3>
+            <p>Un tejido muscular rico en densidad mitocondrial utiliza eficientemente los ácidos grasos libres durante el reposo. Esto significa que tu metabolismo basal se eleva de forma natural, previniendo la acumulación de grasa visceral y optimizando la sensibilidad a la insulina sin recurrir a fármacos o dietas extremas.</p>
+            
+            <div class="cta-consult">
+                <p style="margin-bottom:0; font-weight:600;">¿Quieres estructurar un plan de alimentación adaptado a tu entrenamiento?</p>
+                <a href="https://wa.me/573206344590?text=Hola%20Astrid%2C%20le%C3%AD%20tu%20art%C3%ADculo%20sobre%20salud%20mitocondrial%20y%20quiero%20asesor%C3%ADa" class="btn-consult" target="_blank">💬 Solicitar Consultoría con Astrid ↗</a>
+            </div>
         </article>
 
-        <!-- ARTÍCULO 2: CAFÉ FUNCIONAL Y TERMOGÉNESIS -->
-        <article class="article">
-            <h2>☕ Fitoquímicos del Café: Ácido Clorogénico y Termogénesis</h2>
-            <div class="meta">Por Astrid | Biohacking & Alimentos Funcionales</div>
-            <p>El café no solo es un estimulante del sistema nervioso central mediante la adenosina; es una de las fuentes de antioxidantes polifenólicos más potentes de la dieta humana. El ácido clorogénico (CGA) inhibe parcialmente la enzima glucosa-6-fosfatasa, moderando la liberación de glucosa hepática al torrente sanguíneo.</p>
-            <h3>Sinergia con el ayuno y el entrenamiento</h3>
-            <p>Consumir café de alta especialidad antes de la actividad física estimula la secreción de catecolaminas (adrenalina y noradrenalina), facilitando la lipólisis intracelular al movilizar triglicéridos almacenados en los adipocitos.</p>
+        <!-- ARTÍCULO 2 -->
+        <article class="article-card">
+            <h2>☕ Fitoquímicos del Café de Origen: Ácido Clorogénico y Termogénesis</h2>
+            <span class="meta-author">Por Astrid • Biohacking y Alimentos Funcionales</span>
+            <p>El café de alta especialidad cultivado a 1.750 msnm es mucho más que un estimulante del sistema nervioso central. Su verdadero poder reside en su perfil de polifenoles bioactivos, encabezados por los ácidos clorogénicos (CGA), poderosos antioxidantes capaces de modular la respuesta metabólica a los carbohidratos.</p>
+            <p>A nivel celular, el ácido clorogénico inhibe de forma reversible la enzima <strong>glucosa-6-fosfatasa</strong>, modulando la gluconeogénesis hepática y reduciendo las picos de glucosa e insulina postprandiales.</p>
+            <h3>Termogénesis y movilización de adipocitos</h3>
+            <p>Al consumir café de especialidad antes de la actividad física, la cafeína unida a los compuestos fitoquímicos estimula la liberación de catecolaminas (adrenalina y noradrenalina). Esto activa los receptores beta-adrenérgicos de la membrana del adipocito, acelerando la lipólisis intracelular (descomposición de triglicéridos en ácidos grasos libres).</p>
+            
+            <div class="cta-consult">
+                <p style="margin-bottom:0; font-weight:600;">Conoce nuestro Café Funcional Termogénico de Origen Colombiano.</p>
+                <a href="marca-blanca-cafe.html" class="btn-consult">☕ Ver Detalles del Café & Marca Blanca ↗</a>
+            </div>
         </article>
 
-        <!-- ARTÍCULO 3: PROTEÍNA Y SÍNTESIS MUSCULAR -->
-        <article class="article">
-            <h2>🥗 La Ciencia de la Leucina: Umbral de Síntesis Proteica Muscular</h2>
-            <div class="meta">Por Astrid | Nutrición Deportiva</div>
-            <p>Para frenar el catabolismo y estimular la síntesis de proteína muscular (MPS) a través de la vía mTor, no basta con consumir "proteína de vez en cuando". Se requiere alcanzar un umbral crítico de aproximadamente 2.5 a 3 gramos de leucina pura por comida.</p>
-            <p>Entender la biodisponibilidad y la densidad de nutrientes te permite optimizar tus suplementos sin desperdiciar dinero en frascos innecesarios.</p>
+        <!-- ARTÍCULO 3 -->
+        <article class="article-card">
+            <h2>🥗 La Ciencia del Umbral de Leucina y la Síntesis de Proteína Muscular</h2>
+            <span class="meta-author">Por Astrid • Nutrición Deportiva Avanzada</span>
+            <p>Para mitigar la sarcopenia (pérdida de masa muscular asociada a la edad) o estimular la hipertrofia muscular, no basta con consumir "proteína". El factor desencadenante bioquímico es la concentración plasmática del aminoácido esencial <strong>leucina</strong>.</p>
+            <p>La leucina actúa como el interruptor molecular que activa la vía enzimática <strong>mTORC1</strong> (mTOR Complex 1). Sin alcanzar un umbral de leucina de aproximadamente 2.7 a 3.5 gramos por comida, la cascada de síntesis proteica muscular no se activa de forma óptima.</p>
+            <h3>Educación antes que suplementación impulsiva</h3>
+            <p>Aprender a combinar fuentes de proteínas de alto valor biológico (o suplementos proteicos puros cuando sean necesarios) garantiza que tu esfuerzo en el gimnasio se traduzca en tejido muscular real, metabolismo fuerte y articulaciones sanas.</p>
+            
+            <div class="cta-consult">
+                <p style="margin-bottom:0; font-weight:600;">Aprende a elegir tus fuentes de proteínas y suplementos con criterio.</p>
+                <a href="https://wa.me/573206344590?text=Hola%20Astrid%2C%20quiero%20aprender%20a%20estructurar%20mi%20consumo%20de%20prote%C3%ADnas" class="btn-consult" target="_blank">💬 Hablar con Astrid sobre Asesoría Nutricional ↗</a>
+            </div>
         </article>
 
     </div>
 
     <footer>
-        <p>© 2026 Aliméntate Saludable Hoy. Todos los derechos reservados.</p>
+        <p>© 2026 Aliméntate Saludable Hoy. Todos los derechos reservados. | Educación Nutricional con Propósito.</p>
     </footer>
+
 </body>
 </html>
