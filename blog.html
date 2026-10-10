@@ -3,68 +3,120 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog de Bienestar, Nutrición y Ejercicio | Aliméntate Saludable Hoy</title>
-    <meta name="description" content="Artículos científicos, guías de ejercicio, nutrición con propósito y bienestar integral escritos por Astrid." />
+    <title>Blog de Bienestar, Nutrición y Biohacking | Aliméntate Saludable Hoy</title>
+    <meta name="description" content="Artículos científicos, guías de ejercicio, nutrición con propósito y bienestar integral escritos por Astrid para transformar tu vida con conocimiento real." />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://alimentatesaludablehoy.com/blog.html" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap">
     <style>
-        :root { --primary: #2e7d32; --gold: #ffb300; --dark: #0d1f0d; --light: #f7faf7; --white: #ffffff; }
+        :root {
+            --primary: #2e7d32;
+            --primary-dark: #1b5e20;
+            --gold: #ffb300;
+            --gold-light: #ffd54f;
+            --dark: #121212;
+            --light: #f7faf7;
+            --white: #ffffff;
+            --gray: #555;
+            --shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); line-height: 1.7; }
-        header { background: var(--white); padding: 15px 20px; border-bottom: 2px solid var(--primary); position: sticky; top:0; z-index:100; display:flex; justify-content:space-between; align-items:center; }
-        .logo { font-weight: 800; font-size: 1.2rem; color: var(--primary); text-decoration:none; display:flex; align-items:center; gap:8px; }
-        .btn-home { background: var(--primary); color: white; padding: 8px 18px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; text-decoration:none; }
-        .hero-blog { background: linear-gradient(135deg, #0d1f0d, #2e7d32); color: white; padding: 60px 20px; text-align: center; }
-        .hero-blog h1 { font-size: 2.5rem; margin-bottom: 15px; color: var(--gold); }
-        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-        .article-card { background: var(--white); padding: 35px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 30px; border-left: 5px solid var(--gold); }
-        .article-card h2 { color: var(--primary); margin-bottom: 12px; font-size: 1.6rem; }
-        .meta { font-size: 0.85rem; color: #666; margin-bottom: 15px; }
-        footer { text-align: center; padding: 30px; background: var(--dark); color: white; font-size: 0.85rem; margin-top: 60px; }
+
+        /* HEADER */
+        header { background: var(--white); padding: 15px 30px; border-bottom: 2px solid var(--primary); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+        .logo { font-weight: 800; font-size: 1.15rem; color: var(--primary-dark); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .logo span { color: var(--gold); }
+        .btn-home { background: var(--primary); color: white; padding: 10px 22px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; transition: all 0.3s ease; }
+        .btn-home:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+        /* HERO BLOG */
+        .hero-blog { background: linear-gradient(135deg, #0d1f0d 0%, #1b5e20 60%, #2e7d32 100%); color: white; padding: 80px 20px; text-align: center; }
+        .hero-blog h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 12px; color: var(--white); }
+        .hero-blog h1 span { color: var(--gold); }
+        .hero-blog p { font-size: 1.15rem; max-width: 650px; margin: 0 auto; opacity: 0.9; }
+
+        /* CONTENEDOR PRINCIPAL */
+        .container { max-width: 900px; margin: 50px auto; padding: 0 20px; }
+
+        /* ARTÍCULOS */
+        .article-card { background: var(--white); padding: 40px; border-radius: 16px; box-shadow: var(--shadow); margin-bottom: 40px; border-left: 6px solid var(--gold); transition: all 0.3s ease; }
+        .article-card:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        .article-card h2 { color: var(--primary-dark); font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; }
+        .meta { font-size: 0.85rem; color: #777; margin-bottom: 20px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .article-card p { font-size: 1.05rem; color: var(--gray); margin-bottom: 20px; }
+        
+        .btn-read { background: var(--primary); color: white; padding: 10px 24px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: inline-block; transition: all 0.3s ease; }
+        .btn-read:hover { background: var(--primary-dark); transform: scale(1.05); }
+
+        /* ZONA MODULAR PARA IA / AUTOMATIZACIÓN */
+        .ai-injection-zone { background: #e8f5e9; border: 2px dashed var(--primary); padding: 25px; border-radius: 12px; margin-bottom: 40px; text-align: center; color: var(--primary-dark); font-size: 0.9rem; }
+
+        /* FOOTER */
+        footer { text-align: center; padding: 35px; background: var(--dark); color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-top: 60px; }
+
+        @media(max-width: 768px) {
+            .hero-blog h1 { font-size: 2.2rem; }
+            .article-card { padding: 25px; }
+        }
     </style>
 </head>
 <body>
 
+    <!-- HEADER -->
     <header>
-        <a href="index.html" class="logo">🌿 Aliméntate Saludable Hoy</a>
-        <a href="index.html" class="btn-home">← Volver al Inicio (Home)</a>
+        <a href="index.html" class="logo">🌿 Aliméntate <span>Saludable</span> Hoy</a>
+        <a href="index.html" class="btn-home">← Volver al Home</a>
     </header>
 
+    <!-- HERO BLOG -->
     <section class="hero-blog">
-        <h1>Fuerza, Cuerpo y Vida</h1>
-        <p>Artículos de educación nutricional, biohacking y bienestar con fundamento científico.</p>
+        <h1>Fuerza, <span>Cuerpo y Vida</span></h1>
+        <p>Equilibrio absoluto entre ejercicio, nutrición consciente y biohacking celular con respaldo científico.</p>
     </section>
 
     <div class="container">
 
         <!-- ========================================================== -->
-        <!-- 🚀 PEGA AQUÍ EL ARTÍCULO DE ESTA SEMANA (ZONA MODULAR IA) 🚀 -->
+        <!-- 🚀 ZONA MODULAR PARA LA IA (PEGA AQUÍ EL ARTÍCULO SEMANAL) 🚀 -->
         <!-- ========================================================== -->
-        <div id="articulo-semanal-ia"></div>
+        <div class="ai-injection-zone" id="articulo-semanal-ia">
+            <p><strong>[ÁREA DE INYECCIÓN AUTOMÁTICA SEMANAL]</strong></p>
+            <p style="font-size: 0.8rem; margin-top: 5px; color: #555;">Los agentes de IA inyectarán aquí nuevos artículos optimizados para SEO cada semana sin supervisión.</p>
+        </div>
 
+        <!-- ARTÍCULO 1 -->
         <article class="article-card">
             <h2>🏋️ Ejercicio: El Motor Fundamental de tu Energía Celular</h2>
-            <div class="meta">Publicado por Astrid | Nutrición y Bienestar</div>
-            <p>El movimiento diario no solo tonifica los músculos; activa las mitocondrias, mejora drásticamente la sensibilidad a la insulina y optimiza la calidad del sueño. Integrar rutinas de fuerza adaptadas a tu estilo de vida es el pilar inquebrantable de una longevidad saludable.</p>
+            <div class="meta">Por Astrid • Nutrición y Rendimiento</div>
+            <p>El movimiento diario no solo tonifica los músculos; activa de manera directa las mitocondrias, mejora drásticamente la sensibilidad a la insulina y optimiza la calidad del sueño profundo. Integrar rutinas de fuerza adaptadas a tu estilo de vida es el pilar inquebrantable de una longevidad verdaderamente saludable y activa.</p>
+            <a href="#contacto" class="btn-read">💬 Consultar sobre Asesoría Personalizada</a>
         </article>
 
+        <!-- ARTÍCULO 2 -->
         <article class="article-card">
             <h2>🥗 Alimentación Consciente vs. Restricción Extrema</h2>
-            <div class="meta">Publicado por Astrid | Educación Nutricional</div>
-            <p>Comer bien no significa pasar hambre. Significa comprender el papel bioquímico de cada macronutriente. Cuando priorizas proteínas de alto valor biológico y grasas esenciales, eliminas la ansiedad por comer y desbloqueas la quema natural de grasa corporal.</p>
+            <div class="meta">Por Astrid • Educación Nutricional</div>
+            <p>Comer bien nunca significará pasar hambre. Significa comprender el papel bioquímico y metabólico de cada macronutriente en tu organismo. Cuando priorizas proteínas de alto valor biológico y grasas esenciales, eliminas la ansiedad por comer y desbloqueas de forma natural la quema de grasa corporal.</p>
+            <a href="#contacto" class="btn-read">💬 Aprende a Elegir tus Alimentos</a>
         </article>
 
+        <!-- ARTÍCULO 3 -->
         <article class="article-card">
-            <h2>🧠 Biohacking y Descanso: El Triángulo del Éxito</h2>
-            <div class="meta">Publicado por Astrid | Estilo de Vida</div>
-            <p>El descanso nocturno y la gestión del estrés son tan vitales como el entrenamiento. Sin una adecuada recuperación del sistema nervioso, el cuerpo entra en estado de alerta catabólica impidiendo cualquier progreso físico.</p>
+            <h2>🧠 Biohacking y Descanso: El Triángulo del Éxito Metabólico</h2>
+            <div class="meta">Por Astrid • Estilo de Vida y Salud</div>
+            <p>El descanso nocturno y la correcta gestión del estrés son tan vitales como el entrenamiento físico en el gimnasio. Sin una adecuada recuperación del sistema nervioso central, el cuerpo entra en un estado de alerta catabólica que frena en seco cualquier progreso estético y de salud.</p>
+            <a href="#contacto" class="btn-read">💬 Empieza tu Transformación</a>
         </article>
 
     </div>
 
+    <!-- FOOTER -->
     <footer>
-        <p>© 2026 Aliméntate Saludable Hoy. Todos los derechos reservados.</p>
+        <p>© 2026 Aliméntate Saludable Hoy. Todos los derechos reservados. | Educación nutricional con propósito.</p>
     </footer>
+
 </body>
 </html>
