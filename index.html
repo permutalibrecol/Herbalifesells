@@ -7,7 +7,7 @@
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Aprende a alimentar tu cuerpo con conocimiento. Astrid te guía en nutrición, ejercicio, suplementos y café funcional. ¡Empieza tu transformación hoy!" />
-    <meta name="keywords" content="nutrición, educación nutricional, suplementos, ejercicio, bienestar, alimentación saludable, Astrid, asesoría nutricional, café funcional, asohermosas, marca blanca café" />
+    <meta name="keywords" content="nutrición, educación nutricional, suplementos, ejercicio, bienestar, alimentación saludable, Astrid, asesoría nutricional, café funcional, asohermosas, marca blanca café, exportación café" />
     <meta name="author" content="Astrid - Aliméntate Saludable Hoy" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://alimentatesaludablehoy.com/" />
@@ -29,9 +29,6 @@
     <meta name="twitter:image" content="https://raw.githubusercontent.com/permutalibrecol/Herbalifesells/main/imagenes/IMG_20260721_074307.jpg" />
 
     <meta name="theme-color" content="#2e7d32" />
-
-    <!-- Librería StPageFlip para el Visor Interactivo de Tríptico -->
-    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
 
     <!-- JSON-LD Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -88,10 +85,11 @@
         .loader p { margin-top: 16px; color: var(--primary); font-weight: 600; font-size: 1rem; letter-spacing: 0.5px; }
         @keyframes spin { to { transform: rotate(360deg); } }
 
-        /* HEADER & MOBILE MENU */
+        /* HEADER & HOME LINK */
         .site-header { background: var(--white); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 100; padding: 10px 0; border-bottom: 2px solid var(--primary); }
         .header-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap; gap: 10px; }
-        .header-brand { display: flex; align-items: center; gap: 8px; }
+        .header-brand { display: flex; align-items: center; gap: 8px; cursor: pointer; transition: var(--transition); }
+        .header-brand:hover { opacity: 0.85; }
         .header-brand .logo-icon { font-size: 1.8rem; }
         .header-brand h1 { font-size: 1.1rem; color: var(--primary-dark); font-weight: 800; line-height: 1.2; }
         .header-brand h1 span { color: var(--gold); }
@@ -104,7 +102,6 @@
         .header-whatsapp { background: #25d366; color: white !important; padding: 6px 14px; border-radius: 50px; font-weight: 600; font-size: 0.75rem; transition: var(--transition); display: inline-flex; align-items: center; gap: 4px; }
         .header-whatsapp:hover { transform: scale(1.05); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
 
-        /* Botón Menú Hamburguesa Móvil */
         .menu-toggle { display: none; background: none; border: none; font-size: 1.8rem; color: var(--primary-dark); cursor: pointer; padding: 4px; }
 
         /* HERO */
@@ -163,10 +160,18 @@
         .price-tag { font-size: 1.6rem; color: var(--primary); font-weight: 800; margin: 15px 0; }
         .btn-brand-action { background: var(--gold); color: var(--dark); padding: 14px 30px; border-radius: 50px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); border: none; cursor: pointer; text-decoration: none; }
         .btn-brand-action:hover { background: var(--gold-light); transform: translateY(-3px); }
-        .btn-triptico-trigger { background: #ffffff; color: var(--primary-dark); padding: 14px 30px; border-radius: 50px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); border: none; cursor: pointer; margin-top: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        .btn-triptico-trigger:hover { background: var(--gold-light); transform: translateY(-3px); }
 
-        /* CATÁLOGOS */
+        /* SECCIÓN DEL TRÍPTICO EN CARRUSEL LIMPIO */
+        .triptico-preview-section { background: #121212; color: white; padding: 60px 0; text-align: center; }
+        .triptico-preview-section h2 { color: var(--gold); font-size: 2rem; margin-bottom: 10px; }
+        .triptico-preview-section p { color: #ccc; margin-bottom: 30px; }
+        .triptico-carousel-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
+        .triptico-slide { width: 300px; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.1); }
+        .triptico-slide img { width: 100%; height: auto; display: block; }
+        .btn-ver-mas { background: var(--gold); color: var(--dark); padding: 14px 32px; border-radius: 50px; font-weight: bold; text-decoration: none; display: inline-block; transition: var(--transition); }
+        .btn-ver-mas:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+        /* CATÁLOGO DE PRODUCTOS */
         .catalogo-section { padding: 50px 0; background: var(--white); }
         .catalogo-header { text-align: center; margin-bottom: 35px; }
         .catalogo-header h2 { font-size: 2rem; color: var(--primary-dark); }
@@ -231,31 +236,12 @@
         .btn-cart-remove { background: rgba(211, 47, 47, 0.15); color: #ef5350; border: 1px solid rgba(211, 47, 47, 0.1); padding: 6px 12px; border-radius: 6px; font-weight: 600; font-size: 0.7rem; cursor: pointer; }
         .btn-checkout { background: #25d366; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; cursor: pointer; }
 
-        /* MODALES */
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(6px); display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.35s ease; z-index: 2000; padding: 16px; }
+        /* MODAL */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.55); backdrop-filter: blur(4px); display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.35s ease; z-index: 2000; padding: 16px; }
         .modal-overlay.active { opacity: 1; pointer-events: auto; }
         .modal { background: var(--white); padding: 28px 24px; border-radius: var(--radius); width: 100%; max-width: 420px; box-shadow: var(--shadow-lg); max-height: 90vh; overflow-y: auto; }
 
-        /* MODAL DEL TRÍPTICO INTERACTIVO */
-        .modal-triptico { max-width: 1050px; width: 95%; background: #121212; color: white; padding: 20px; border-radius: var(--radius); position: relative; }
-        .modal-triptico-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
-        .modal-triptico-header h3 { color: var(--gold); font-size: 1.3rem; }
-        .close-triptico { background: rgba(255,255,255,0.2); border: none; color: white; font-size: 1.2rem; border-radius: 50%; width: 32px; height: 32px; cursor: pointer; }
-        
-        #flipbook-container { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; }
-        #flipbook { box-shadow: 0 10px 30px rgba(0,0,0,0.8); border-radius: 4px; overflow: hidden; }
-        .triptico-page { background: #fff; display: flex; justify-content: center; align-items: center; }
-        .triptico-page img { width: 100%; height: 100%; object-fit: fill; }
-        
-        .triptico-controls { margin-top: 15px; display: flex; gap: 15px; align-items: center; justify-content: center; }
-        .btn-flip { background: var(--gold); color: #1c1c1c; border: none; padding: 8px 18px; border-radius: 20px; font-weight: bold; cursor: pointer; }
-
-        /* MEDIA QUERIES MOBILE-FIRST */
-        @media (max-width: 900px) { 
-            .grid-2, .hero-container { flex-direction: column; text-align: center; } 
-            .hero-imagen { flex: 0 0 220px; max-width: 220px; } 
-            .hero-buttons { justify-content: center; } 
-        }
+        @media (max-width: 900px) { .grid-2, .hero-container { flex-direction: column; text-align: center; } .hero-imagen { flex: 0 0 220px; max-width: 220px; } .hero-buttons { justify-content: center; } }
         @media (max-width: 768px) { 
             .problema-grid, .contacto-grid { grid-template-columns: 1fr; } 
             .menu-toggle { display: block; }
@@ -273,15 +259,15 @@
         <p>🌿 Cargando conocimiento...</p>
     </div>
 
-    <!-- HEADER & NAVEGACIÓN MOBILE-FIRST -->
+    <!-- HEADER & HOME LOGO LINK -->
     <header class="site-header">
         <div class="container header-inner">
-            <div class="header-brand">
+            <!-- LOGO FUNCIONANDO COMO BOTÓN HOME -->
+            <div class="header-brand" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Volver al inicio">
                 <span class="logo-icon">🌿</span>
                 <h1>Aliméntate <span>Saludable</span> Hoy</h1>
             </div>
             
-            <!-- Botón Hamburguesa para Móviles -->
             <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
 
             <nav class="header-nav" id="headerNav">
@@ -320,7 +306,7 @@
                 <div class="hero-buttons">
                     <a href="#contacto" class="btn-hero-primary">💬 Quiero aprender</a>
                     <a href="#problema" class="btn-hero-secondary">📖 Conoce mi enfoque</a>
-                    <a href="https://wa.me/573206344590?text=Hola%20Astrid%2C%20quiero%20conocer%20sobre%20el%20Caf%C3%A9%20Funcional%20y%20Marca%20Blanca" target="_blank" class="btn-hero-primary" style="background:var(--primary-light); color:white;">☕ Pestaña Café & B2B 🚀</a>
+                    <a href="#cafe-pestana" class="btn-hero-primary" style="background:var(--primary-light); color:white;">☕ Café Funcional & B2B 🚀</a>
                 </div>
             </div>
         </div>
@@ -387,7 +373,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN B2C BIOHACKING NUTRICIONAL & CAFÉ -->
+    <!-- BIOHACKING (TEXTO CORREGIDO SIN CARACTERES EXTRAÑOS) -->
     <section class="biohacking-section" id="biohacking">
         <div class="container grid-2">
             <div>
@@ -397,7 +383,7 @@
                     El verdadero bienestar no se trata de añadir procesos complejos a tu vida, sino de <strong>hackear de forma inteligente tus hábitos cotidianos</strong>. Al combinar la ciencia de la nutrición celular con alimentos funcionales de alto impacto, despiertas el máximo potencial de tu metabolismo.
                 </p>
                 <p class="bio-text">
-                    Aprende a estructurar un ecosistema donde tu café matutino activa la termogénesis natural, las proteínas premium重建tus músculos y los micronutrientes esenciales protegen tu salud cardiovascular desde la primera hora del día.
+                    Aprende a estructurar un ecosistema donde tu café matutino activa la termogénesis natural, las proteínas premium reconstruyen tus músculos y los micronutrientes esenciales protegen tu salud cardiovascular desde la primera hora del día.
                 </p>
             </div>
             
@@ -413,7 +399,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN B2B MARCA BLANCA / ASOHERMOSAS (CON VISOR DE TRÍPTICO LOCAL) -->
+    <!-- SECCIÓN MARCA BLANCA / ASOHERMOSAS & ENLACE A PÁGINA AMPLIADA -->
     <section class="brand-section" id="cafe-pestana">
         <div class="container grid-2">
             <div style="text-align: center;">
@@ -422,10 +408,6 @@
                 <p style="font-size: 0.95rem; opacity: 0.8; margin-top: 10px; max-width: 380px; margin-left: auto; margin-right: auto; color: white;">
                     Respaldo técnico, nutricional y logístico para poner en el mercado un producto premium y con propósito social.
                 </p>
-                <!-- BOTÓN PARA DESPLEGAR EL TRÍPTICO MEJORADO -->
-                <button class="btn-triptico-trigger" onclick="abrilModalTriptico()">
-                    📖 Ver Tríptico Interactivo Asohermosas ↗
-                </button>
             </div>
             
             <div>
@@ -435,16 +417,37 @@
                     Si eres dueño de un gimnasio, influencer fitness, profesional de la salud o emprendedor, es momento de monetizar tu comunidad con un producto propio de alta demanda en Colombia. 
                 </p>
                 <p class="brand-text">
-                    A través de nuestra alianza con <strong>Asohermosas</strong>, te ofrecemos el servicio completo de <strong>maquila y distribución de marca blanca</strong> de café funcional. Astrid te asesora paso a paso en el perfil nutricional y la estructura comercial.
+                    A través de nuestra alianza con <strong>Asohermosas</strong>, te ofrecemos el servicio completo de maquila y distribución de marca blanca de café funcional.
                 </p>
-                <a href="https://wa.me/573206344590?text=Hola%20Astrid%2C%20estoy%20interesado%20en%20crear%20mi%20propia%20marca%20de%20Caf%C3%A9%20Saludable%20(Marca%20Blanca%20Asohermosas)" class="btn-brand-action" target="_blank">
-                    🤝 Hablar con Astrid sobre Distribución (Nueva Pestaña) ↗
-                </a>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <a href="marca-blanca-cafe.html" class="btn-brand-action" target="_blank">
+                        📖 Ver Información Completa y Tríptico ↗
+                    </a>
+                    <a href="https://wa.me/573206344590?text=Hola%20Astrid%2C%20estoy%20interesado%20en%20crear%20mi%20propia%20marca%20de%20Caf%C3%A9%20Saludable" class="btn-brand-action" style="background:#25d366; color:white;" target="_blank">
+                        🤝 Hablar con Astrid sobre Distribución
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CATÁLOGO DE PRODUCTOS COMPLETO DE HERBALIFE -->
+    <!-- SECCIÓN DE TRÍPTICO PREVIEW CON CARRUSEL DIRECTO -->
+    <section class="triptico-preview-section">
+        <div class="container">
+            <h2>☕ Vistazo al Tríptico Oficial Asohermosas</h2>
+            <p>Conoce nuestras variedades exclusivas de altura, perfiles de taza y trazabilidad real.</p>
+            
+            <div class="triptico-carousel-container">
+                <div class="triptico-slide"><img src="imagenes/triptico-1.webp.jpg" alt="Tríptico 1"></div>
+                <div class="triptico-slide"><img src="imagenes/triptico-2.webp.jpg" alt="Tríptico 2"></div>
+                <div class="triptico-slide"><img src="imagenes/triptico-3.webp.jpg" alt="Tríptico 3"></div>
+            </div>
+
+            <a href="marca-blanca-cafe.html" class="btn-ver-mas" target="_blank">Abrir Versión Completa en Otra Página ↗</a>
+        </div>
+    </section>
+
+    <!-- CATÁLOGO DE PRODUCTOS HERBALIFE -->
     <section class="catalogo-section" id="catalogo">
         <div class="container">
             <div class="catalogo-header">
@@ -455,7 +458,6 @@
             <!-- ===== CATEGORÍA 1: BEBIDAS Y ENERGIZANTES ===== -->
             <div class="category-title"><span>🥤</span> Bebidas y Energizantes</div>
             <div class="grid">
-
                 <div class="card" data-id="P01" data-name="Golden Beverage" data-price="145000">
                     <div class="card-img">
                         <span class="card-badge popular">🔥 Popular</span>
@@ -572,7 +574,6 @@
             <!-- ===== CATEGORÍA 2: PROTEÍNAS Y NUTRICIÓN ===== -->
             <div class="category-title"><span>💪</span> Proteínas y Nutrición</div>
             <div class="grid">
-
                 <div class="card" data-id="P10" data-name="Fórmula 1 Batido Nutricional" data-price="142000">
                     <div class="card-img">
                         <span class="card-badge">⭐ Esencial</span>
@@ -657,7 +658,6 @@
             <!-- ===== CATEGORÍA 3: SUPLEMENTOS Y BIENESTAR ===== -->
             <div class="category-title"><span>🌿</span> Suplementos y Bienestar</div>
             <div class="grid">
-
                 <div class="card" data-id="P17" data-name="Collagen Drink" data-price="194000">
                     <div class="card-img">
                         <span class="card-badge premium">💎 Premium</span>
@@ -710,7 +710,6 @@
             <!-- ===== CATEGORÍA 4: SNACKS ===== -->
             <div class="category-title"><span>🍫</span> Snacks y Complementos</div>
             <div class="grid">
-
                 <div class="card" data-id="P20" data-name="Crocante de Proteína" data-price="65000">
                     <div class="card-img">
                         <span class="card-badge snack">🍿 Snack</span>
@@ -746,7 +745,7 @@
         </div>
     </section>
 
-    <!-- BLOG -->
+    <!-- BLOG (ENLACE A OTRA PÁGINA INTERNA DE ARTÍCULOS) -->
     <section class="blog-section" id="blog">
         <div class="container">
             <div class="blog-header">
@@ -755,31 +754,28 @@
             </div>
             <div class="blog-grid">
                 <div class="blog-card">
-                    <span class="icon">🏋️</span>
-                    <h3>Ejercicio: El Motor de tu Energía</h3>
+                    <span class="icon">☕</span>
+                    <h3>El Boom del Café de Especialidad: Tendencias de Exportación y Crecimiento</h3>
                     <p>
-                        El movimiento diario no solo fortalece músculos, también mejora tu estado de ánimo,
-                        calidad del sueño y salud cardiovascular. Encuentra la rutina que se adapte a ti.
+                        Descubre cómo las ventas internacionales y exportaciones del café colombiano de alta especialidad continúan su expansión global, generando nuevas oportunidades de negocio e impacto social en 2025 y 2026.
                     </p>
-                    <span class="tag">💪 Movimiento</span>
+                    <a href="blog-cafe-exportacion.html" class="btn-ver-mas" style="padding: 8px 16px; font-size:0.85rem; margin-top:10px;" target="_blank">Leer artículo completo ↗</a>
+                </div>
+                <div class="blog-card">
+                    <span class="icon">🧬</span>
+                    <h3>Beneficios del Café en Todas Sus Formas: Salud, Energía y Antioxidantes</h3>
+                    <p>
+                        Un análisis profundo sobre cómo el consumo inteligente de café funcional activa el metabolismo, protege el sistema cardiovascular y potencia el rendimiento físico diario.
+                    </p>
+                    <a href="blog-beneficios-cafe.html" class="btn-ver-mas" style="padding: 8px 16px; font-size:0.85rem; margin-top:10px;" target="_blank">Leer artículo completo ↗</a>
                 </div>
                 <div class="blog-card">
                     <span class="icon">🥗</span>
-                    <h3>Alimentación Consciente</h3>
+                    <h3>Alimentación Consciente y Biohacking Celular</h3>
                     <p>
-                        Comer bien no es restringirse, es nutrir tu cuerpo con lo que realmente necesita.
-                        Prioriza proteínas de calidad, grasas saludables y carbohidratos complejos.
+                        Comer bien no es restringirse, es nutrir tu cuerpo con lo que realmente necesita para desbloquear tu máximo potencial físico y mental.
                     </p>
-                    <span class="tag">🍽️ Nutrición</span>
-                </div>
-                <div class="blog-card">
-                    <span class="icon">🧠</span>
-                    <h3>Vida en Equilibrio</h3>
-                    <p>
-                        El verdadero bienestar integra cuerpo, mente y espíritu. El descanso reparador
-                        y la gestión del estrés son tan importantes como el ejercicio.
-                    </p>
-                    <span class="tag">🌟 Bienestar</span>
+                    <a href="blog-biohacking.html" class="btn-ver-mas" style="padding: 8px 16px; font-size:0.85rem; margin-top:10px;" target="_blank">Leer artículo completo ↗</a>
                 </div>
             </div>
         </div>
@@ -915,36 +911,7 @@
         </div>
     </div>
 
-    <!-- MODAL TRÍPTICO INTERACTIVO ASOHERMOSAS -->
-    <div class="modal-overlay" id="modalTripticoOverlay">
-        <div class="modal-triptico">
-            <div class="modal-triptico-header">
-                <h3>☕ Tríptico Interactivo - Marca Blanca Asohermosas</h3>
-                <button class="close-triptico" onclick="cerrarModalTriptico()">✕</button>
-            </div>
-            <div id="flipbook-container">
-                <div id="flipbook">
-                    <!-- Páginas Locales del Tríptico Optimizado -->
-                    <div class="triptico-page">
-                        <img src="imagenes/triptico-1.webp.jpg" alt="Tríptico Asohermosas - Cara 1">
-                    </div>
-                    <div class="triptico-page">
-                        <img src="imagenes/triptico-2.webp.jpg" alt="Tríptico Asohermosas - Cara 2">
-                    </div>
-                    <div class="triptico-page">
-                        <img src="imagenes/triptico-3.webp.jpg" alt="Tríptico Asohermosas - Cara 3">
-                    </div>
-                </div>
-                <div class="triptico-controls">
-                    <button class="btn-flip" id="prevTriptico">← Anterior</button>
-                    <span id="pageInfoTriptico" style="font-size:0.9rem;">Página 1 de 3</span>
-                    <button class="btn-flip" id="nextTriptico">Siguiente →</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- JAVASCRIPT LOGIC COMPLETA -->
+    <!-- JAVASCRIPT LOGIC -->
     <script>
         window.addEventListener('load', function() {
             const loader = document.getElementById('loader');
@@ -953,7 +920,6 @@
             }, 500);
         });
 
-        // Menú Hamburguesa Móvil
         const menuToggle = document.getElementById('menuToggle');
         const headerNav = document.getElementById('headerNav');
 
@@ -967,45 +933,6 @@
             }
         }
 
-        // Lógica del Tríptico Interactivo
-        let pageFlip = null;
-
-        function abrilModalTriptico() {
-            document.getElementById('modalTripticoOverlay').classList.add('active');
-            
-            if (!pageFlip) {
-                setTimeout(() => {
-                    const isMobile = window.innerWidth <= 600;
-                    pageFlip = new St.PageFlip(document.getElementById("flipbook"), {
-                        width: isMobile ? 320 : 460,
-                        height: isMobile ? 480 : 650,
-                        size: "stretch",
-                        minWidth: 280,
-                        maxWidth: 600,
-                        minHeight: 400,
-                        maxHeight: 800,
-                        maxShadowOpacity: 0.5,
-                        showCover: true,
-                        mobileScrollSupport: true
-                    });
-
-                    pageFlip.loadFromHTML(document.querySelectorAll(".triptico-page"));
-
-                    document.getElementById("prevTriptico").addEventListener("click", () => pageFlip.flipPrev());
-                    document.getElementById("nextTriptico").addEventListener("click", () => pageFlip.flipNext());
-
-                    pageFlip.on("flip", (e) => {
-                        document.getElementById("pageInfoTriptico").textContent = `Página ${e.data + 1} de 3`;
-                    });
-                }, 200);
-            }
-        }
-
-        function cerrarModalTriptico() {
-            document.getElementById('modalTripticoOverlay').classList.remove('active');
-        }
-
-        // Carrito de compras y Pedidos
         const WEB_APP_URL = "https://script.google.com/macros/s/AKfycby0BL-lu6GSx5wa8-oTd0lLlPyfmGsY21qyIC_l0_DlHwTYVfZ8KidRcquu1oN-Fw/exec";
         const NUMERO_WHATSAPP = "573206344590";
         const EMAIL_ASTRID = "astridvidasana@gmail.com";
